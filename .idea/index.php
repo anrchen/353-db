@@ -20,7 +20,7 @@
 
                 <div class="category">
                     <header class="categoryHeader">
-                        <h1 class="commnunityHeading">Rider</h1>
+                        <h1 class="categoryHeading">Rider</h1>
                         <button class="search" id="searchField" data-trigger="toggle.search.field" type="button">
                             <span class="searchButton">
                                 <i class="icon"></i>
@@ -29,17 +29,41 @@
                         <input name="q" placeholder="Search all posts" type="search" autocomplete="off">
                     </header>
 
-                    <a href="../Images/rider_createPost">
-                        <img src="../Images/rider_createPost.png">
+                    <a href="../Images/rider_createPost" class="serviceContent">
+                        <img src="../Images/createTemplate.png" class="serviceIcon">
+                        <div class="serviceDetail">
+                            <h1 class="serviceHeader">
+                                Create a post
+                            </h1>
+                            <span class="serviceDescription">
+                                Looking for riders on your next trip? Come here!
+                            </span>
+                        </div>
                     </a>
-                    <a href="../Images/rider_editPost">
-                        <img src="../Images/rider_editPost.png">
+                    <a href="../Images/rider_editPost" class="serviceContent">
+                        <img src="../Images/editTemplate.png" class="serviceIcon">
+                        <div class="serviceDetail">
+                            <h1 class="serviceHeader">
+                                Edit a post
+                            </h1>
+                            <span class="serviceDescription">
+                                Change your mind? Reschedule or relocate your trip!
+                            </span>
+                        </div>
                     </a>
-                    <a href="../Images/rider_viewPost">
-                        <img src="../Images/rider_viewPost.png">
+                    <a href="../Images/rider_viewPost" class="serviceContent">
+                        <img src="../Images/viewTemplate.png" class="serviceIcon">
+                        <div class="serviceDetail">
+                            <h1 class="serviceHeader">
+                                View a post
+                            </h1>
+                            <span class="serviceDescription">
+                                Find the details of your posts!
+                            </span>
+                        </div>
                     </a>
-                    <a href="../Images/rider_matchPost"></a>
-                    <a href="../Images/rider_rateATrip"></a>
+                    <a href="../Images/rider_matchPost" class="serviceContent"></a>
+                    <a href="../Images/rider_rateATrip" class="serviceContent"></a>
                 </div>
 
                 <div class="category">
@@ -47,16 +71,40 @@
                         <h1 class="commnunityHeading">Driver</h1>
                     </header>
 
-                    <a href="../Images/driver_createPost.jpg">
-                        <img src="../Images/driver_createPost.png">
+                    <a href="../Images/driver_createPost.jpg" class="serviceContent">
+                        <img src="../Images/createTemplate.png" class="serviceIcon">
+                        <div class="serviceDetail">
+                            <h1 class="serviceHeader">
+                                Create a post
+                            </h1>
+                            <span class="serviceDescription">
+                                Looking for riders on your next trip? Come here!
+                            </span>
+                        </div>
                     </a>
-                    <a href="../Images/drider_editPost">
-                        <img src="../Images/driver_editPost.png">
+                    <a href="../Images/drider_editPost" class="serviceContent">
+                        <img src="../Images/editTemplate.png" class="serviceIcon">
+                        <div class="serviceDetail">
+                            <h1 class="serviceHeader">
+                                Edit a post
+                            </h1>
+                            <span class="serviceDescription">
+                                Change your mind? Reschedule or relocate your trip!
+                            </span>
+                        </div>
                     </a>
-                    <a href="../Images/drider_viewPost">
-                        <img src="../Images/driver_viewPost.png">
+                    <a href="../Images/drider_viewPost" class="serviceContent">
+                        <img src="../Images/viewTemplate.png" class="serviceIcon">
+                        <div class="serviceDetail">
+                            <h1 class="serviceHeader">
+                                View a post
+                            </h1>
+                            <span class="serviceDescription">
+                                Find the details of your posts!
+                            </span>
+                        </div>
                     </a>
-                    <a href="../Images/drider_matchPost"></a>
+                    <a href="../Images/drider_matchPost" class="serviceContent"></a>
                 </div>
 
                 <div class="category">
@@ -64,10 +112,10 @@
                         <h1 class="commnunityHeading">Administrator</h1>
                     </header>
 
-                    <a href="../Images/admin_createPost"></a>
-                    <a href="../Images/admin_editPost"></a>
-                    <a href="../Images/admin_viewPost"></a>
-                    <a href="../Images/admin_matchPost"></a>
+                    <a href="../Images/admin_createPost" class="serviceContent"></a>
+                    <a href="../Images/admin_editPost" class="serviceContent"></a>
+                    <a href="../Images/admin_viewPost" class="serviceContent"></a>
+                    <a href="../Images/admin_matchPost" class="serviceContent"></a>
                 </div>
 
 
