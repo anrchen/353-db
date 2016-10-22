@@ -3,6 +3,7 @@
         <head>
             <link rel="stylesheet" type="text/css" href="../css/main.css">
             <link rel="stylesheet" type="text/css" href="../css/header.css">
+            <link rel="stylesheet" type="text/css" href="../css/nav.css">
         </head>
 
         <body>
@@ -23,6 +24,18 @@
 
 
             <section class="community">
+
+
+                    <div class="styled-select">
+                        <select>
+                            <option selected disabled>Select a role</option>
+                            <option>Posted by Riders</option>
+                            <option>Posted by Drivers</option>
+                        </select>
+                    </div>
+                    <input type="text" class="nav" name="search" placeholder="Search all posts">
+
+
 <!--                <header class="communityHeader">-->
 <!--                    <div class="siteLogo_container">-->
 <!--                        <p class="welcomeMsg">-->
@@ -37,12 +50,6 @@
                 <div class="category">
                     <header class="categoryHeader">
                         <h1 class="categoryHeading">Rider</h1>
-                        <button class="search" id="searchField" data-trigger="toggle.search.field" type="button">
-                            <span class="searchButton">
-                                <i class="icon"></i>
-                            </span>
-                        </button>
-                        <input name="q" placeholder="Search all posts" type="search" autocomplete="off">
                     </header>
 
                     <a href="../Images/rider_createPost" class="serviceContent">
@@ -138,6 +145,5 @@
                 <footer>
                     <p>All rights reserved</p>
                 </footer>
-
         </body>
     </html>

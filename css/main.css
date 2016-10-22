@@ -8,13 +8,12 @@ h1.categoryHeading{
     position: relative;
     margin: 1%;
     float: left;
-    width: 500px;
+    width: 430px;
     height: auto;
     border: 1px solid #fafffb;
     box-shadow: 5px 5px 5px #888888;
     text-decoration: none;
     color: white;
-
 }
 
 img{
@@ -57,18 +56,20 @@ img{
     max-height: 3.515625rem;
     overflow: hidden;
     padding: 0;
+    word-wrap:break-word
 }
 
+.community{
+    background-color:lightblue;
+}
 
 .category{
     display:inline-block;
     width: 100%;
     margin: 0 auto;
-    padding: 10px;
     position: relative;
     font-family: lucida grande ,tahoma,verdana,arial,sans-serif;
     opacity : 0.8;
-    background-color:lightblue;
 }
 
 
