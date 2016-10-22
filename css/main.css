@@ -1,10 +1,9 @@
-h1.commnunityHeading{
+h1.categoryHeading{
     font-size: 1.5em;
     font-weight: bold;
-    color: rgba(255,255,255,.7);
 }
 
-a{
+.community a{
     display: inline-block;
     position: relative;
     margin: 1%;
@@ -21,6 +20,12 @@ a{
 img{
     max-width: 100%;
     max-height: 100%;
+}
+
+.serviceContent:hover{
+    border: 1px solid #fafffb ;
+    box-shadow: 10px 10px 10px #888888 ;
+    background-color: rgba(0,0,0,.35);
 }
 
 .serviceIcon{
@@ -54,9 +59,6 @@ img{
     padding: 0;
 }
 
-p{
-    color: white;
-}
 
 .category{
     display:inline-block;
@@ -64,15 +66,14 @@ p{
     margin: 0 auto;
     padding: 10px;
     position: relative;
-}
-
-
-body {
     font-family: lucida grande ,tahoma,verdana,arial,sans-serif;
-    background-image: url('../Images/background.jpg');
+    opacity : 0.8;
+    background-color:lightblue;
 }
 
-body p {
+
+.category p {
+    color: white;
     line-height: 1.25;
 }
 
@@ -92,6 +93,4 @@ footer {
     border: 3px solid #E3E3E3;
     text-align: center;
     color: #fff;
-    text-shadow: 0.1em 0.1em #333;
-    background-image: url(../Images/bar_background.png);
 }

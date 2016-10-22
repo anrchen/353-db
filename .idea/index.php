@@ -2,21 +2,37 @@
 <html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
         <head>
             <link rel="stylesheet" type="text/css" href="../css/main.css">
+            <link rel="stylesheet" type="text/css" href="../css/header.css">
         </head>
+
         <body>
-            <div id="banner"></div>
+
+            <header class="header-basic">
+
+                <div class="header-limiter">
+
+                    <h1><a href="#">Car<span>ToGo</span></a></h1>
+
+                    <nav>
+                        <a href="#">Support</a>
+                        <a href="#">Log in</a>
+                        <a href="#">About</a>
+                    </nav>
+                </div>
+            </header>
+
+
             <section class="community">
-                <header class="communityHeader">
-                    <div class="siteLogo_container">
-                        <img class="siteLogo" src="../Images/logo.jpg"></img>
-                        <p class="welcomeMsg">
-                            Welcome to the official
-                            <span class="SiteName">
-                                Car2Go
-                            </span>  site
-                        </p>
-                    </div>
-                </header>
+<!--                <header class="communityHeader">-->
+<!--                    <div class="siteLogo_container">-->
+<!--                        <p class="welcomeMsg">-->
+<!--                            Welcome to the official-->
+<!--                            <span class="SiteName">-->
+<!--                                Car2Go-->
+<!--                            </span>  site-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </header>-->
 
                 <div class="category">
                     <header class="categoryHeader">
@@ -30,7 +46,7 @@
                     </header>
 
                     <a href="../Images/rider_createPost" class="serviceContent">
-                        <img src="../Images/createTemplate.png" class="serviceIcon">
+                        <img src="../Images/createTemplateRider2.png" class="serviceIcon">
                         <div class="serviceDetail">
                             <h1 class="serviceHeader">
                                 Create a post
@@ -68,7 +84,7 @@
 
                 <div class="category">
                     <header class="categoryHeader">
-                        <h1 class="commnunityHeading">Driver</h1>
+                        <h1 class="categoryHeading">Driver</h1>
                     </header>
 
                     <a href="../Images/driver_createPost.jpg" class="serviceContent">
@@ -109,7 +125,7 @@
 
                 <div class="category">
                     <header class="categoryHeader">
-                        <h1 class="commnunityHeading">Administrator</h1>
+                        <h1 class="categoryHeading">Administrator</h1>
                     </header>
 
                     <a href="../Images/admin_createPost" class="serviceContent"></a>
