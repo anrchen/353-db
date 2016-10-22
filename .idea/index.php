@@ -52,7 +52,7 @@
                         <h1 class="categoryHeading">Rider</h1>
                     </header>
 
-                    <a href="../Images/rider_createPost" class="serviceContent">
+                    <a href="../post.php" class="serviceContent">
                         <img src="../Images/createTemplateRider2.png" class="serviceIcon">
                         <div class="serviceDetail">
                             <h1 class="serviceHeader">
