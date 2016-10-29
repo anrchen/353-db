@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <html>
         <head>
             <link rel="stylesheet" type="text/css" href="../css/main.css">
             <link rel="stylesheet" type="text/css" href="../css/header.css">
@@ -12,7 +12,7 @@
 
                 <div class="header-limiter">
 
-                    <h1><a href="#">Car<span>ToGo</span></a></h1>
+                    <h1><a href="#">Su<span>per</span></a></h1>
 
                     <nav>
                         <a href="#">Support</a>
@@ -52,7 +52,7 @@
                         <h1 class="categoryHeading">Rider</h1>
                     </header>
 
-                    <a href="../post.php" class="serviceContent">
+                    <a href="../addPost.php" class="serviceContent">
                         <img src="../Images/createTemplateRider2.png" class="serviceIcon">
                         <div class="serviceDetail">
                             <h1 class="serviceHeader">

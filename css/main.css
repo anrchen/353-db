@@ -16,6 +16,10 @@ h1.categoryHeading{
     color: white;
 }
 
+.serviceContent{
+    background: rgba(145, 156, 152, 0.27);
+}
+
 img{
     max-width: 100%;
     max-height: 100%;

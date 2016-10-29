@@ -1,0 +1,59 @@
+.formName{
+    color: #fafffb;
+    max-width: 100%;
+    margin-bottom: auto;
+    font-weight: bold;
+    display: block;
+    text-align: left;
+    margin-left:70px;
+}
+
+.new_post{
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    height: 700px;
+    width: 700px;
+    margin-top:50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.textBoxWrapper{
+    display: block;
+    padding: 8px 12px;
+    font-size: 16px;
+    line-height: 1.43;
+    border-radius: 4px;
+}
+
+#formName, textarea {
+    border-color:#cccccc;
+    padding:10px;
+    font-size:16px;
+    border-radius:7px;
+    border-width:3px;
+    /*border-style:groove;*/
+    width: 80%;
+}
+
+input:focus, textarea { outline:none; }
+
+textarea{
+    resize: none;
+    overflow: auto;
+    height: 400px;
+}
+
+.head{
+    padding-bottom: 19px;
+    color: white;
+    margin-left:30px;
+    font-size: 30px;
+    text-align:left;
+}
+
+
+body{
+    background-color: lightblue;
+    font-family: 'Exo 2', "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
