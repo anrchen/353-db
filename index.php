@@ -1,9 +1,9 @@
 <!DOCTYPE html>
     <html>
         <head>
-            <link rel="stylesheet" type="text/css" href="../css/main.css">
-            <link rel="stylesheet" type="text/css" href="../css/header.css">
-            <link rel="stylesheet" type="text/css" href="../css/nav.css">
+            <link rel="stylesheet" type="text/css" href="css/main.css">
+            <link rel="stylesheet" type="text/css" href="css/header.css">
+            <link rel="stylesheet" type="text/css" href="css/nav.css">
         </head>
 
         <body>
@@ -52,8 +52,8 @@
                         <h1 class="categoryHeading">Rider</h1>
                     </header>
 
-                    <a href="../addPost.php" class="serviceContent">
-                        <img src="../Images/createTemplateRider2.png" class="serviceIcon">
+                    <a href="addPost.php" class="serviceContent">
+                        <img src="Images/createTemplateRider2.png" class="serviceIcon">
                         <div class="serviceDetail">
                             <h1 class="serviceHeader">
                                 Create a post
@@ -63,8 +63,8 @@
                             </span>
                         </div>
                     </a>
-                    <a href="../Images/rider_editPost" class="serviceContent">
-                        <img src="../Images/editTemplate.png" class="serviceIcon">
+                    <a href="Images/rider_editPost" class="serviceContent">
+                        <img src="Images/editTemplate.png" class="serviceIcon">
                         <div class="serviceDetail">
                             <h1 class="serviceHeader">
                                 Edit a post
@@ -74,8 +74,8 @@
                             </span>
                         </div>
                     </a>
-                    <a href="../Images/rider_viewPost" class="serviceContent">
-                        <img src="../Images/viewTemplate.png" class="serviceIcon">
+                    <a href="Images/rider_viewPost" class="serviceContent">
+                        <img src="Images/viewTemplate.png" class="serviceIcon">
                         <div class="serviceDetail">
                             <h1 class="serviceHeader">
                                 View a post
@@ -85,8 +85,8 @@
                             </span>
                         </div>
                     </a>
-                    <a href="../Images/rider_matchPost" class="serviceContent"></a>
-                    <a href="../Images/rider_rateATrip" class="serviceContent"></a>
+                    <a href="Images/rider_matchPost" class="serviceContent"></a>
+                    <a href="Images/rider_rateATrip" class="serviceContent"></a>
                 </div>
 
                 <div class="category">
@@ -94,8 +94,8 @@
                         <h1 class="categoryHeading">Driver</h1>
                     </header>
 
-                    <a href="../Images/driver_createPost.jpg" class="serviceContent">
-                        <img src="../Images/createTemplate.png" class="serviceIcon">
+                    <a href="Images/driver_createPost.jpg" class="serviceContent">
+                        <img src="Images/createTemplate.png" class="serviceIcon">
                         <div class="serviceDetail">
                             <h1 class="serviceHeader">
                                 Create a post
@@ -105,8 +105,8 @@
                             </span>
                         </div>
                     </a>
-                    <a href="../Images/drider_editPost" class="serviceContent">
-                        <img src="../Images/editTemplate.png" class="serviceIcon">
+                    <a href="Images/drider_editPost" class="serviceContent">
+                        <img src="Images/editTemplate.png" class="serviceIcon">
                         <div class="serviceDetail">
                             <h1 class="serviceHeader">
                                 Edit a post
@@ -116,8 +116,8 @@
                             </span>
                         </div>
                     </a>
-                    <a href="../Images/drider_viewPost" class="serviceContent">
-                        <img src="../Images/viewTemplate.png" class="serviceIcon">
+                    <a href="Images/drider_viewPost" class="serviceContent">
+                        <img src="Images/viewTemplate.png" class="serviceIcon">
                         <div class="serviceDetail">
                             <h1 class="serviceHeader">
                                 View a post
@@ -127,7 +127,7 @@
                             </span>
                         </div>
                     </a>
-                    <a href="../Images/drider_matchPost" class="serviceContent"></a>
+                    <a href="Images/drider_matchPost" class="serviceContent"></a>
                 </div>
 
                 <div class="category">
@@ -135,10 +135,10 @@
                         <h1 class="categoryHeading">Administrator</h1>
                     </header>
 
-                    <a href="../Images/admin_createPost" class="serviceContent"></a>
-                    <a href="../Images/admin_editPost" class="serviceContent"></a>
-                    <a href="../Images/admin_viewPost" class="serviceContent"></a>
-                    <a href="../Images/admin_matchPost" class="serviceContent"></a>
+                    <a href="Images/admin_createPost" class="serviceContent"></a>
+                    <a href="Images/admin_editPost" class="serviceContent"></a>
+                    <a href="Images/admin_viewPost" class="serviceContent"></a>
+                    <a href="Images/admin_matchPost" class="serviceContent"></a>
                 </div>
 
 

@@ -6,16 +6,18 @@
     display: block;
     text-align: left;
     margin-left:70px;
+    margin-top: 30px;
 }
 
 .new_post{
     text-align: center;
     background: rgba(0, 0, 0, 0.6);
-    height: 700px;
+    /*height: 700px;*/
     width: 700px;
     margin-top:50px;
     margin-left: auto;
     margin-right: auto;
+    height:auto;
 }
 
 .textBoxWrapper{
@@ -50,8 +52,31 @@ textarea{
     margin-left:30px;
     font-size: 30px;
     text-align:left;
+    padding-top:30px;
 }
 
+#datepicker{
+    width: 37%;
+    border-color:#cccccc;
+    padding:10px;
+    font-size:16px;
+    border-radius:7px;
+    border-width:3px;
+}
+
+#timepicker{
+    width: 37%;
+    margin-left:0;
+    border-color:#cccccc;
+    padding:5px;
+    font-size:16px;
+    border-radius:7px;
+    border-width:3px;
+}
+
+textarea::-webkit-input-placeholder{
+    font-family: 'Exo 2', "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 
 body{
     background-color: lightblue;
