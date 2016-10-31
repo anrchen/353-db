@@ -36,14 +36,15 @@
             </div>
         </header>
 
-        <form method="post" action="/post/generalTrip.php">
+<!--        <form method="post" action="/post/generalTrip.php">-->
+        <form method="post" action="action.php">
             <div class="new_post">
                 <h1 class="head">New Trip</h1>
                 <div class="p">
 
                     <label class="formName">Trip Title</label>
                     <div class="textBoxWrapper">
-                        <input type="text" id="formName" title="" value="" maxlength="100" class="inputBox">
+                        <input type="text" name="formName" id="formName" title="" value="" maxlength="100" class="inputBox">
                     </div>
 
                     <input type="text" id="datepicker" placeholder="Departure Date">
@@ -63,27 +64,7 @@
                 </div>
             </div>
         </form>
+        <?php echo $message; ?>
     </body>
 </html>
 
-<?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "person";
-
-    try {
-        $conn = new PDO("mysql:host=$servername;dbname=person", $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//        $sql = "INSERT INTO SAILORS (sname, rating, age)
-//                VALUES ('John', '8', '18')";
-//        $conn->exec($sql);
-//        echo "New record created successfully";
-    }
-    catch(PDOException $e)
-    {
-        echo "Connection failed: " . $e->getMessage();
-    }
-
-    $conn=null;
-?>
