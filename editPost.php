@@ -36,7 +36,7 @@
         </div>
     </header>
 
-    <form method="post" action="/post/generalTrip.php">
+    <form method="post" action="/viewPosts.php">
         <div class="new_post">
             <h1 class="head">Edit Trip</h1>
             <div class="p">

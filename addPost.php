@@ -64,7 +64,6 @@
                 </div>
             </div>
         </form>
-        <?php echo $message; ?>
     </body>
 </html>
 

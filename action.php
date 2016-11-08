@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv=REFRESH CONTENT=10;url=post/generalTrip.php>
+        <meta http-equiv=REFRESH CONTENT=10;url=viewPosts.php>
 
     </head>
 
@@ -28,13 +28,12 @@
 
     <p class="success" style="text-align: center">
         <?php
-        if(isset($_GET['formName'])){
+        if(isset($_GET['formName']) and isset($_GET['datepicker']) and isset($_GET['timepicker'])
+        and isset($_GET['formBody'])){
             $servername = "localhost";
             $username = "root";
             $password = "";
             $dbname = "person";
-
-            $message = "Defined message";
 
             try {
                 $conn = new PDO("mysql:host=$servername;dbname=person", $username, $password);
