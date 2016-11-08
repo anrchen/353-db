@@ -1,5 +1,5 @@
 .formName{
-    color: #fafffb;
+    /*color: #fafffb;*/
     max-width: 100%;
     margin-bottom: auto;
     font-weight: bold;
@@ -83,3 +83,4 @@ body{
     background-color: lightblue;
     font-family: 'Exo 2', "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+

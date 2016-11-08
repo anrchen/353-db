@@ -37,7 +37,7 @@
         </header>
 
 <!--        <form method="post" action="/post/generalTrip.php">-->
-        <form method="post" action="action.php">
+        <form method="get" action="action.php">
             <div class="new_post">
                 <h1 class="head">New Trip</h1>
                 <div class="p">
@@ -47,11 +47,11 @@
                         <input type="text" name="formName" id="formName" title="" value="" maxlength="100" class="inputBox">
                     </div>
 
-                    <input type="text" id="datepicker" placeholder="Departure Date">
-                    <input title="" type="time" id="timepicker" value="00:00">
+                    <input type="text" id="datepicker" name="datepicker" placeholder="Departure Date">
+                    <input title="" type="time" id="timepicker" name="timepicker" value="00:00">
 
                     <div class="textBoxWrapper">
-                        <textarea id="formBody" title="" placeholder="Give a short description of your trip!"></textarea>
+                        <textarea id="formBody" name="formBody" title="" placeholder="Give a short description of your trip!"></textarea>
                     </div>
 
                     <div class="agreement">
