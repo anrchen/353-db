@@ -43,9 +43,14 @@
     $sql = "SELECT title, time, description FROM trip";
     $result = $conn->query($sql);
 
+    $sql2 = "SELECT title, time, description FROM trip WHERE tripID=";
+    $result2 = $conn->query($sql);
+    $row2 = $result2->fetch_assoc();
+
     if ($result->num_rows > 0) {
         // output data of each row
         while ($row = $result->fetch_assoc()) {
+            if($row["city"]==$row2["city"])
             echo "<br> Title: " . $row["title"] . "<br> Time: " . $row["time"] . "<br> Description: " . $row["description"] . "<br>";
         }
     } else {
