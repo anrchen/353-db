@@ -60,7 +60,7 @@
                     $servername = "localhost";
                     $username = "root";
                     $password = "";
-                    $dbname = "353_project_test";
+                    $dbname = "trip";
                     // Create connection
                     $conn = new mysqli($servername, $username, $password, $dbname);
 
