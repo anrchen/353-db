@@ -31,7 +31,7 @@
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "person";
+        $dbname = "trip";
 
 
             $conn = new mysqli($servername, $username, $password, $dbname);

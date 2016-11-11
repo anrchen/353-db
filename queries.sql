@@ -38,3 +38,15 @@ CREATE TABLE city (
  PRIMARY KEY (cityName)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+INSERT INTO city (cityName, citySurrounded) VALUES
+('Brossard', 'Montreal'),
+('Dorval', 'Montreal'),
+('Laval', 'Montreal'),
+('Montreal', 'Toronto'),
+('Quebec', 'Montreal'),
+('Sherbrooke', 'Montreal'),
+('Toronto', 'Montreal'),
+('WestIsland', 'Montreal');
+
+INSERT INTO trip ('TID', 'dDate', 'aDate', 'dPostal', 'aPostal', 'Description', 'Restriction', 'Title', 'Comments') VALUES ('1', '20100101', '20101010', 'H4V2N2', 'H4V2N2', 'myDescription', NULL, 'myTitle', 'Here is the comment');
+INSERT INTO trip ('TID', 'dDate', 'aDate', 'dPostal', 'aPostal', 'Description', 'Restriction', 'Title', 'Comments') VALUES ('2', '19901111', '19901212', 'H4V2N2', 'H4V2N2', 'Desc#2', NULL, 'Trip#2', 'comments#2');

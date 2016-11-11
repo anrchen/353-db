@@ -135,6 +135,8 @@
                         <h1 class="categoryHeading">Administrator</h1>
                     </header>
 
+                    <a href="deletePost.php">Click here to delete a post</a>
+
                     <a href="Images/admin_createPost" class="serviceContent"></a>
                     <a href="Images/admin_editPost" class="serviceContent"></a>
                     <a href="Images/admin_viewPost" class="serviceContent"></a>
