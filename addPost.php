@@ -50,56 +50,30 @@
                     <input type="text" id="datepicker" name="datepicker" placeholder="Departure Date">
                     <input title="" type="time" id="timepicker" name="timepicker" value="00:00">
 
-
-                    <p></p>
-
-
-                    <!--City-->
-                    <?php
-                    echo 'Departure City';
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $dbname = "trip";
-                    // Create connection
-                    $conn = new mysqli($servername, $username, $password, $dbname);
-
-
-                    $result = $conn->query("select cityName from city");
-                    echo "<select name='id'>";
-                    while ($row = $result->fetch_assoc()) {
-                        $id = $row['cityName'];
-                        echo '<option value="">'.$id.'</option>';
-                    }
-                    echo "</select>";
-                    ?>
-
-                    <!--postal code-->
-                    <label class="formName">Departure Postal Code</label>
-                    <div class="postalWrapper">
-                        <input type="text" name="formName" id="formName" title="" value="" maxlength="6" class="inputBox">
+                    <div class="styled-select">
+                        <?php
+                        echo '';
+                        include_once ('connection.php');
+                        $con = new Connection();
+                        $con->displaySelectList('cityName','City','Choose Departure City');
+                        ?>
                     </div>
 
-
-                    <!--City-->
-                    <?php
-                    echo '<p></p>';
-
-                    echo 'Arrival City';
-                    $result = $conn->query("select cityName from city");
-                    echo "<select name='id'>";
-                    while ($row = $result->fetch_assoc()) {
-                        $id = $row['cityName'];
-                        echo '<option value="">'.$id.'</option>';
-                    }
-                    echo "</select>";
-                    $conn->close();
-                    ?>
-
-                    <!--postal code-->
-                    <label class="formName">Arrival Postal Code</label>
                     <div class="postalWrapper">
-                        <input type="text" name="formName" id="formName" title="" value="" maxlength="6" class="inputBox">
+                        <input type="text" name="formName" id="formName" title="" value=""
+                               placeholder="Departure Postal Code" maxlength="6" class="inputBox">
+                    </div>
+
+                    <div class="styled-select">
+                        <?php
+                            $con->displaySelectList('cityName','City','Choose Departure City');
+                            $con->close();
+                        ?>
+                    </div>
+
+                    <div class="postalWrapper">
+                        <input type="text" name="formName" id="formName" placeholder="Arrival Postal Code"
+                               title="" value="" maxlength="6" class="inputBox">
                     </div>
 
                     <p></p>
