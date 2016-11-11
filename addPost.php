@@ -50,6 +50,30 @@
                     <input type="text" id="datepicker" name="datepicker" placeholder="Departure Date">
                     <input title="" type="time" id="timepicker" name="timepicker" value="00:00">
 
+
+                    <p></p>
+
+
+
+                    <?php
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $dbname = "353_project_test";
+                    // Create connection
+                    $conn = new mysqli($servername, $username, $password, $dbname);
+                    $result = $conn->query("select cityName from city");
+                    echo "<select name='id'>";
+                    while ($row = $result->fetch_assoc()) {
+                        $id = $row['cityName'];
+                        echo '<option value="">'.$id.'</option>';
+                    }
+                    echo "</select>";
+                    $conn->close();
+                    ?>
+
+
+                    
                     <div class="textBoxWrapper">
                         <textarea id="formBody" name="formBody" title="" placeholder="Give a short description of your trip!"></textarea>
                     </div>
