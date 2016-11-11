@@ -54,14 +54,38 @@
                     <p></p>
 
 
-
+                    <!--City-->
                     <?php
+                    echo 'Departure City';
                     $servername = "localhost";
                     $username = "root";
                     $password = "";
                     $dbname = "353_project_test";
                     // Create connection
                     $conn = new mysqli($servername, $username, $password, $dbname);
+
+
+                    $result = $conn->query("select cityName from city");
+                    echo "<select name='id'>";
+                    while ($row = $result->fetch_assoc()) {
+                        $id = $row['cityName'];
+                        echo '<option value="">'.$id.'</option>';
+                    }
+                    echo "</select>";
+                    ?>
+
+                    <!--postal code-->
+                    <label class="formName">Departure Postal Code</label>
+                    <div class="postalWrapper">
+                        <input type="text" name="formName" id="formName" title="" value="" maxlength="6" class="inputBox">
+                    </div>
+
+
+                    <!--City-->
+                    <?php
+                    echo '<p></p>';
+
+                    echo 'Arrival City';
                     $result = $conn->query("select cityName from city");
                     echo "<select name='id'>";
                     while ($row = $result->fetch_assoc()) {
@@ -72,8 +96,16 @@
                     $conn->close();
                     ?>
 
+                    <!--postal code-->
+                    <label class="formName">Arrival Postal Code</label>
+                    <div class="postalWrapper">
+                        <input type="text" name="formName" id="formName" title="" value="" maxlength="6" class="inputBox">
+                    </div>
 
-                    
+                    <p></p>
+                    <input type="checkbox" name="Yes" value="1"> Would you like to restrict travel area?<br>
+
+
                     <div class="textBoxWrapper">
                         <textarea id="formBody" name="formBody" title="" placeholder="Give a short description of your trip!"></textarea>
                     </div>

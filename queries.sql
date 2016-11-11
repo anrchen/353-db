@@ -9,10 +9,12 @@ CREATE TABLE member (
 
 CREATE TABLE trip (
  TID int(11) NOT NULL,
- departureDate int(8) NOT NULL,
- departureAddress varchar(20) DEFAULT NULL,
- destinationAddress varchar(20) DEFAULT NULL,
+ dDate int(8) NOT NULL,
+ aDate int(8) NOT NULL,
+ dPostal varchar(20) DEFAULT NULL,
+ aPostal varchar(20) DEFAULT NULL,
  Description varchar(100) DEFAULT NULL,
+ Restriction boolean DEFAULT NULL,
  Title varchar(10) DEFAULT NULL,
   Comments varchar(100) DEFAULT NULL,
  PRIMARY KEY (TID)
