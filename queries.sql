@@ -4,7 +4,12 @@ CREATE TABLE member (
   lastName varchar(20) DEFAULT NULL,
   Birthday int(11) NOT NULL,
   Role varchar(20) NOT NULL,
+  email varchar(20) NOT NULL,
+  password varchar(20) NOT NULL,
+  balance float(20) NOT NULL,
   isAdmin BOOLEAN,
+  isActive tinyint(1) NOT NULL,
+  rating float(5) not null
   PRIMARY KEY (MID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -41,7 +46,13 @@ CREATE TABLE trip (
   Title varchar(20) DEFAULT NULL,
   Comments varchar(100) DEFAULT NULL,
   Category varchar(15) NOT NULL,
-  PRIMARY KEY (TID),
+  startAddress1 varchar(20) DEFAULT NULL,
+  startAddress2 varchar(20) DEFAULT NULL,
+  endAddress1 varchar(20) DEFAULT NULL,
+  endAddress2 varchar(20) DEFAULT NULL,
+  startProvince varchar(20) DEFAULT NULL,
+  endProvince varchar(20) DEFAULT NULL,
+  PRIMARY KEY (TID),  
   FOREIGN KEY (cityName) REFERENCES city(cityName)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
@@ -69,7 +80,9 @@ CREATE TABLE Reviews(
   author int(11) NOT NULL,
   target int(11) NOT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (author) REFERENCES member(MID),
+  FOREIGN KEY (author) REFERENCES member(MID)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (target) REFERENCES member(MID)
     ON DELETE CASCADE
     ON UPDATE CASCADE
@@ -82,7 +95,20 @@ CREATE TABLE Transactions(
   amount float(20) DEFAULT NULL,
   transactionDate date NOT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (tripId) REFERENCES trip(TID),
+  FOREIGN KEY (tripId) REFERENCES trip(TID)    
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  FOREIGN KEY (memberId) REFERENCES member(MID)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE Matches(
+  tripID int(11) NOT NULL,
+  memberId int(11) NOT NULL,
+  FOREIGN KEY (tripId) REFERENCES trip(TID)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (memberId) REFERENCES member(MID)
     ON DELETE CASCADE
     ON UPDATE CASCADE
