@@ -53,3 +53,5 @@ INSERT INTO city (cityName, citySurrounded) VALUES
  ('WestIsland', 'Montreal');
 
 INSERT INTO trip
+VALUES (1, 19901111, 19911212, 'Dorval', 'H4V2N2', 'H4V2N2', 'Description1', 0, 'title#1', 'comments#1'),
+ (2, 20161116, 20121212, 'Dorval', 'H4B2N2', 'H4B2N2', 'description#2', 1, 'title#2', 'comments#2');
