@@ -29,21 +29,24 @@
         public function showPosts($table){
             $result = $this->conn->query("SELECT * FROM $table");
             while ($row = $result->fetch_assoc()) {
-                echo "Trip ID: ".$row['TID'];
+                echo "<br><br>Trip ID: ".$row['TID'];
                 echo "<br>Departure Date: ".$row['dDate'];
                 echo "<br>Arrival Date: ".$row['aDate'];
                 echo "<br>Departure Postal Code: ".$row['dPostal'];
                 echo "<br>Arrival Postal Code: ".$row['aPostal'];
                 echo "<br>Description: ".$row['Description'];
                 $city = $row["cityName"];
-                if ($row['restriction']){
-                    $city = $this->conn->query("SELECT citySurrounded FROM $table WHERE cityName=$city");
+                if ($row['Restriction']){
+                    $city2 = $this->conn->query("SELECT * FROM city WHERE cityName='$city'");
                     echo "<br>Restricted to drivers from the following regions: ";
-                    while ($row2 = $city->fetch_assoc()) {
-                        $row2['citySurrounded'];
+                    while ($row2 = $city2->fetch_assoc()) {
+                        echo $row2['citySurrounded'];
                     }
+                }else{
+                    echo "<br>No restriction is given by the poster.";
                 }
-                echo "Departure Date: ".$row['dDate'];
+                echo "<br>Departure Date: ".$row['dDate'];
+                echo '<a href="action_delete.php?subject='.$row['TID'].'">Yes, delete!</a>';
             }
         }
 
