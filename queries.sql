@@ -17,7 +17,7 @@ CREATE TABLE trip (
  Description varchar(100) DEFAULT NULL,
  Restriction boolean DEFAULT NULL,
  Title varchar(10) DEFAULT NULL,
-  Comments varchar(100) DEFAULT NULL,
+ Comments varchar(100) DEFAULT NULL,
  PRIMARY KEY (TID),
  FOREIGN KEY (cityName) REFERENCES FROM city (cityName)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
