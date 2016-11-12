@@ -7,6 +7,20 @@ CREATE TABLE member (
  PRIMARY KEY (MID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE memberDetails(
+id int(11) NOT NULL,
+dob date NOT NULL,
+address1 varchar(20) DEFAULT NULL,
+address2 varchar(20) DEFAULT NULL,
+city varchar(20) DEFAULT NULL,
+postalCode varchar(20) DEFAULT NULL,
+province varchar(20) DEFAULT NULL,
+PRIMARY KEY (id),
+FOREIGN KEY (id) REFERENCES member(MID)
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+
 CREATE TABLE city (
   cityName varchar(10) NOT NULL,
   citySurrounded varchar(20) DEFAULT NULL,
@@ -41,6 +55,32 @@ CREATE TABLE account (
    ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE Reviews(
+id int(11) NOT NULL,
+date date NOT NULL,
+rating tinyint(1) NOT NULL,
+review varchar(20) DEFAULT NULL,
+author int(11) NOT NULL,
+target int(11) NOT NULL,
+PRIMARY KEY (id),
+FOREIGN KEY (author) REFERENCES member(MID),
+FOREIGN KEY (target) REFERENCES member(MID)
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE Transactions(
+id int(11) NOT NULL,
+tripId int(11) NOT NULL,
+memberId int(11) NOT NULL,
+amount float(20) DEFAULT NULL,
+transactionDate date NOT NULL,
+PRIMARY KEY (id),
+FOREIGN KEY (tripId) REFERENCES trip(TID),
+FOREIGN KEY (memberId) REFERENCES member(MID)
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO city (cityName, citySurrounded) VALUES
  ('Brossard', 'Montreal'),
