@@ -55,10 +55,10 @@
                 /* Link the TID from deletedPost.php to delete.php
                     still have errors
                     -*/
-                $TID =  $row["tid"];
+                $myVar = $row["tid"];
 
                 echo "Trip ID: " . $row["tid"]. "<br>";
-                echo '<a href="deleted.php?'.$TID.'">Yes, delete!</a>';
+                echo '<a href="deleted.php?subject='.$row["tid"].'">Click here to delete.</a> <p>';
             }
         } else {
             echo "0 results";
