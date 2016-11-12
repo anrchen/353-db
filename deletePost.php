@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: aaronchen
- * Date: 2016-11-10
- * Time: 12:43 PM
- */
+
 ?>
 
 <!DOCTYPE html>
@@ -36,41 +31,41 @@
 
     <p class="success" style="text-align: center">
         <p>Delete Posts by Trip Number</p>
+<!--        --><?php
+//                    $servername = "localhost";
+//                    $username = "root";
+//                    $password = "";
+//                    $dbname = "trip";
+//                    // Create connection
+//                    $conn = new mysqli($servername, $username, $password, $dbname);
+//
+//
+//                    $sql = "SELECT tid FROM trip";
+//                    $result = $conn->query($sql);
+//
+//        if ($result->num_rows > 0) {
+//            // output data of each row
+//            while($row = $result->fetch_assoc()) {
+//
+//                /* Link the TID from deletedPost.php to delete.php
+//                    still have errors
+//                    -*/
+//                $TID =  $row["tid"];
+//
+//                echo "Trip ID: " . $row["tid"]. "<br>";
+//                echo '<a href="action_delete.php?'.$TID.'">Yes, delete!</a>';
+//            }
+//        } else {
+//            echo "0 results";
+//        }
+//
+//        ?>
+
         <?php
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $dbname = "trip";
-                    // Create connection
-                    $conn = new mysqli($servername, $username, $password, $dbname);
-
-
-                    $sql = "SELECT tid FROM trip";
-                    $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            // output data of each row
-            while($row = $result->fetch_assoc()) {
-
-                /* Link the TID from deletedPost.php to delete.php
-                    still have errors
-                    -*/
-                $TID =  $row["tid"];
-
-                echo "Trip ID: " . $row["tid"]. "<br>";
-                echo '<a href="deleted.php?'.$TID.'">Yes, delete!</a>';
-            }
-        } else {
-            echo "0 results";
-        }
-
+            include_once ('connection.php');
+            $con = new Connection();
+            $con->showPosts('trip');
         ?>
-</p>
 
-</body>
+    </body>
 </html>
-
-
-
-
-//SAM HELLLO look here ***********************************

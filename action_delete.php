@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sam_8_000
- * Date: 11/11/2016
- * Time: 6:08 PM
- */
 
                     /* Link the TID from deletedPost.php to delete.php
                     still have errors
