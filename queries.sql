@@ -52,3 +52,4 @@ INSERT INTO city (cityName, citySurrounded) VALUES
  ('Toronto', 'Montreal'),
  ('WestIsland', 'Montreal');
 
+INSERT INTO trip
