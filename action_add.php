@@ -27,6 +27,7 @@
     </header>
 
     <p class="success" style="text-align: center">
+        <?php
         if(isset($_GET['formName']) and isset($_GET['dCity']) and isset($_GET['formBody'])){
             $servername = "localhost";
             $username = "root";
