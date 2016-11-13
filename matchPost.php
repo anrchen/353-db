@@ -30,8 +30,9 @@
             <?php
                 include_once ('connection.php');
                 $con = new Connection();
-                $con->setQuery("SELECT * FROM trip");
+                $con->setQuery("");
                 $con->showPosts('');
+                $con->close();
             ?>
         </div>
 

@@ -27,24 +27,36 @@
     </header>
 
     <p class="success" style="text-align: center">
-        <?php
-        if(isset($_GET['formName']) and isset($_GET['datepicker']) and isset($_GET['timepicker'])
-        and isset($_GET['formBody'])){
+        if(isset($_GET['formName']) and isset($_GET['dCity']) and isset($_GET['formBody'])){
             $servername = "localhost";
             $username = "root";
             $password = "";
-            $dbname = "person";
+            $dbname = "trip";
 
             try {
-                $conn = new PDO("mysql:host=$servername;dbname=person", $username, $password);
+                $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                $formName = $_GET['formName'];
-                $timepicker = $_GET['datepicker']."_".$_GET['timepicker'];
-                $formBody = $_GET['formBody'];
+                $authorID="1";
+                if(isset($_GET['weekday'])){
+                    $dDate=implode(",", $_GET['weekday']);;
+                    $category = 'regular';
+                    echo "weekday";
+                }else{
+                    $dDate=$_GET['date'];
+                    $category = 'onetime';
+                    echo $dDate;
+                }
+                $dCity=$_GET['dCity'];
+                $aCity=$_GET['aCity'];
+                $dPostal=$_GET['dPostal'];
+                $aPostal=$_GET['aPostal'];
+                $Description=$_GET['formBody'];
+                $Restriction=$_GET['restriction'];
+                $Title=$_GET['formName'];
 
-                $sql = "INSERT INTO trip (title, time, description)
-                        VALUES ('$formName', '$timepicker', '$formBody')";
+                $sql = "INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restriction,Title, Category)
+                        VALUES ('$authorID','$dDate','$dCity','$aCity','$dPostal','$aPostal','$Description','$Restriction','$Title', '$category')";
                 $conn->exec($sql);
                 echo '
                       Your trip has been <span style="color:#1bcd00;">successfully</span> 

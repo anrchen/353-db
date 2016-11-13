@@ -20,9 +20,9 @@
             $this->query=$query;
         }
 
-        public function displaySelectList($attribute, $table, $selected){
+        public function displaySelectList($attribute, $table, $selected, $name){
             $result = $this->conn->query("SELECT $attribute FROM $table");
-            echo "<select class='city' name='city'> 
+            echo "<select class='city' name=$name> 
                       <option selected value='default'>$selected</option>>";
             while ($row = $result->fetch_assoc()) {
                 $id = $row[$attribute];
@@ -41,7 +41,6 @@
                 echo "<br><div class='serviceContent'>";
                     echo "Trip ID: ".$row['TID'];
                     echo "<br>Departure Date: ".$row['dDate'];
-                    echo "<br>Arrival Date: ".$row['aDate'];
                     echo "<br>Departure Postal Code: ".$row['dPostal'];
                     echo "<br>Arrival Postal Code: ".$row['aPostal'];
                     echo "<br>Description: ".$row['Description'];
@@ -53,7 +52,6 @@
                             echo $row2['citySurrounded'];
                         }
                     }
-                    echo "<br>Departure Date: ".$row['dDate'];
                 echo "</div>";
             }
         }

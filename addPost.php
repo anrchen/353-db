@@ -41,6 +41,11 @@
             <div class="new_post">
                 <h1 class="head">New Trip</h1>
                 <div class="p">
+                    <?php
+                        echo"
+                            <div name='type' value='".$_GET['type']."'></div>
+                        ";
+                    ?>
 
                     <label class="formName">Trip Title</label>
                     <div class="textBoxWrapper">
@@ -76,24 +81,24 @@
                             echo '';
                             include_once ('connection.php');
                             $con = new Connection();
-                            $con->displaySelectList('cityName','City','Arrival city');
+                            $con->displaySelectList('cityName','City','Arrival city','dCity');
                             ?>
                         </div>
-                        <input type="text" placeholder="Departure Postal Code" id="postal" value="" maxlength="6">
+                        <input type="text" placeholder="Departure Postal Code" name="dPostal" class="postal" maxlength="6">
                     </div>
 
                     <div class="textBoxWrapper">
                         <div class="styled-select">
                             <?php
-                                $con->displaySelectList('cityName','City','Departure city');
+                                $con->displaySelectList('cityName','City','Departure city','aCity');
                                 $con->close();
                             ?>
                         </div>
-                        <input type="text" placeholder="Arrival Postal Code" id="postal" value="" maxlength="6">
+                        <input type="text" placeholder="Arrival Postal Code" name="aPostal" class="postal" maxlength="6">
                     </div>
 
                     <div class="restriction">
-                        <input title="" type="checkbox" name="Yes" value="1">
+                        <input title="" type="checkbox" name="restriction" value="1">
                         Would you like to restrict the travel area?<br>
                     </div>
 

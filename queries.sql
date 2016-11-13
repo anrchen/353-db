@@ -30,10 +30,9 @@ CREATE TABLE city (
 
 CREATE TABLE trip
 (
-    TID INT(11) PRIMARY KEY NOT NULL,
+    TID INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     authorID INT(11) NOT NULL,
-    dDate VARCHAR(10) NOT NULL,
-    aDate INT(8) NOT NULL,
+    dDate VARCHAR(50) NOT NULL,
     dCity VARCHAR(10) NOT NULL,
     aCity VARCHAR(15) NOT NULL,
     dPostal VARCHAR(20) DEFAULT NULL,
@@ -43,9 +42,8 @@ CREATE TABLE trip
     Title VARCHAR(20) DEFAULT NULL,
     Comments VARCHAR(100) DEFAULT NULL,
     Category VARCHAR(15) NOT NULL,
-    FOREIGN KEY (dCity) REFERENCES city (cityName),
     FOREIGN KEY (authorID) REFERENCES member (MID)
-)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE account (
   MID int(11) NOT NULL,
@@ -112,8 +110,7 @@ INSERT INTO member VALUES
 INSERT INTO trip VALUES
   (1,
     1,
-    19901111,
-    19911212,
+    'Monday',
     'Dorval',
     'Montreal',
     'H4V2N2',
@@ -126,8 +123,7 @@ INSERT INTO trip VALUES
 
   (2,
     2,
-    20161116,
-    20121212,
+    '20161116',
     'Dorval',
     'New York',
     'H4B2N2',

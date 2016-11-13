@@ -100,7 +100,7 @@ textarea{
     float: left;
 }
 
-#postal{
+.postal{
     width: 200px;
     height: 16px;
     border-color:#cccccc;
