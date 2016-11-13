@@ -4,13 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--       jQuery UI Datepicker -->
+        <!--       Source: jQuery UI Datepicker -->
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script>
             $( function() {
-                $( "#datepicker" ).datepicker();
+                $( ".datepicker" ).datepicker();
             } );
         </script>
         <!--end of Datepicker -->
@@ -47,37 +47,56 @@
                         <input type="text" name="formName" id="formName" title="" value="" maxlength="100" class="inputBox">
                     </div>
 
-                    <input type="text" id="datepicker" name="datepicker" placeholder="Departure Date">
-                    <input title="" type="time" id="timepicker" name="timepicker" value="00:00">
+                    <?php
+                        if ($_GET['type']=='regular'){
+                            echo "
+                                <label class=\"formName\" style='margin-top: 5px'>Regular trip day</label>
+                                <div class=\"textBoxWrapper\">
+                                    <input type=\"checkbox\" name=\"weekday[]\" value=\"Monday\" />Monday
+                                    <input type=\"checkbox\" name=\"weekday[]\" value=\"Tuesday\" />Tuesday
+                                    <input type=\"checkbox\" name=\"weekday[]\" value=\"Wednesday\" />Wednesday
+                                    <input type=\"checkbox\" name=\"weekday[]\" value=\"Thursday\" />Thursday
+                                    <input type=\"checkbox\" name=\"weekday[]\" value=\"Friday\" />Friday
+                                    <input type=\"checkbox\" name=\"weekday[]\" value=\"Saturday\" />Saturday
+                                    <input type=\"checkbox\" name=\"weekday[]\" value=\"Sunday\" />Sunday
+                                </div>
+                            ";
+                        }else{
+                            echo "
+                                <div class=\"textBoxWrapper\">
+                                    <input type=\"text\" class=\"datepicker\" name=\"date\" placeholder=\"Departure Date\">
+                                </div>
+                            ";
+                        }
+                    ?>
 
-                    <div class="styled-select">
-                        <?php
-                        echo '';
-                        include_once ('connection.php');
-                        $con = new Connection();
-                        $con->displaySelectList('cityName','City','Choose Departure City');
-                        ?>
+                    <div class="textBoxWrapper">
+                        <div class="styled-select">
+                            <?php
+                            echo '';
+                            include_once ('connection.php');
+                            $con = new Connection();
+                            $con->displaySelectList('cityName','City','Arrival city');
+                            ?>
+                        </div>
+                        <input type="text" placeholder="Departure Postal Code" id="postal" value="" maxlength="6">
                     </div>
 
-                    <div class="postalWrapper">
-                        <input type="text" name="formName" id="formName" title="" value=""
-                               placeholder="Departure Postal Code" maxlength="6" class="inputBox">
+                    <div class="textBoxWrapper">
+                        <div class="styled-select">
+                            <?php
+                                $con->displaySelectList('cityName','City','Departure city');
+                                $con->close();
+                            ?>
+                        </div>
+                        <input type="text" placeholder="Arrival Postal Code" id="postal" value="" maxlength="6">
                     </div>
 
-                    <div class="styled-select">
-                        <?php
-                            $con->displaySelectList('cityName','City','Choose Departure City');
-                            $con->close();
-                        ?>
+                    <div class="restriction">
+                        <input title="" type="checkbox" name="Yes" value="1">
+                        Would you like to restrict the travel area?<br>
                     </div>
 
-                    <div class="postalWrapper">
-                        <input type="text" name="formName" id="formName" placeholder="Arrival Postal Code"
-                               title="" value="" maxlength="6" class="inputBox">
-                    </div>
-
-                    <p></p>
-                    <input type="checkbox" name="Yes" value="1"> Would you like to restrict travel area?<br>
 
 
                     <div class="textBoxWrapper">

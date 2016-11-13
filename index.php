@@ -52,11 +52,22 @@
                         <h1 class="categoryHeading">Rider</h1>
                     </header>
 
-                    <a href="addPost.php" class="serviceContent">
+                    <a href="addPost.php?type=onetime" class="serviceContent">
                         <img src="Images/createTemplateRider2.png" class="serviceIcon">
                         <div class="serviceDetail">
                             <h1 class="serviceHeader">
-                                Create a post
+                                Create a one-time trip post
+                            </h1>
+                            <span class="serviceDescription">
+                                Looking for riders on your next trip? Come here!
+                            </span>
+                        </div>
+                    </a>
+                    <a href="addPost.php?type=regular" class="serviceContent">
+                        <img src="Images/createTemplateRider2.png" class="serviceIcon">
+                        <div class="serviceDetail">
+                            <h1 class="serviceHeader">
+                                Create a regular trip post
                             </h1>
                             <span class="serviceDescription">
                                 Looking for riders on your next trip? Come here!

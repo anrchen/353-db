@@ -22,10 +22,10 @@
 
         public function displaySelectList($attribute, $table, $selected){
             $result = $this->conn->query("SELECT $attribute FROM $table");
-            echo "<select name='id'> 
+            echo "<select class='city' name='city'> 
                       <option selected value='default'>$selected</option>>";
             while ($row = $result->fetch_assoc()) {
-                $id = $row['$attribute'];
+                $id = $row[$attribute];
                 echo '<option value="">'.$id.'</option>';
             }
             echo "</select>";

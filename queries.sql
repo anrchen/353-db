@@ -28,28 +28,24 @@ CREATE TABLE city (
   PRIMARY KEY (cityName)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE trip (
-  TID int(11) NOT NULL,
-  authorID int(11) NOT NULL,
-  dDate int(8) NOT NULL,
-  aDate int(8) NOT NULL,
-  dCity varchar(10) NOT NULL,
-  aCity varchar(15) NOT NULL,
-  dPostal varchar(20) DEFAULT NULL,
-  aPostal varchar(20) DEFAULT NULL,
-  Description varchar(100) DEFAULT NULL,
-  Restriction boolean DEFAULT NULL,
-  Title varchar(20) DEFAULT NULL,
-  Comments varchar(100) DEFAULT NULL,
-  Category varchar(15) NOT NULL,
-  PRIMARY KEY (TID),
-  FOREIGN KEY (dCity) REFERENCES city(cityName)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  FOREIGN KEY (authorID) REFERENCES member(MID)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE trip
+(
+    TID INT(11) PRIMARY KEY NOT NULL,
+    authorID INT(11) NOT NULL,
+    dDate VARCHAR(10) NOT NULL,
+    aDate INT(8) NOT NULL,
+    dCity VARCHAR(10) NOT NULL,
+    aCity VARCHAR(15) NOT NULL,
+    dPostal VARCHAR(20) DEFAULT NULL,
+    aPostal VARCHAR(20) DEFAULT NULL,
+    Description VARCHAR(100) DEFAULT NULL,
+    Restriction BOOLEAN DEFAULT NULL,
+    Title VARCHAR(20) DEFAULT NULL,
+    Comments VARCHAR(100) DEFAULT NULL,
+    Category VARCHAR(15) NOT NULL,
+    FOREIGN KEY (dCity) REFERENCES city (cityName),
+    FOREIGN KEY (authorID) REFERENCES member (MID)
+)
 
 CREATE TABLE account (
   MID int(11) NOT NULL,

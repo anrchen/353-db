@@ -38,10 +38,7 @@
             try {
                 $conn = new PDO("mysql:host=$servername;dbname=person", $username, $password);
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        //        $sql = "CREATE TABLE trip(
-        //                    Title varchar(20),
-        //                    Time varchar(20),
-        //                    Description varchar(255));";
+
                 $formName = $_GET['formName'];
                 $timepicker = $_GET['datepicker']."_".$_GET['timepicker'];
                 $formBody = $_GET['formBody'];
