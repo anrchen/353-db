@@ -16,6 +16,19 @@ h1.categoryHeading{
     color: white;
 }
 
+.match{
+    width: 45%;
+    position: relative;
+    margin: auto;
+}
+
+.match .serviceContent{
+    width:auto;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #f0f3f4;
+}
+
 .serviceContent{
     background: rgba(145, 156, 152, 0.27);
 }
@@ -26,7 +39,7 @@ img{
 }
 
 .serviceContent:hover{
-    border: 1px solid #fafffb ;
+    border: 1px solid #f7fdff;
     box-shadow: 10px 10px 10px #888888 ;
     background-color: rgba(0,0,0,.35);
 }

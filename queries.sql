@@ -33,7 +33,8 @@ CREATE TABLE trip (
   authorID int(11) NOT NULL,
   dDate int(8) NOT NULL,
   aDate int(8) NOT NULL,
-  cityName varchar(10) NOT NULL,
+  dCity varchar(10) NOT NULL,
+  aCity varchar(15) NOT NULL,
   dPostal varchar(20) DEFAULT NULL,
   aPostal varchar(20) DEFAULT NULL,
   Description varchar(100) DEFAULT NULL,
@@ -42,7 +43,7 @@ CREATE TABLE trip (
   Comments varchar(100) DEFAULT NULL,
   Category varchar(15) NOT NULL,
   PRIMARY KEY (TID),
-  FOREIGN KEY (cityName) REFERENCES city(cityName)
+  FOREIGN KEY (dCity) REFERENCES city(cityName)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (authorID) REFERENCES member(MID)
@@ -118,6 +119,7 @@ INSERT INTO trip VALUES
     19901111,
     19911212,
     'Dorval',
+    'Montreal',
     'H4V2N2',
     'H4V2N2',
     'Description1',
@@ -131,6 +133,7 @@ INSERT INTO trip VALUES
     20161116,
     20121212,
     'Dorval',
+    'New York',
     'H4B2N2',
     'H4B2N2',
     'description#2',

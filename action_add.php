@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv=REFRESH CONTENT=10;url=viewPosts.php>
+        <meta http-equiv=REFRESH CONTENT=10;url=matchPost.php>
 
     </head>
 
