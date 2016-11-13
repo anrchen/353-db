@@ -29,21 +29,21 @@
         public function showPosts($table){
             $result = $this->conn->query("SELECT * FROM $table");
             while ($row = $result->fetch_assoc()) {
-                echo "Trip ID: ".$row['TID'];
+                echo "<br><br>Trip ID: ".$row['TID'];
                 echo "<br>Departure Date: ".$row['dDate'];
                 echo "<br>Arrival Date: ".$row['aDate'];
                 echo "<br>Departure Postal Code: ".$row['dPostal'];
                 echo "<br>Arrival Postal Code: ".$row['aPostal'];
                 echo "<br>Description: ".$row['Description'];
                 $city = $row["cityName"];
-                if ($row['restriction']){
+                if ($row['Restriction']){
                     $city = $this->conn->query("SELECT citySurrounded FROM $table WHERE cityName=$city");
                     echo "<br>Restricted to drivers from the following regions: ";
                     while ($row2 = $city->fetch_assoc()) {
                         $row2['citySurrounded'];
                     }
                 }
-                echo "Departure Date: ".$row['dDate'];
+                echo "<br>Departure Date: ".$row['dDate'];
             }
         }
 

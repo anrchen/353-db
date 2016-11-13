@@ -27,42 +27,9 @@
 
 <p class="success" style="text-align: center">
     <?php
-
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "person";
-
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    $sql = "SELECT title, time, description FROM trip";
-    $result = $conn->query($sql);
-
-    $tripID = $_GET['tripID'];
-    $sql2 = "SELECT title, time, description FROM trip WHERE tripID='$tripID'";
-    $result2 = $conn->query($sql);
-    $row2 = $result2->fetch_assoc();
-
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while ($row = $result->fetch_assoc()) {
-            if($row["city"]==$row2["city"]){
-                echo "<br> Title: " . $row["title"] . "<br> Time: " . $row["time"] . "<br> 
-                Description: " . $row["description"] . "<br>";
-            }
-
-        }
-    } else {
-        echo "0 results";
-    }
-
-    $conn->close();
-
+        include_once ('connection.php');
+        $con = new Connection();
+        $con->showPosts('trip');
     ?>
 </p>
 
