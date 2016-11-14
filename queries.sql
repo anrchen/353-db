@@ -1,5 +1,5 @@
 CREATE TABLE member (
-  MID int(11) NOT NULL,
+  MID int(11) NOT NULL AUTO_INCREMENT,
   firstName varchar(20) DEFAULT NULL,
   lastName varchar(20) DEFAULT NULL,
   Birthday int(11) NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE member (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE memberDetails(
-  id int(11) NOT NULL,
+  id int(11) NOT NULL AUTO_INCREMENT,
   dob date NOT NULL,
   address1 varchar(20) DEFAULT NULL,
   address2 varchar(20) DEFAULT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE trip
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE account (
-  MID int(11) NOT NULL,
+  MID int(11) NOT NULL AUTO_INCREMENT,
   Username varchar(20) NOT NULL,
   Password varchar(20) NOT NULL,
   Balance float(20) NOT NULL,
@@ -57,7 +57,7 @@ CREATE TABLE account (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE Reviews(
-  id int(11) NOT NULL,
+  id int(11) NOT NULL AUTO_INCREMENT,
   date date NOT NULL,
   rating tinyint(1) NOT NULL,
   review varchar(20) DEFAULT NULL,
@@ -71,7 +71,7 @@ CREATE TABLE Reviews(
 ) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE Transactions(
-  id int(11) NOT NULL,
+  id int(11) NOT NULL AUTO_INCREMENT,
   tripId int(11) NOT NULL,
   memberId int(11) NOT NULL,
   amount float(20) DEFAULT NULL,
