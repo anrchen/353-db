@@ -4,6 +4,7 @@ CREATE TABLE member (
   lastName varchar(20) DEFAULT NULL,
   Birthday int(11) NOT NULL,
   Role varchar(20) NOT NULL,
+  Rating float(5) DEFAULT 0,
   isAdmin BOOLEAN,
   PRIMARY KEY (MID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
