@@ -49,7 +49,7 @@ CREATE TABLE account (
   MID int(11) NOT NULL AUTO_INCREMENT,
   Username varchar(20) NOT NULL,
   Email varchar(60) NOT NULL,
-  Password varchar(60) NOT NULL,
+  Password varchar(80) NOT NULL,
   Balance float(20) NOT NULL,
   adminPrivilege boolean NOT NULL,
   FOREIGN KEY(MID) REFERENCES member(MID)
@@ -98,15 +98,18 @@ INSERT INTO member VALUES
   (  1,
      'Dragon',
      'Doctor',
-     19931223,
+     19880508,
      'rider',
-     1),
-  (  2,
-     'Dog',
-     'Flying',
-     19920123,
-     'driver',
-     1);;
+	 0,
+     1);
+	 
+INSERT INTO account VALUES
+  (  1,
+     'Dragonman',
+	 'email@email.com',
+     'qwerty',
+     0,
+     1);
 
 INSERT INTO trip VALUES
   (1,
