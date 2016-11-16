@@ -11,7 +11,6 @@ CREATE TABLE member (
 
 CREATE TABLE memberDetails(
   id int(11) NOT NULL AUTO_INCREMENT,
-  dob date NOT NULL,
   address1 varchar(20) DEFAULT NULL,
   address2 varchar(20) DEFAULT NULL,
   city varchar(20) DEFAULT NULL,
