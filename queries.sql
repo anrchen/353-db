@@ -49,7 +49,7 @@ CREATE TABLE account (
   MID int(11) NOT NULL AUTO_INCREMENT,
   Username varchar(20) NOT NULL,
   Email varchar(60) NOT NULL,
-  Password varchar(80) NOT NULL,
+  Password varchar(500) NOT NULL,
   Balance float(20) NOT NULL,
   adminPrivilege boolean NOT NULL,
   FOREIGN KEY(MID) REFERENCES member(MID)
