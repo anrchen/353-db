@@ -16,6 +16,7 @@ CREATE TABLE memberDetails(
   city varchar(20) DEFAULT NULL,
   postalCode varchar(20) DEFAULT NULL,
   province varchar(20) DEFAULT NULL,
+  license varchar(20) DEFAULT NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (id) REFERENCES member(MID)
     ON DELETE CASCADE
