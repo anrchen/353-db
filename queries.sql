@@ -97,11 +97,19 @@ INSERT INTO city (cityName, citySurrounded) VALUES
 
 INSERT INTO member VALUES
   (  1,
-     'Dragon',
-     'Doctor',
-     19880508,
+     'Dragon1',
+     'Doctor1',
+     19880501,
      'rider',
 	 0,
+     1);
+INSERT INTO member VALUES
+  (  2,
+     'Dragon2',
+     'Doctor2',
+     19880502,
+     'driver',
+     0,
      1);
 	 
 INSERT INTO account VALUES
