@@ -57,11 +57,12 @@
                 $Title=$_GET['formName'];
 
                 $sql = "INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restriction,Title, Category)
-                        VALUES ('$authorID','$dDate','$dCity','$aCity','$dPostal','$aPostal','$Description','$Restriction','$Title', '$category')";
+                        VALUES ('$authorID','$dDate','$dCity','$aCity','$dPostal','$aPostal','$Description',
+                        '$Restriction','$Title', '$category')";
                 $conn->exec($sql);
                 echo '
                       Your trip has been <span style="color:#1bcd00;">successfully</span> 
-                      posted, you will be redirected in 10 secondes.
+                      posted, you will be redirected in 10 seconds.
                       ';
             }
             catch(PDOException $e)

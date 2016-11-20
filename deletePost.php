@@ -1,6 +1,4 @@
-<?php
 
-?>
 
 <!DOCTYPE html>
 <html>
@@ -30,7 +28,7 @@
 </header>
 
 <p class="success" style="text-align: center">
-<p>Delete Posts by Trip Number</p>
+<h1>Delete Posts by Trip Number</h1>
 
         <?php
                     $servername = "localhost";
@@ -48,9 +46,6 @@
             // output data of each row
             while($row = $result->fetch_assoc()) {
 
-                /* Link the TID from deletedPost.php to delete.php
-                    still have errors
-                    -*/
                 $TID =  $row["tid"];
 
                 echo "Trip ID: " . $row["tid"]. "<br>";
@@ -62,12 +57,7 @@
 
         ?>
 
-<!---->
-<?php
-//include_once ('connection.php');
-//$con = new Connection();
-//$con->showPosts('trip');
-//?>
+
 
 </body>
 </html>

@@ -96,8 +96,31 @@
                             </span>
                         </div>
                     </a>
-                    <a href="Images/rider_matchPost" class="serviceContent"></a>
-                    <a href="Images/rider_rateATrip" class="serviceContent"></a>
+                    <a href="Images/rider_matchPost" class="serviceContent">
+                        <img src="Images/viewTemplate.png" class="serviceIcon">
+                        <div class="serviceDetail">
+                            <h1 class="serviceHeader">
+                                Matching System
+                            </h1>
+                            <span class="serviceDescription">
+                                TBD by Chen
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Ming's rating system-->
+                    <a href="ratingSystem.php" class="serviceContent">
+                        <img src="Images/viewTemplate.png" class="serviceIcon">
+                        <div class="serviceDetail">
+                            <h1 class="serviceHeader">
+                                Rating
+                            </h1>
+                            <span class="serviceDescription">
+                                Rate A Member or A Trip
+                            </span>
+                        </div>
+                    </a>
+
                 </div>
 
                 <div class="category">
@@ -146,7 +169,19 @@
                         <h1 class="categoryHeading">Administrator</h1>
                     </header>
 
-                    <a href="deletePost.php">Click here to delete a post</a>
+                    <a href="deletePost.php" class="serviceContent">
+                        <img src="Images/viewTemplate.png" class="serviceIcon">
+                        <div class="serviceDetail">
+                            <h1 class="serviceHeader">
+                                Delete Post
+                            </h1>
+                            <span class="serviceDescription">
+                                ONLY ADMIN
+                            </span>
+                        </div>
+                    </a>
+
+
 
                     <a href="Images/admin_createPost" class="serviceContent"></a>
                     <a href="Images/admin_editPost" class="serviceContent"></a>
