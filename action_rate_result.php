@@ -49,7 +49,11 @@
             echo "<P>";
             echo "Comments: " . $rateComments ;
 
-    /* fix the reviewer value with session ID */
+    /* PHILIP
+    fix the reviewer value with session ID
+    for example insert into (blabla) Values ('session userId', etc);
+    just replace '1' with session userID
+    */
         if ($type == "Trip") {
             $result = $conn->query("INSERT INTO tripreview (Reviewer, reviewTrip, stars, messages)
                      VALUES ('1', '$ID', '$stars', '$rateComments')");
@@ -62,10 +66,7 @@
 
         echo '<p>'.'Your rating has been successfully saved.  ';
 
-    /*('ReviewerID', 'Trip or Driver ID', 'stars', 'Comments')
-    ("INSERT INTO tripreview (Reviewer, reviewTrip, stars, messages)
-                     VALUES ('1', '$ID', '$stars', '$rateComments')"
-    */
+
 
     ?>
 

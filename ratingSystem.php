@@ -39,8 +39,16 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 
 <?php
-/* PHILIP
-    need to fix the condition, with session user id matching the driver he has been with
+/* PHILIP *
+    need to fix the condition,
+    with session user id matching the driver he has been with
+
+    something like
+    "SELECT  MID FROM member
+          where Role = 'driver'
+     ***  AND "driver and rider has been on the same trip"          ***
+          ORDER BY MID
+          ";
 */
 $sql = "SELECT  MID FROM member
           where Role = 'driver'
@@ -67,7 +75,16 @@ if ($result->num_rows > 0) {
 
 <?php
 
-/* need to fix the condition, with session user id matching the trip he has taken*/
+/* PHILIP *
+need to fix the condition,
+    with all trips taken by session user ID
+
+    something like
+    "SELECT  TID FROM trip, member
+          where " shows all the trip from session userID "          ***
+          ORDER BY MID
+          ";
+*/
 $sql = "SELECT  TID FROM trip
         ORDER BY TID";
 $result = $conn->query($sql);

@@ -41,7 +41,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 
 <!-- create a condition, if exists, say you can only rate once
-echo '<a href="action_rate_form.phpsubject1='.$TID.'&subject2='.$type.">Yes, rate this trip!</a><p>';
 -->
 
 
@@ -85,11 +84,7 @@ echo '<a href="action_rate_form.phpsubject1='.$TID.'&subject2='.$type.">Yes, rat
 
 
 /*
-$result = $conn->query("Insert");
 
-
-echo 'Successfully Rated. <p>';
-echo '<a href="ratingSystem.php">Click here to go back and rate more.</a>';
 */
 ?>
 
