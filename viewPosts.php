@@ -40,13 +40,14 @@
                 die("Connection failed: " . $conn->connect_error);
             }
 
-            $sql = "SELECT title, time, description FROM trip";
+            $sql = "SELECT title, dDate, description FROM trip";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
                 // output data of each row
                 while ($row = $result->fetch_assoc()) {
-                    echo "<br> Title: " . $row["title"] . "<br> Time: " . $row["time"] . "<br> Description: " . $row["description"] . "<br>";
+                    echo "<br> Title: " . $row["title"] . "<br> Time: " . $row["dDate"]
+                        . "<br> Description: " . $row["description"] . "<br>";
                 }
             } else {
                 echo "0 results";

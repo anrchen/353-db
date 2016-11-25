@@ -65,10 +65,17 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 <input type="number" name="rating" id="rating" title="" value="" min="1" max="10" class="inputBox">
             </div>
 
+            <div class="textBoxWrapper">
+                <label>Do you wish to complaint?</label>
+            <input type="radio" name="complaint" value="true">Yes
+                <input type="radio" name="complaint" value="false" checked>No
+            </div>
 
             <div class="textBoxWrapper">
                 <textarea id="comments" name="comments" title="" placeholder="Give a short description of your rating!"></textarea>
             </div>
+
+
 
 
 

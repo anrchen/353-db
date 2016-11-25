@@ -85,7 +85,7 @@
                             </span>
                         </div>
                     </a>
-                    <a href="Images/rider_viewPost" class="serviceContent">
+                    <a href="viewPosts.php" class="serviceContent">
                         <img src="Images/viewTemplate.png" class="serviceIcon">
                         <div class="serviceDetail">
                             <h1 class="serviceHeader">
@@ -150,7 +150,7 @@
                             </span>
                         </div>
                     </a>
-                    <a href="Images/drider_viewPost" class="serviceContent">
+                    <a href="viewPosts.php" class="serviceContent">
                         <img src="Images/viewTemplate.png" class="serviceIcon">
                         <div class="serviceDetail">
                             <h1 class="serviceHeader">
@@ -174,6 +174,19 @@
                         <div class="serviceDetail">
                             <h1 class="serviceHeader">
                                 Delete Post
+                            </h1>
+                            <span class="serviceDescription">
+                                ONLY ADMIN
+                            </span>
+                        </div>
+                    </a>
+
+                    <!--suspend a complainted dirver or trip-->
+                    <a href="see_bad_ratings.php" class="serviceContent">
+                        <img src="Images/viewTemplate.png" class="serviceIcon">
+                        <div class="serviceDetail">
+                            <h1 class="serviceHeader">
+                                Suspend Bad Rating
                             </h1>
                             <span class="serviceDescription">
                                 ONLY ADMIN

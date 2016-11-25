@@ -40,6 +40,28 @@
             $ID = $_GET['ID'];
             $type = $_GET['type'];
 
+            $complaint = $_GET ['complaint'];
+
+            /*
+            //$complaint = $_GET['complaint'];
+            if($_GET['complaint']!=null){
+        $complaint=$_GET['complaint'];
+    }
+
+            if ($_GET['complaint']=='on') {
+                $complaint = 'true';
+            }else{
+                $complaint = 'false';
+            }
+
+            /*
+            if ($complaint == 'false'){
+                $complaint = 'false';
+            }else {
+                $complaint = 'true';
+            }
+*/
+
             echo "<P>";
             echo "ID: " .$ID;
             echo "<P>";
@@ -47,20 +69,18 @@
             echo "<P>";
             echo "Stars: " .$stars;
             echo "<P>";
+            echo "Complaint: " .$complaint;
+            echo "<P>";
             echo "Comments: " . $rateComments ;
 
-    /* PHILIP
-    fix the reviewer value with session ID
-    for example insert into (blabla) Values ('session userId', etc);
-    just replace '1' with session userID
-    */
+
         if ($type == "Trip") {
-            $result = $conn->query("INSERT INTO tripreview (Reviewer, reviewTrip, stars, messages)
-                     VALUES ('1', '$ID', '$stars', '$rateComments')");
+            $result = $conn->query("INSERT INTO tripreview (Reviewer, reviewTrip, stars, complaint, messages)
+                     VALUES ('1', '$ID', '$stars', '$complaint', '$rateComments')");
         }
         if ($type == "Driver") {
-        $result = $conn->query("INSERT INTO driverreview (Reviewer, reviewTrip, stars, messages)
-                     VALUES ('1', '$ID', '$stars', '$rateComments')");
+        $result = $conn->query("INSERT INTO driverreview (Reviewer, driverID, stars, complaint, messages)
+                     VALUES ('1', '$ID', '$stars', '$complaint', '$rateComments')");
         }
 
 

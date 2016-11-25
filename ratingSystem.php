@@ -75,16 +75,7 @@ if ($result->num_rows > 0) {
 
 <?php
 
-/* PHILIP *
-need to fix the condition,
-    with all trips taken by session user ID
 
-    something like
-    "SELECT  TID FROM trip, member
-          where " shows all the trip from session userID "          ***
-          ORDER BY MID
-          ";
-*/
 $sql = "SELECT  TID FROM trip
         ORDER BY TID";
 $result = $conn->query($sql);
