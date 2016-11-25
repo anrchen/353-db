@@ -42,7 +42,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 $sql = "SELECT driverID, Reviewer, messages FROM driverreview d
         where d.stars =1 
-        OR complaint = true";
+        OR complaint = 0";
 
 $result = $conn->query($sql);
 
@@ -58,7 +58,8 @@ if ($result->num_rows > 0) {
         echo "Driver ID: " . $row["driverID"]. "<br>";
         echo "Reason: " . $row["messages"]. "<br>";
 
-        echo "suspend him with a link; pass id to that link, use query to suspend"."<br>"."<br>";
+        echo "suspend that member with a link like in the delete_post.php; 
+        pass id to that link, use query to suspend"."<br>"."<br>";
     }
 } else {
     echo "0 results";
