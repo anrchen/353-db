@@ -6,9 +6,11 @@ CREATE TABLE member
   Birthday int(11) NOT NULL,
   Role varchar(20) NOT NULL,
   Rating float(5) DEFAULT 0,
+  Status tinyint(1) DEFAULT 1,
   isAdmin BOOLEAN,
   PRIMARY KEY (MID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+//Status:  0 = suspended, 1 = Active (Default), 2 = Inactive
 
 CREATE TABLE memberDetails
 (
@@ -144,6 +146,7 @@ INSERT INTO member VALUES
      19880501,
      'rider',
   	 0,
+   	1,
      1),
 
   (  2,
@@ -152,6 +155,7 @@ INSERT INTO member VALUES
      19880502,
      'driver',
      0,
+     1,
      1),
 
   (  3,
@@ -160,6 +164,7 @@ INSERT INTO member VALUES
       19880503,
       'driver',
       0,
+      1,
       1),
   (  4,
            'firstnameFOUR',
@@ -167,6 +172,7 @@ INSERT INTO member VALUES
            19880504,
            'rider',
            0,
+   	   1,
            1);
 	 
 INSERT INTO account VALUES
