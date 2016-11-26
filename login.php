@@ -41,7 +41,6 @@
 
 			$password = hash('sha256', $pass); // password hashing using SHA256
 
-			//$res=mysql_query("SELECT userId, userName, userPass FROM users WHERE userEmail='$email'");
 			$res=mysql_query(sprintf("SELECT MID, Username, Password FROM account WHERE Email='%s' AND Password = '%s'",
 					mysql_real_escape_string($email),
 					mysql_real_escape_string($password)
@@ -49,9 +48,31 @@
 			$row=mysql_fetch_array($res);
 			$count = mysql_num_rows($res); // if uname/pass correct it returns must be 1 row
 
-			if( $count == 1) { //&& $row['Password']== $password ) {
+			$query2 = mysql_query(sprintf("SELECT DISTINCT Status FROM Member M, account A WHERE (A.Email='%s' AND A.Password = '%s') AND (M.MID = A.MID)",//" AND (M.Status = 1)",
+						mysql_real_escape_string($email),
+						mysql_real_escape_string($password)
+					));
+
+
+			$stat = mysql_fetch_assoc($query2);
+
+			if($count == 1) { //&& $row['Password']== $password ) {
+				if ($stat['Status'] == 1)
+				{
 				$_SESSION['user'] = $row['MID'];
 				header("Location: home.php");
+				}
+				else
+				{
+					if($stat['Status'] == 0)
+					{
+						$errMSG = "This account has been Suspended.  Access Rights revoked.";
+					}
+					else
+						{
+							$errMSG = "This account is flagged as Inactive.  Contact an admin.";
+						}
+				}
 			} else {
 				$errMSG = "Incorrect Credentials, Try again...";
 			}
