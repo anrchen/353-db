@@ -299,7 +299,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Coding Cage - Login & Registration System</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 </head>
 <body>
 
@@ -498,8 +498,8 @@
 
 </div>
 
-<script src="jquery.js" type="text/javascript"></script>
-<script src="jquery.maskedinput.js" type="text/javascript"></script>
+<script src="assets/js/jquery.js" type="text/javascript"></script>
+<script src="assets/js/jquery.maskedinput.js" type="text/javascript"></script>
 
 <script type="text/javascript">
  jQuery(function($){
@@ -512,7 +512,7 @@
 
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript" src="strength.js"></script>
+<script type="text/javascript" src="assets/js/strength.js"></script>
 
 <script>
 

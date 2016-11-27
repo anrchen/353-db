@@ -18,7 +18,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Welcome - <?php echo $userRow['userEmail']; ?></title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 </head>
 <body>
 
