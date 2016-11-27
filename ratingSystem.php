@@ -52,12 +52,12 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 
 <?php
-$username = $_SESSION['user'];
+$user = $_SESSION['user'];
 // Username is now used and added, please fix the query
 $sql = "SELECT  Username FROM member m1, member m2
           where m2.Role = 'driver' and m1.Role='rider'
-          and m1.Username='$username'
-          ORDER BY Username
+          and m1.MID='$user'
+          ORDER BY MID
           ";
 $result = $conn->query($sql);
 
@@ -82,7 +82,7 @@ if ($result->num_rows > 0) {
 
 
 $sql = "SELECT  TID FROM trip
-        WHERE Username='$username'
+        WHERE MID='$user'
         ORDER BY TID";
 $result = $conn->query($sql);
 
