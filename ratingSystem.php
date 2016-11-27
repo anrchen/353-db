@@ -27,21 +27,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         <h1><a href="index.php">Su<span>per</span></a></h1>
 
         <nav>
-            <?php
-            session_start();
-            if(isset($_SESSION['user'])){
-                echo"
-                                <a>Welcome ".$_SESSION['user'].
-                    ", </a>
-                                <a href=\"logout.php?logout=true\">Log out</a>
-                            ";
-            }else{
-                echo"
-                                <a href=\"login.php\">Log in</a>
-                            ";
-            }
-            ?>
             <a href="#">Support</a>
+            <a href="#">Log in</a>
             <a href="#">About</a>
         </nav>
     </div>
@@ -52,22 +39,30 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 
 <?php
-$username = $_SESSION['user'];
-// Username is now used and added, please fix the query
-$sql = "SELECT  Username FROM member m1, member m2
-          where m2.Role = 'driver' and m1.Role='rider'
-          and m1.Username='$username'
-          ORDER BY Username
+/* PHILIP *
+    need to fix the condition,
+    with session user id matching the driver he has been with
+
+    something like
+    "SELECT  MID FROM member
+          where Role = 'driver'
+     ***  AND "driver and rider has been on the same trip"          ***
+          ORDER BY MID
+          ";
+*/
+$sql = "SELECT  MID FROM member
+          where Role = 'driver'
+          ORDER BY MID
           ";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        $Username =  $row["Username"];
+        $MID =  $row["MID"];
         $type= "Driver";
         echo "Driver ID: " . $row["MID"]. "<br>";
-        echo '<a href="action_rate_form.php?subject2='.$type.'&subject1='.$Username.'">Yes, rate this driver!</a><p>';
+        echo '<a href="action_rate_form.php?subject2='.$type.'&subject1='.$MID.'">Yes, rate this driver!</a><p>';
     }
 } else {
     echo "0 results";
@@ -82,7 +77,6 @@ if ($result->num_rows > 0) {
 
 
 $sql = "SELECT  TID FROM trip
-        WHERE Username='$username'
         ORDER BY TID";
 $result = $conn->query($sql);
 
