@@ -60,7 +60,7 @@
 				if ($stat['Status'] == 1)
 				{
 				$_SESSION['user'] = $row['MID'];
-				header("Location: home.php");
+				header("Location: index.php");
 				}
 				else
 				{
