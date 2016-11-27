@@ -1,12 +1,12 @@
 <!DOCTYPE html>
     <html>
         <head>
-            <link rel="stylesheet" type="text/css" href="css/main.css">
-            <link rel="stylesheet" type="text/css" href="css/header.css">
-            <link rel="stylesheet" type="text/css" href="css/nav.css">
+            <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+            <link rel="stylesheet" type="text/css" href="assets/css/header.css">
+            <link rel="stylesheet" type="text/css" href="assets/css/nav.css">
         </head>
 
-        <body>
+        <body bgcolor="#add8e6">
 
             <header class="header-basic">
 
@@ -15,8 +15,21 @@
                     <h1><a href="#">Su<span>per</span></a></h1>
 
                     <nav>
+                        <?php
+                        session_start();
+                        if(isset($_SESSION['user'])){
+                            echo"
+                                <a>Welcome ".$_SESSION['user'].
+                                ", </a>
+                                <a href=\"logout.php?logout=true\">Log out</a>
+                            ";
+                        }else{
+                            echo"
+                                <a href=\"login.php\">Log in</a>
+                            ";
+                        }
+                        ?>
                         <a href="#">Support</a>
-                        <a href="#">Log in</a>
                         <a href="#">About</a>
                     </nav>
                 </div>
@@ -46,6 +59,7 @@
 <!--                        </p>-->
 <!--                    </div>-->
 <!--                </header>-->
+
 
                 <div class="category">
                     <header class="categoryHeader">

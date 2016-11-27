@@ -3,15 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv=REFRESH CONTENT=10;url=matchPost.php>
+        <meta http-equiv=REFRESH CONTENT=5;url=matchPost.php>
 
     </head>
 
     <body>
 
     <header class="header-basic">
-        <link rel="stylesheet" type="text/css" href="css/header.css">
-        <link rel="stylesheet" type="text/css" href="css/addPost.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/header.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/addPost.css"/>
 
 
         <div class="header-limiter">
@@ -28,17 +28,13 @@
 
     <p class="success" style="text-align: center">
         <?php
+        session_start();
+        include_once ('connection.php');
         if(isset($_GET['formName']) and isset($_GET['dCity']) and isset($_GET['formBody'])){
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "trip";
-
             try {
-                $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $con = new Connection();
 
-                $authorID="1";
+                $authorID=$_SESSION['user'];
                 if(isset($_GET['weekday'])){
                     $dDate=implode(",", $_GET['weekday']);;
                     $category = 'regular';
@@ -56,13 +52,14 @@
                 $Restriction=$_GET['restriction'];
                 $Title=$_GET['formName'];
 
-                $sql = "INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restriction,Title, Category)
+                $sql = "INSERT INTO trip (Username,dDate,dCity,aCity,dPostal,aPostal,Description,Restriction,Title, Category)
                         VALUES ('$authorID','$dDate','$dCity','$aCity','$dPostal','$aPostal','$Description',
                         '$Restriction','$Title', '$category')";
-                $conn->exec($sql);
+                $con->setQuery($sql);
+                $_SESSION['newPost']=$con->getLastID();
                 echo '
                       Your trip has been <span style="color:#1bcd00;">successfully</span> 
-                      posted, you will be redirected in 10 seconds.
+                      posted, you will be redirected in 5 seconds.
                       ';
             }
             catch(PDOException $e)

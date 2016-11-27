@@ -20,8 +20,8 @@
     <body>
 
         <header class="header-basic">
-            <link rel="stylesheet" type="text/css" href="css/header.css">
-            <link rel="stylesheet" type="text/css" href="css/addPost.css"/>
+            <link rel="stylesheet" type="text/css" href="assets/css/header.css">
+            <link rel="stylesheet" type="text/css" href="assets/css/addPost.css"/>
 
 
             <div class="header-limiter">
@@ -29,8 +29,21 @@
                 <h1><a href="index.php">Su<span>per</span></a></h1>
 
                 <nav>
+                    <?php
+                    session_start();
+                    if(isset($_SESSION['user'])){
+                        echo"
+                                <a>Welcome ".$_SESSION['user'].
+                            ", </a>
+                                <a href=\"logout.php?logout=true\">Log out</a>
+                            ";
+                    }else{
+                        echo"
+                                <a href=\"login.php\">Log in</a>
+                            ";
+                    }
+                    ?>
                     <a href="#">Support</a>
-                    <a href="#">Log in</a>
                     <a href="#">About</a>
                 </nav>
             </div>
@@ -78,7 +91,6 @@
                     <div class="textBoxWrapper">
                         <div class="styled-select">
                             <?php
-                            echo '';
                             include_once ('connection.php');
                             $con = new Connection();
                             $con->displaySelectList('cityName','City','Arrival city','dCity');
@@ -100,6 +112,7 @@
                     <div class="restriction">
                         <input title="" type="checkbox" name="restriction" value="1">
                         Would you like to restrict the travel area?<br>
+                        <input title="" type="hidden" name="restriction" value="0">
                     </div>
 
 
