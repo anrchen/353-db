@@ -18,8 +18,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 <body>
 
 <header class="header-basic">
-    <link rel="stylesheet" type="text/css" href="css/header.css">
-    <link rel="stylesheet" type="text/css" href="css/addPost.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/header.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/addPost.css"/>
 
 
     <div class="header-limiter">

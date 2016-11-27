@@ -10,7 +10,7 @@ CREATE TABLE member
   isAdmin BOOLEAN,
   PRIMARY KEY (MID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-//Status:  0 = suspended, 1 = Active (Default), 2 = Inactive
+# Status:  0 = suspended, 1 = Active (Default), 2 = Inactive
 
 CREATE TABLE memberDetails
 (
@@ -36,20 +36,20 @@ CREATE TABLE city
 
 CREATE TABLE trip
 (
-    TID INT(11) NOT NULL AUTO_INCREMENT,
-    authorID INT(11) NOT NULL,
-    dDate VARCHAR(50) NOT NULL,
-    dCity VARCHAR(10) NOT NULL,
-    aCity VARCHAR(15) NOT NULL,
-    dPostal VARCHAR(20) DEFAULT NULL,
-    aPostal VARCHAR(20) DEFAULT NULL,
-    Description VARCHAR(100) DEFAULT NULL,
-    Restriction BOOLEAN DEFAULT NULL,
-    Title VARCHAR(20) DEFAULT NULL,
-    Comments VARCHAR(100) DEFAULT NULL,
-    Category VARCHAR(15) NOT NULL,
-    PRIMARY KEY(TID),
-    FOREIGN KEY (authorID) REFERENCES member (MID)
+  TID INT(11) NOT NULL AUTO_INCREMENT,
+  authorID INT(11) NOT NULL,
+  dDate VARCHAR(50) NOT NULL,
+  dCity VARCHAR(10) NOT NULL,
+  aCity VARCHAR(15) NOT NULL,
+  dPostal VARCHAR(20) DEFAULT NULL,
+  aPostal VARCHAR(20) DEFAULT NULL,
+  Description VARCHAR(100) DEFAULT NULL,
+  Restriction BOOLEAN DEFAULT NULL,
+  Title VARCHAR(20) DEFAULT NULL,
+  Comments VARCHAR(100) DEFAULT NULL,
+  Category VARCHAR(15) NOT NULL,
+  PRIMARY KEY(TID),
+  FOREIGN KEY (authorID) REFERENCES member (MID)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE account
@@ -65,8 +65,8 @@ CREATE TABLE account
     ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-  CREATE TABLE Reviews
-  (
+CREATE TABLE Reviews
+(
   id int(11) NOT NULL AUTO_INCREMENT,
   date date NOT NULL,
   rating tinyint(1) NOT NULL,
@@ -145,8 +145,8 @@ INSERT INTO member VALUES
      'DOCTOR',
      19880501,
      'rider',
-  	 0,
-   	1,
+     0,
+     1,
      1),
 
   (  2,
@@ -159,26 +159,26 @@ INSERT INTO member VALUES
      1),
 
   (  3,
-      'firstnameTHREE',
-      'lastnameTHREE',
-      19880503,
-      'driver',
-      0,
-      1,
-      1),
+     'firstnameTHREE',
+     'lastnameTHREE',
+     19880503,
+     'driver',
+     0,
+     1,
+     1),
   (  4,
-           'firstnameFOUR',
-           'lastnameFOUR',
-           19880504,
-           'rider',
-           0,
-   	   1,
-           1);
-	 
+     'firstnameFOUR',
+     'lastnameFOUR',
+     19880504,
+     'rider',
+     0,
+     1,
+     1);
+
 INSERT INTO account VALUES
   (  1,
      'Dragonman',
-	 'email@email.com',
+     'email@email.com',
      'qwerty',
      0,
      1);

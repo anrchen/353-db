@@ -20,8 +20,8 @@
     <body>
 
     <header class="header-basic">
-        <link rel="stylesheet" type="text/css" href="css/header.css">
-        <link rel="stylesheet" type="text/css" href="css/addPost.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/header.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/addPost.css"/>
 
 
         <div class="header-limiter">
@@ -29,8 +29,21 @@
             <h1><a href="index.php">Su<span>per</span></a></h1>
 
             <nav>
+                <?php
+                session_start();
+                if(isset($_SESSION['user'])){
+                    echo"
+                                <a>Welcome ".$_SESSION['userName'].
+                        ", </a>
+                                <a href=\"logout.php?logout=true\">Log out</a>
+                            ";
+                }else{
+                    echo"
+                                <a href=\"login.php\">Log in</a>
+                            ";
+                }
+                ?>
                 <a href="#">Support</a>
-                <a href="#">Log in</a>
                 <a href="#">About</a>
             </nav>
         </div>

@@ -2,7 +2,7 @@
 	ob_start();
 	session_start();
 	if( isset($_SESSION['user'])!="" ){
-		header("Location: home.php");
+		header("Location: index.php");
 	}
 	include_once 'dbconnect.php';
 
@@ -513,7 +513,6 @@
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" src="strength.js"></script>
-<script type="text/javascript" src="js.js"></script>
 
 <script>
 
