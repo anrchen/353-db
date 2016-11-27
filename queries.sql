@@ -1,18 +1,6 @@
-
-CREATE TABLE account
-(
-  Username varchar(20) NOT NULL,
-  Email varchar(60) NOT NULL,
-  Password varchar(500) NOT NULL,
-  Balance float(20) NOT NULL,
-  adminPrivilege boolean NOT NULL,
-  PRIMARY KEY (Username)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
 CREATE TABLE member
 (
-  Username varchar(20) NOT NULL,
+  MID int(11) NOT NULL AUTO_INCREMENT,
   firstName varchar(20) DEFAULT NULL,
   lastName varchar(20) DEFAULT NULL,
   Birthday int(11) NOT NULL,
@@ -20,23 +8,21 @@ CREATE TABLE member
   Rating float(5) DEFAULT 0,
   Status tinyint(1) DEFAULT 1,
   isAdmin BOOLEAN,
-  FOREIGN KEY (Username) REFERENCES account(Username)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
+  PRIMARY KEY (MID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-# Status:  0 = suspended, 1 = Active (Default), 2 = Inactive
+//Status:  0 = suspended, 1 = Active (Default), 2 = Inactive
 
 CREATE TABLE memberDetails
 (
-  Username varchar(20) NOT NULL,
+  id int(11) NOT NULL AUTO_INCREMENT,
   address1 varchar(20) DEFAULT NULL,
   address2 varchar(20) DEFAULT NULL,
   city varchar(20) DEFAULT NULL,
   postalCode varchar(20) DEFAULT NULL,
   province varchar(20) DEFAULT NULL,
   license varchar(20) DEFAULT NULL,
-  PRIMARY KEY (Username),
-  FOREIGN KEY (Username) REFERENCES account(Username)
+  PRIMARY KEY (id),
+  FOREIGN KEY (id) REFERENCES member(MID)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET=latin1;
@@ -51,7 +37,7 @@ CREATE TABLE city
 CREATE TABLE trip
 (
     TID INT(11) NOT NULL AUTO_INCREMENT,
-    Username varchar(20) NOT NULL,
+    authorID INT(11) NOT NULL,
     dDate VARCHAR(50) NOT NULL,
     dCity VARCHAR(10) NOT NULL,
     aCity VARCHAR(15) NOT NULL,
@@ -63,8 +49,21 @@ CREATE TABLE trip
     Comments VARCHAR(100) DEFAULT NULL,
     Category VARCHAR(15) NOT NULL,
     PRIMARY KEY(TID),
-    FOREIGN KEY (Username) REFERENCES account (Username)
+    FOREIGN KEY (authorID) REFERENCES member (MID)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE account
+(
+  MID int(11) NOT NULL AUTO_INCREMENT,
+  Username varchar(20) NOT NULL,
+  Email varchar(60) NOT NULL,
+  Password varchar(500) NOT NULL,
+  Balance float(20) NOT NULL,
+  adminPrivilege boolean NOT NULL,
+  FOREIGN KEY(MID) REFERENCES member(MID)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
   CREATE TABLE Reviews
   (
@@ -72,11 +71,11 @@ CREATE TABLE trip
   date date NOT NULL,
   rating tinyint(1) NOT NULL,
   review varchar(20) DEFAULT NULL,
-  author varchar(20) NOT NULL,
-  target varchar(20) NOT NULL,
+  author int(11) NOT NULL,
+  target int(11) NOT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (author) REFERENCES account(Username),
-  FOREIGN KEY (target) REFERENCES account(Username)
+  FOREIGN KEY (author) REFERENCES member(MID),
+  FOREIGN KEY (target) REFERENCES member(MID)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET=latin1;
@@ -84,13 +83,13 @@ CREATE TABLE trip
 /*added for rating*/
 CREATE TABLE tripreview
 (
-  Reviewer varchar(20) NOT NULL,
+  Reviewer INT(11) NOT NULL,
   reviewTrip INT(11)NOT NULL,
   stars float (10) NOT NULL ,
   complaint BOOLEAN default FALSE,
   messages varchar(200) DEFAULT NULL,
   PRIMARY KEY (Reviewer,reviewTrip),
-  FOREIGN KEY (Reviewer) REFERENCES account(Username)
+  FOREIGN KEY (Reviewer) REFERENCES member(MID)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   FOREIGN KEY (reviewTrip)REFERENCES trip(TID)
@@ -101,16 +100,16 @@ CREATE TABLE tripreview
 /*added for rating*/
 CREATE TABLE driverreview
 (
-  Reviewer varchar(20) NOT NULL,
-  driver varchar(20) NOT NULL,
+  Reviewer INT(11) NOT NULL,
+  driverID INT(11)NOT NULL,
   stars float (10) NOT NULL ,
   complaint BOOLEAN default FALSE,
   messages varchar(200) DEFAULT NULL,
-  PRIMARY KEY (Reviewer,driver),
-  FOREIGN KEY (Reviewer) REFERENCES account(Username)
+  PRIMARY KEY (Reviewer,driverID),
+  FOREIGN KEY (Reviewer) REFERENCES member(MID)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  FOREIGN KEY (driver)REFERENCES account(Username)
+  FOREIGN KEY (driverID)REFERENCES member(MID)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 )ENGINE = InnoDB DEFAULT CHARSET=latin1;
@@ -120,12 +119,12 @@ CREATE TABLE Transactions
 (
   id int(11) NOT NULL AUTO_INCREMENT,
   tripId int(11) NOT NULL,
-  Username varchar(20) NOT NULL,
+  memberId int(11) NOT NULL,
   amount float(20) DEFAULT NULL,
   transactionDate date NOT NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (tripId) REFERENCES trip(TID),
-  FOREIGN KEY (Username) REFERENCES account(Username)
+  FOREIGN KEY (memberId) REFERENCES member(MID)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET=latin1;
@@ -140,27 +139,53 @@ INSERT INTO city (cityName, citySurrounded) VALUES
   ('Toronto', 'Montreal'),
   ('WestIsland', 'Montreal');
 
-INSERT INTO account VALUES
-  (
-    'Dragonman',
-    'email@email.com',
-    'abc',
-    0,
-    1);
-
 INSERT INTO member VALUES
-  (  'Dragonman',
+  (  1,
      'DRAGON',
      'DOCTOR',
      19880501,
      'rider',
   	 0,
    	1,
+     1),
+
+  (  2,
+     'firstnameTwo',
+     'lastnameTwo',
+     19880502,
+     'driver',
+     0,
+     1,
+     1),
+
+  (  3,
+      'firstnameTHREE',
+      'lastnameTHREE',
+      19880503,
+      'driver',
+      0,
+      1,
+      1),
+  (  4,
+           'firstnameFOUR',
+           'lastnameFOUR',
+           19880504,
+           'rider',
+           0,
+   	   1,
+           1);
+	 
+INSERT INTO account VALUES
+  (  1,
+     'Dragonman',
+	 'email@email.com',
+     'qwerty',
+     0,
      1);
 
 INSERT INTO trip VALUES
   (1,
-    'Dragonman',
+    1,
     'Monday',
     'Dorval',
     'Montreal',
@@ -173,7 +198,7 @@ INSERT INTO trip VALUES
    'specialized'),
 
   (2,
-    'Dragonman',
+    2,
     '20161116',
     'Dorval',
     'New York',

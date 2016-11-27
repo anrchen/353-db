@@ -9,8 +9,6 @@
 
         public $conn;
         protected $query;
-        protected $lastID;
-        protected $result;
 
         public function __construct()
         {
@@ -28,7 +26,7 @@
                       <option selected value='default'>$selected</option>>";
             while ($row = $result->fetch_assoc()) {
                 $id = $row[$attribute];
-                echo '<option value='.$id.'>'.$id.'</option>';
+                echo '<option value="">'.$id.'</option>';
             }
             echo "</select>";
         }
@@ -56,21 +54,6 @@
                     }
                 echo "</div>";
             }
-        }
-
-        public function getLastID(){
-            $last_id='';
-            if ($this->conn->query($this->query) === TRUE) {
-                $last_id = $this->conn->insert_id;
-//                echo "New record created successfully. Last inserted ID is: " . $last_id;
-            } else {
-                echo "Error: " . $this->query . "<br>" . $this->conn->error;
-            }
-            return $last_id;
-        }
-
-        public function getResult(){
-            return $this->result;
         }
 
         public function close(){

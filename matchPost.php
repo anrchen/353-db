@@ -9,9 +9,9 @@
     <body>
 
         <header class="header-basic">
-            <link rel="stylesheet" type="text/css" href="assets/css/header.css">
-            <link rel="stylesheet" type="text/css" href="assets/css/addPost.css"/>
-            <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
+            <link rel="stylesheet" type="text/css" href="css/header.css">
+            <link rel="stylesheet" type="text/css" href="css/addPost.css"/>
+            <link rel="stylesheet" type="text/css" href="css/main.css"/>
 
 
             <div class="header-limiter">
@@ -28,14 +28,9 @@
 
         <div class="match" style="text-align: center">
             <?php
-                session_start();
-                $lastID = $_SESSION['newPost'];
                 include_once ('connection.php');
                 $con = new Connection();
-                $query = "SELECT * FROM trip t1, trip t2
-                            WHERE t1.dDate=t2.dDate and t1.dCity=t2.dCity
-                            and t1.aCity=t2.aCity and t1.Tid=$lastID and t2.TID!=$lastID";
-                $con->setQuery($query);
+                $con->setQuery("");
                 $con->showPosts('');
                 $con->close();
             ?>
