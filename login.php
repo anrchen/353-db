@@ -41,14 +41,15 @@
 
 			$password = hash('sha256', $pass); // password hashing using SHA256
 
-			$res=mysql_query(sprintf("SELECT MID, Username, Password FROM account",
+			$res=mysql_query(sprintf("SELECT MID, Username, Password FROM account WHERE Email='%s' AND Password = '%s'",
 					mysql_real_escape_string($email),
 					mysql_real_escape_string($password)
 				));
 			$row=mysql_fetch_array($res);
 			$count = mysql_num_rows($res); // if uname/pass correct it returns must be 1 row
 
-			$query2 = mysql_query(sprintf("SELECT DISTINCT Status FROM Member M, account A WHERE (M.MID = A.MID)",//" AND (M.Status = 1)",
+			$query2 = mysql_query(sprintf("SELECT DISTINCT Status FROM Member M, account A WHERE (A.Email='%s' 
+			AND A.Password = '%s') AND (M.MID = A.MID)",//" AND (M.Status = 1)",
 						mysql_real_escape_string($email),
 						mysql_real_escape_string($password)
 					));
