@@ -226,8 +226,8 @@
 				$referCount = mysql_num_rows($referQuery);
 
 				//die(mysql_errno($conn) . ": " . mysql_error($conn));
-				
-				$query1 = sprintf("INSERT INTO member(firstName, lastName, Birthday, Role, Rating, isAdmin) VALUES('%s','%s', '%s', 'Driver', 0, false)",
+
+				$query1 = sprintf("INSERT INTO member(firstName, lastName, Birthday, Role, isAdmin) VALUES('%s','%s', '%s', 'Driver', false)",
 						mysql_real_escape_string($fName),
 						mysql_real_escape_string($lName),
 						mysql_real_escape_string($dob)
@@ -246,19 +246,19 @@
 						mysql_real_escape_string($license)
 					);
 
-				$query3 = sprintf("INSERT INTO account(MID, Username,Email,Password, Balance, adminPrivilege) VALUES('%s','%s','%s','%s', 0, false)",
+				$query3 = sprintf("INSERT INTO account(MID, Username,Email,Password, Balance) VALUES('%s','%s','%s','%s', 0)",
 						mysql_real_escape_string($storeMemberID),
 						mysql_real_escape_string($name),
 						mysql_real_escape_string($email),
 						mysql_real_escape_string($password)
 					);
 				$res2 = mysql_query($query2);
-				
+
 				//echo "RANDOM STRING!!!  = ";
 				//die(mysql_errno($conn) . ": " . mysql_error($conn));
-				
+
 				$res3 = mysql_query($query3);
-				
+
 				//die($res2);
 				if ($res1 && $res2 &&$res3) {
 									$errTyp = "success";
