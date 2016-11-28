@@ -33,6 +33,7 @@
             }
             $MID = $_SESSION['user'];
             $_SESSION['role']=$_GET['role'];
+            $role = $_SESSION['role'];
             ?>
             <a href="#">Support</a>
             <a href="#">About</a>
@@ -48,6 +49,11 @@
         $password = "";
         $dbname = "trip";
 
+        if($role=='rider'){
+            $role=1;
+        }else{
+            $role=0;
+        }
 
             $conn = new mysqli($servername, $username, $password, $dbname);
             // Check connection
@@ -55,7 +61,8 @@
                 die("Connection failed: " . $conn->connect_error);
             }
 
-            $sql = "SELECT tid FROM trip WHERE authorID='$MID'";
+            $sql = "SELECT tid FROM trip WHERE authorID='$MID' 
+                    AND role=$role";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {

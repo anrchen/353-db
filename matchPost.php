@@ -74,6 +74,7 @@
                   and t1.aCity=t2.aCity and t1.authorID='$user' and t2.authorID!='$user'
                   and t2.status=$lookingStatus and t1.TID=$lastID
                   and t1.status!=2";
+        echo $sql;
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
