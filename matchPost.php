@@ -111,6 +111,13 @@
     if(isset($_GET['token'])){
         echo 'Verificaiton code is '.$_GET['token'];
 
+        include_once ('connection.php');
+        $con = new Connection();
+        $query="UPDATE trip SET matchedID='$matchID', status='2' WHERE TID='$postID';";
+        $con->setQuery($query);
+        $con->execute();
+        $con->close();
+
     }
 
     ?>

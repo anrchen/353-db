@@ -99,7 +99,7 @@
                             </span>
             </div>
         </a>
-        <a href="viewPosts.php" class="serviceContent">
+        <a href="viewPosts.php?role=rider" class="serviceContent">
             <img src="Images/viewTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
