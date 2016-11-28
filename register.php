@@ -246,7 +246,7 @@
 						mysql_real_escape_string($license)
 					);
 
-				$query3 = sprintf("INSERT INTO account(MID, Username,Email,Password, Balance) VALUES('%s','%s','%s','%s', 0)",
+				$query3 = sprintf("INSERT INTO account(MID, Username,Email,Password, Balance) VALUES('%s','%s','%s','%s', 10)",
 						mysql_real_escape_string($storeMemberID),
 						mysql_real_escape_string($name),
 						mysql_real_escape_string($email),
