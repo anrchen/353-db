@@ -5,12 +5,12 @@ CREATE TABLE member
   lastName varchar(20) DEFAULT NULL,
   Birthday int(11) NOT NULL,
   Role varchar(20) NOT NULL,
-  Rating float(5) DEFAULT 0,
   Status tinyint(1) DEFAULT 1,
   isAdmin BOOLEAN,
   PRIMARY KEY (MID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 # Status:  0 = suspended, 1 = Active (Default), 2 = Inactive
+
 
 CREATE TABLE memberDetails
 (
@@ -67,26 +67,12 @@ CREATE TABLE account
   Email varchar(60) NOT NULL,
   Password varchar(500) NOT NULL,
   Balance float(20) NOT NULL,
-  adminPrivilege boolean NOT NULL,
+  adminPrivilege boolean NOT NULL, #Duplicated
   FOREIGN KEY(MID) REFERENCES member(MID)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE Reviews
-(
-  id int(11) NOT NULL AUTO_INCREMENT,
-  date date NOT NULL,
-  rating tinyint(1) NOT NULL,
-  review varchar(20) DEFAULT NULL,
-  author int(11) NOT NULL,
-  target int(11) NOT NULL,
-  PRIMARY KEY (id),
-  FOREIGN KEY (author) REFERENCES member(MID),
-  FOREIGN KEY (target) REFERENCES member(MID)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
-) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
 /*added for rating*/
 CREATE TABLE tripreview
