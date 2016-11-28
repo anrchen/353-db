@@ -4,7 +4,6 @@ CREATE TABLE member
   firstName varchar(20) DEFAULT NULL,
   lastName varchar(20) DEFAULT NULL,
   Birthday int(11) NOT NULL,
-  Role varchar(20) NOT NULL,
   Status tinyint(1) DEFAULT 1,
   isAdmin BOOLEAN,
   PRIMARY KEY (MID)
@@ -48,7 +47,7 @@ CREATE TABLE trip
   Title VARCHAR(20) DEFAULT NULL,
   Comments VARCHAR(100) DEFAULT NULL,
   Category VARCHAR(15) NOT NULL,
-  Role BOOLEAN,
+  Role INT (3),
 #   0 = request for ride, 1 = offer a ride, 2 = ride found, 3 = rider found
   matchedID INT(11) DEFAULT NULL,
   PRIMARY KEY(TID),
@@ -138,8 +137,6 @@ INSERT INTO member VALUES
      'DRAGON',
      'DOCTOR',
      19880501,
-     'rider',
-     0,
      1,
      1),
 
@@ -147,8 +144,6 @@ INSERT INTO member VALUES
      'Strange',
      'Dr',
      19880502,
-     'driver',
-     0,
      1,
      1),
 
@@ -156,18 +151,20 @@ INSERT INTO member VALUES
      'Superman',
      'Mr',
      19880503,
-     'driver',
-     0,
      1,
      1),
   (  4,
      'Wonder',
      'Woman',
      19880504,
-     'rider',
-     0,
      1,
-     1);
+     0),
+  (  5,
+     'Wonder',
+     'Woman',
+     19880504,
+     1,
+     0);
 
 INSERT INTO account VALUES
   (  1,
@@ -183,7 +180,7 @@ INSERT INTO account VALUES
      0,
      1);
 
-INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restriction,Title, Category)
+INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restriction,Title, Comments, Category, Role)
  VALUES
   (
     1,
@@ -195,7 +192,9 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
     'Description1',
     0,
     'title#1',
-   'specialized'),
+    'comments1',
+   'specialized',
+    1),
 
   (
     2,
@@ -204,7 +203,28 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
     'New York',
     'H4B2N2',
     'H4B2N2',
-    'description#2',
+    'description 2',
     1,
-    'title#2',
-   'normal');
+    'title 2',
+    'comments 2',
+   'normal',
+    2),
+
+   (
+     '3',
+     '20100101',
+     'Montreal',
+     'Montreal',
+     'H4V2N2',
+     'H4V2N2',
+     'Description 3',
+     '0',
+     'Title 3',
+     'Comments 3',
+     'normal',
+    '3'
+    )
+
+
+
+;
