@@ -18,8 +18,24 @@
         <h1><a href="index.php">Su<span>per</span></a></h1>
 
         <nav>
+            <?php
+            session_start();
+            if(isset($_SESSION['user'])){
+                echo"
+                <a>Welcome ".$_SESSION['userName'].
+                    ", </a>
+                <a href=\"logout.php?logout=true\">Log out</a>
+                ";
+            }else{
+                echo"
+                <a href=\"login.php\">Log in</a>
+                ";
+            }
+            $MID = $_SESSION['user'];
+            $_SESSION['role']=$_GET['role'];
+            $role = $_SESSION['role'];
+            ?>
             <a href="#">Support</a>
-            <a href="#">Log in</a>
             <a href="#">About</a>
         </nav>
     </div>
@@ -33,6 +49,11 @@
         $password = "";
         $dbname = "trip";
 
+        if($role=='rider'){
+            $role=1;
+        }else{
+            $role=0;
+        }
 
             $conn = new mysqli($servername, $username, $password, $dbname);
             // Check connection
@@ -40,14 +61,18 @@
                 die("Connection failed: " . $conn->connect_error);
             }
 
-            $sql = "SELECT title, dDate, description FROM trip";
+            $sql = "SELECT tid FROM trip WHERE authorID='$MID' 
+                    AND role=$role";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
                 // output data of each row
-                while ($row = $result->fetch_assoc()) {
-                    echo "<br> Title: " . $row["title"] . "<br> Time: " . $row["dDate"]
-                        . "<br> Description: " . $row["description"] . "<br>";
+                while($row = $result->fetch_assoc()) {
+
+                    $TID =  $row["tid"];
+
+                    echo "Trip ID: " . $row["tid"]. "<br>";
+                    echo '<a href="matchPost.php?match='.$TID.'">Yes, match!</a><p>';
                 }
             } else {
                 echo "0 results";

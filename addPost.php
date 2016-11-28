@@ -42,6 +42,8 @@
                                 <a href=\"login.php\">Log in</a>
                             ";
             }
+            $_SESSION['role']=$_GET['role'];
+            echo $_SESSION['role'];
             ?>
             <a href="#">Support</a>
             <a href="#">About</a>
