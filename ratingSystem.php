@@ -48,15 +48,16 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 </header>
 
 <p class="success" style="text-align: center">
-<h1>Rate A Driver</h1>
+<h1>Rate a driver that you have gone with</h1>
 
 
 <?php
 $user = $_SESSION['user'];
 // Username is now used and added, please fix the query
-$sql = "SELECT  Username FROM member m1, member m2
-          where m2.Role = 'driver' and m1.Role='rider'
-          and m1.MID='$user'
+$sql = "SELECT MID FROM member, trip
+          where trip.Role = 1 
+          and trip.matchedID='$user'
+          and member.MID= trip.authorID
           ORDER BY MID
           ";
 $result = $conn->query($sql);
@@ -76,13 +77,14 @@ if ($result->num_rows > 0) {
 ?>
 
 <p class="success" style="text-align: center">
-<h1>Rate A TRIP</h1>
+<h1>Rate a trip that you have taken</h1>
 
 <?php
+$user = $_SESSION['user'];
 
-
-$sql = "SELECT  TID FROM trip
-        WHERE MID='$user'
+$sql = "SELECT  TID FROM trip, member
+        WHERE member.MID='$user'
+        And member.MID = trip.authorID
         ORDER BY TID";
 $result = $conn->query($sql);
 

@@ -47,8 +47,10 @@ CREATE TABLE trip
   Title VARCHAR(20) DEFAULT NULL,
   Comments VARCHAR(100) DEFAULT NULL,
   Category VARCHAR(15) NOT NULL,
-  Role INT(3),
-#   0 = request for ride, 1 = offer a ride, 2 = ride found, 3 = rider found
+  Role INT(3), /*0 = request for ride, 1 = offer a ride, 2 = ride found, 3 = rider found
+                1= driver
+                0=rider
+                */
   matchedID INT(11) DEFAULT NULL,
   PRIMARY KEY(TID),
   FOREIGN KEY (authorID) REFERENCES member (MID)
@@ -169,7 +171,7 @@ INSERT INTO account VALUES
   (  1,
      'Dragonman',
      'email@email.com',
-     '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5',
+     '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', /*qwerty*/
      1),
   (  2,
      'StrangeDoctor',
@@ -177,7 +179,7 @@ INSERT INTO account VALUES
      '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5',
      1);
 
-INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restriction,Title, Comments, Category, Role)
+INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restriction,Title, Comments, Category, Role, matchedID)
  VALUES
   (
     1,
@@ -191,7 +193,8 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
     'title#1',
     'comments1',
    'specialized',
-    1),
+    1,
+  2),
 
   (
     2,
@@ -205,7 +208,8 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
     'title 2',
     'comments 2',
    'normal',
-    2),
+    2,
+  3),
 
    (
      '3',
@@ -219,7 +223,8 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
      'Title 3',
      'Comments 3',
      'normal',
-    '3'
+    3,
+     4
     )
 
 
