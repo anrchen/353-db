@@ -161,9 +161,9 @@ INSERT INTO member VALUES
      1,
      0),
   (  5,
-     'Wonder',
-     'Woman',
-     19880504,
+     'Ming',
+     'Tsai',
+     19991214,
      1,
      0);
 
@@ -172,12 +172,27 @@ INSERT INTO account VALUES
      'Dragonman',
      'email@email.com',
      '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', /*qwerty*/
-     1),
+     10),
   (  2,
      'StrangeDoctor',
      'newEmail@email.com',
      '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5',
-     1);
+     100),
+  (  3,
+     'Superman',
+     'supermanemail@email.com',
+     '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', /*qwerty*/
+     120),
+  (  4,
+     'Wonder Woman',
+     'wonderemail@email.com',
+     '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', /*qwerty*/
+     150),
+  (  5,
+     'Dragonman',
+     'email@email.com',
+     '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', /*qwerty*/
+     50);
 
 INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restriction,Title, Comments, Category, Role, matchedID)
  VALUES

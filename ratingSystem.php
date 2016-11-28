@@ -65,10 +65,11 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        $Username =  $row["Username"];
+        echo 'you have been with ';
+        $MID =  $row["MID"];
         $type= "Driver";
         echo "Driver ID: " . $row["MID"]. "<br>";
-        echo '<a href="action_rate_form.php?subject2='.$type.'&subject1='.$Username.'">Yes, rate this driver!</a><p>';
+        echo '<a href="action_rate_form.php?subject2='.$type.'&subject1='.$MID.'">Yes, rate this driver!</a><p>';
     }
 } else {
     echo "0 results";
@@ -91,9 +92,10 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
+        echo 'You have gone to ';
         $TID =  $row["TID"];
         $type= "Trip";
-        echo "TRIP ID: " . $row["TID"]. "<br>";
+        echo "Trip ID: " . $row["TID"]. "<br>";
         echo '<a href="action_rate_form.php?subject1='.$TID.'&subject2='.$type.'">Yes, rate this trip!</a><p>';
     }
 } else {
