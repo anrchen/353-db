@@ -47,7 +47,7 @@ CREATE TABLE trip
   Title VARCHAR(20) DEFAULT NULL,
   Comments VARCHAR(100) DEFAULT NULL,
   Category VARCHAR(15) NOT NULL,
-  Role INT (3),
+  Role INT(3),
 #   0 = request for ride, 1 = offer a ride, 2 = ride found, 3 = rider found
   matchedID INT(11) DEFAULT NULL,
   PRIMARY KEY(TID),

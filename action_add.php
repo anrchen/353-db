@@ -29,7 +29,6 @@
 <p class="success" style="text-align: center">
     <?php
     session_start();
-    var_dump($_SESSION);
     include_once ('connection.php');
     if(isset($_GET['formName']) and isset($_GET['dCity']) and isset($_GET['formBody'])){
         try {
@@ -58,7 +57,7 @@
             $Description=$_GET['formBody'];
             $Restriction=$_GET['restriction'];
             $Title=$_GET['formName'];
-            $sql = "INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restriction,Title, Category, status)
+            $sql = "INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restriction,Title, Category, Role)
                         VALUES ('$authorID','$dDate','$dCity','$aCity','$dPostal','$aPostal','$Description',
                         '$Restriction','$Title', '$category', '$status')";
             $con->setQuery($sql);
