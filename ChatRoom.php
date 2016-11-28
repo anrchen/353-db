@@ -10,13 +10,13 @@ if( !isset($_SESSION['user']) ) {
   exit;
 }
 // select loggedin users detail
-$res=mysql_query("SELECT * FROM account WHERE MID=".$_SESSION['user']);
-$userRow=mysql_fetch_array($res);
-
+//$res=mysql_query("SELECT * FROM account WHERE MID=".$_SESSION['user']);
+//$userRow=mysql_fetch_array($res);
     //$Uname = $res[0];
 
     //die(mysql_errno($conn) . ": " . mysql_error($conn));
-    //die($Uname);
+    //die($_SESSION['userName']);
+    $Name = $_SESSION['userName'];
   ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -35,7 +35,7 @@ $userRow=mysql_fetch_array($res);
     <script type="text/javascript">
 
         // ask user for name with popup prompt
-        var name = "<?php $userRow['userName'];  ?>"  // prompt("Enter your chat name:", "Guest");
+        var name = "<?php echo $Name ?>";  // prompt("Enter your chat name:", "Guest");
         // default name is 'Guest'
     	if (!name || name === ' ') {
         name = "NO NAME";
@@ -105,14 +105,14 @@ $userRow=mysql_fetch_array($res);
 
     <div id="page-wrap">
 
-        <h2>jQuery/PHP Chat</h2>
+        <h2>Super Chat</h2>
 
         <p id="name-area"></p>
 
         <div id="chat-wrap"><div id="chat-area"></div></div>
 
         <form id="send-message-area">
-            <p>Your message: </p>
+            <p>Your message: </nl> (Press Enter to send text) </p>
             <textarea id="sendie" maxlength = '100' ></textarea>
         </form>
 
