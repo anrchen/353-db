@@ -50,9 +50,9 @@
         $dbname = "trip";
 
         if($role=='rider'){
-            $role=1;
-        }else{
             $role=0;
+        }else{
+            $role=1;
         }
 
             $conn = new mysqli($servername, $username, $password, $dbname);

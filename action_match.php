@@ -1,9 +1,7 @@
 <?php
     session_start();
     $postID = $_SESSION['newPost'];
-echo 'My post'.$postID;
     $matchID = $_GET['match'];
-echo 'My match'.$matchID;
     include_once ('connection.php');
 
     $con = new Connection();

@@ -72,9 +72,8 @@
         $sql = "SELECT * FROM trip t1, trip t2
                   WHERE t1.dDate=t2.dDate and t1.dCity=t2.dCity
                   and t1.aCity=t2.aCity and t1.authorID='$user' and t2.authorID!='$user'
-                  and t2.status=$lookingStatus and t1.TID=$lastID
-                  and t1.status!=2";
-        echo $sql;
+                  and t2.Role=$lookingStatus and t1.TID=$lastID
+                  and t1.Role!=2";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -100,7 +99,7 @@
                     }
                 }
                 echo "</div>";
-                echo '<a href="action_match.php?match='.$TID.'">Yes, match!</a><p>';
+                echo '<a target="_blank" href="action_match.php?match='.$TID.'">Yes, match!</a><p>';
             }
         } else {
             echo "0 results";
@@ -109,6 +108,10 @@
         $conn->close();
     }
 
+    if(isset($_GET['token'])){
+        echo 'Verificaiton code is '.$_GET['token'];
+
+    }
 
     ?>
 </div>
