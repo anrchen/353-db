@@ -215,3 +215,7 @@
 <span>NO NAME</span>gh 
 <span>Aegix</span>kk 
 <span>Aegix</span>JOY 
+<span>Aegix</span>HEAR ME? 
+<span>Aegix</span>hear me? 
+<span>Leet</span>yo? 
+<span>Aegix</span>NOW do you hear me? 
