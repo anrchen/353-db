@@ -4,11 +4,11 @@ CREATE TABLE member
   firstName varchar(20) DEFAULT NULL,
   lastName varchar(20) DEFAULT NULL,
   Birthday int(11) NOT NULL,
-  Status tinyint(1) DEFAULT 1,
+  Status tinyint(1) DEFAULT 1,	/*Status:  0 = suspended, 1 = Active (Default), 2 = Inactive*/
   isAdmin BOOLEAN,
   PRIMARY KEY (MID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-# Status:  0 = suspended, 1 = Active (Default), 2 = Inactive
+
 
 
 CREATE TABLE memberDetails
@@ -189,8 +189,8 @@ INSERT INTO account VALUES
      '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', /*qwerty*/
      150),
   (  5,
-     'Dragonman',
-     'email@email.com',
+     'Ming Tsai',
+     'mingemail@email.com',
      '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', /*qwerty*/
      50);
 
@@ -210,6 +210,20 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
    'specialized',
     1,
   2),
+   (
+   1,
+   'Monday',
+   'Montreal',
+   'Dorval',
+   'H4V4N4',
+   'H4V4N4',
+   'I love New York.',
+   0,
+   'Lets Go to New York',
+   'I want to see NYC.',
+   'specialized',
+   1,
+   2),
 
   (
     2,

@@ -86,6 +86,8 @@
 
         echo '<p>'.'Your rating has been successfully saved.  ';
 
+    echo '<p>';
+    echo '<a href="index.php">Go Back To Home Page.</a>';
 
 
     ?>

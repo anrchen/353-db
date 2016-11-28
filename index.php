@@ -219,7 +219,7 @@
         </a>
 
         <!--suspend a complainted dirver or trip-->
-        <a href="see_bad_ratings.php" class="serviceContent">
+        <a href="suspendUser.php" class="serviceContent">
             <img src="Images/viewTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
