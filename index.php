@@ -66,7 +66,7 @@
             <h1 class="categoryHeading">Rider</h1>
         </header>
 
-        <a href="addPost.php?type=onetime" class="serviceContent">
+        <a href="addPost.php?type=onetime&role=rider" class="serviceContent">
             <img src="Images/createTemplateRider2.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
@@ -77,7 +77,7 @@
                             </span>
             </div>
         </a>
-        <a href="addPost.php?type=regular" class="serviceContent">
+        <a href="addPost.php?type=regular&role=rider" class="serviceContent">
             <img src="Images/createTemplateRider2.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
@@ -110,14 +110,14 @@
                             </span>
             </div>
         </a>
-        <a href="Images/rider_matchPost" class="serviceContent">
+        <a href="viewPosts.php?role=rider" class="serviceContent">
             <img src="Images/viewTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
                     Matching System
                 </h1>
                 <span class="serviceDescription">
-                                TBD by Chen
+                                Match posts created by you!
                             </span>
             </div>
         </a>
@@ -142,11 +142,22 @@
             <h1 class="categoryHeading">Driver</h1>
         </header>
 
-        <a href="Images/driver_createPost.jpg" class="serviceContent">
+        <a href="addPost.php?type=onetime&role=driver" class="serviceContent">
             <img src="Images/createTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
-                    Create a post
+                    Create a one-time trip post
+                </h1>
+                <span class="serviceDescription">
+                                Looking for riders on your next trip? Come here!
+                            </span>
+            </div>
+        </a>
+        <a href="addPost.php?type=regular&role=driver" class="serviceContent">
+            <img src="Images/createTemplateRider2.png" class="serviceIcon">
+            <div class="serviceDetail">
+                <h1 class="serviceHeader">
+                    Create a regular trip post
                 </h1>
                 <span class="serviceDescription">
                                 Looking for riders on your next trip? Come here!
@@ -164,7 +175,7 @@
                             </span>
             </div>
         </a>
-        <a href="viewPosts.php" class="serviceContent">
+        <a href="viewPosts.php?role=driver" class="serviceContent">
             <img src="Images/viewTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
@@ -175,7 +186,19 @@
                             </span>
             </div>
         </a>
-        <a href="Images/drider_matchPost" class="serviceContent"></a>
+
+        <a href="viewPosts.php?role=driver" class="serviceContent">
+            <img src="Images/viewTemplate.png" class="serviceIcon">
+            <div class="serviceDetail">
+                <h1 class="serviceHeader">
+                    Matching System
+                </h1>
+                <span class="serviceDescription">
+                                Match posts created by you!
+                            </span>
+            </div>
+        </a>
+
     </div>
 
     <div class="category">
