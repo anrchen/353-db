@@ -66,7 +66,6 @@ CREATE TABLE account
   Email varchar(60) NOT NULL,
   Password varchar(500) NOT NULL,
   Balance float(20) NOT NULL,
-  adminPrivilege boolean NOT NULL, #Duplicated
   FOREIGN KEY(MID) REFERENCES member(MID)
     ON DELETE CASCADE
     ON UPDATE CASCADE
@@ -171,13 +170,11 @@ INSERT INTO account VALUES
      'Dragonman',
      'email@email.com',
      '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5',
-     0,
      1),
   (  2,
      'StrangeDoctor',
      'newEmail@email.com',
      '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5',
-     0,
      1);
 
 INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restriction,Title, Comments, Category, Role)
