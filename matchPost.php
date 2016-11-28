@@ -72,7 +72,8 @@
         $sql = "SELECT * FROM trip t1, trip t2
                   WHERE t1.dDate=t2.dDate and t1.dCity=t2.dCity
                   and t1.aCity=t2.aCity and t1.authorID='$user' and t2.authorID!='$user'
-                  and t2.status=$lookingStatus and t1.TID=$lastID";
+                  and t2.status=$lookingStatus and t1.TID=$lastID
+                  and t1.status!=2";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -80,9 +81,11 @@
             while($row = $result->fetch_assoc()) {
 
                 $TID =  $row["TID"];
+                $_SESSION['location'] = $row['dCity'].' to '.$row['aCity'];
 
                 echo "<br><div class='serviceContent'>";
                 echo "Trip ID: ".$row['TID'];
+                echo "<br>Title: ".$row['Title'];
                 echo "<br>Departure Date: ".$row['dDate'];
                 echo "<br>Departure Postal Code: ".$row['dPostal'];
                 echo "<br>Arrival Postal Code: ".$row['aPostal'];
@@ -96,7 +99,7 @@
                     }
                 }
                 echo "</div>";
-                echo '<a href="action_match?match='.$TID.'">Yes, match!</a><p>';
+                echo '<a href="action_match.php?match='.$TID.'">Yes, match!</a><p>';
             }
         } else {
             echo "0 results";

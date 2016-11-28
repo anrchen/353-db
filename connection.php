@@ -35,6 +35,7 @@ class Connection{
         while ($row = $result->fetch_assoc()) {
             echo "<br><div class='serviceContent'>";
             echo "Trip ID: ".$row['TID'];
+            echo "Title: ".$row['title'];
             echo "<br>Departure Date: ".$row['dDate'];
             echo "<br>Departure Postal Code: ".$row['dPostal'];
             echo "<br>Arrival Postal Code: ".$row['aPostal'];
@@ -51,6 +52,9 @@ class Connection{
         }
     }
 
+    public function execute(){
+        $this->conn->query($this->query);
+    }
 
     public function getLastID(){
         $last_id='';
