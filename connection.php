@@ -50,6 +50,8 @@ class Connection{
             echo "</div>";
         }
     }
+
+
     public function getLastID(){
         $last_id='';
         if ($this->conn->query($this->query) === TRUE) {

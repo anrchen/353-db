@@ -48,8 +48,16 @@ CREATE TABLE trip
   Title VARCHAR(20) DEFAULT NULL,
   Comments VARCHAR(100) DEFAULT NULL,
   Category VARCHAR(15) NOT NULL,
+  status BOOLEAN,
+#   0 = request for ride, 1 = offer a ride, 2 = ride found
+  matchedID INT(11) DEFAULT NULL,
   PRIMARY KEY(TID),
   FOREIGN KEY (authorID) REFERENCES member (MID)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  FOREIGN KEY (matchedID) REFERENCES member (MID)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE account
@@ -150,8 +158,8 @@ INSERT INTO member VALUES
      1),
 
   (  2,
-     'firstnameTwo',
-     'lastnameTwo',
+     'Strange',
+     'Dr',
      19880502,
      'driver',
      0,
@@ -159,16 +167,16 @@ INSERT INTO member VALUES
      1),
 
   (  3,
-     'firstnameTHREE',
-     'lastnameTHREE',
+     'Superman',
+     'Mr',
      19880503,
      'driver',
      0,
      1,
      1),
   (  4,
-     'firstnameFOUR',
-     'lastnameFOUR',
+     'Wonder',
+     'Woman',
      19880504,
      'rider',
      0,
@@ -181,10 +189,17 @@ INSERT INTO account VALUES
      'email@email.com',
      '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5',
      0,
+     1),
+  (  2,
+     'StrangeDoctor',
+     'newEmail@email.com',
+     '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5',
+     0,
      1);
 
-INSERT INTO trip VALUES
-  (1,
+INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restriction,Title, Category)
+ VALUES
+  (
     1,
     'Monday',
     'Dorval',
@@ -194,10 +209,9 @@ INSERT INTO trip VALUES
     'Description1',
     0,
     'title#1',
-    'comments#1',
    'specialized'),
 
-  (2,
+  (
     2,
     '20161116',
     'Dorval',
@@ -207,5 +221,4 @@ INSERT INTO trip VALUES
     'description#2',
     1,
     'title#2',
-    'comments#2',
    'normal');

@@ -29,11 +29,19 @@
 <p class="success" style="text-align: center">
     <?php
     session_start();
+    var_dump($_SESSION);
     include_once ('connection.php');
     if(isset($_GET['formName']) and isset($_GET['dCity']) and isset($_GET['formBody'])){
         try {
             $con = new Connection();
             $authorID=$_SESSION['user'];
+            $role = $_SESSION['role'];
+            $status='';
+            if($role=='rider'){
+                $status=0;
+            }else{
+                $status=1;
+            }
             if(isset($_GET['weekday'])){
                 $dDate=implode(",", $_GET['weekday']);;
                 $category = 'regular';
@@ -50,9 +58,9 @@
             $Description=$_GET['formBody'];
             $Restriction=$_GET['restriction'];
             $Title=$_GET['formName'];
-            $sql = "INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restriction,Title, Category)
+            $sql = "INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restriction,Title, Category, status)
                         VALUES ('$authorID','$dDate','$dCity','$aCity','$dPostal','$aPostal','$Description',
-                        '$Restriction','$Title', '$category')";
+                        '$Restriction','$Title', '$category', '$status')";
             $con->setQuery($sql);
             $_SESSION['newPost']=$con->getLastID();
             echo '
