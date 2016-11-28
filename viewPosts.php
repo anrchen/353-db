@@ -11,7 +11,7 @@
 <header class="header-basic">
     <link rel="stylesheet" type="text/css" href="assets/css/header.css">
     <link rel="stylesheet" type="text/css" href="assets/css/addPost.css"/>
-
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
 
     <div class="header-limiter">
 
@@ -41,6 +41,7 @@
     </div>
 </header>
 
+<div class="match" style="text-align: center">
 <p class="success" style="text-align: center">
     <?php
 
@@ -61,7 +62,7 @@
                 die("Connection failed: " . $conn->connect_error);
             }
 
-            $sql = "SELECT tid FROM trip WHERE authorID='$MID' 
+            $sql = "SELECT * FROM trip WHERE authorID='$MID' 
                     AND role=$role";
             $result = $conn->query($sql);
 
@@ -69,9 +70,25 @@
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
 
-                    $TID =  $row["tid"];
+                    $TID =  $row["TID"];
+                    $_SESSION['location'] = $row['dCity'].' to '.$row['aCity'];
 
-                    echo "Trip ID: " . $row["tid"]. "<br>";
+                    echo "<br><div class='serviceContent'>";
+                    echo "Trip ID: ".$row['TID'];
+                    echo "<br>Title: ".$row['Title'];
+                    echo "<br>Departure Date: ".$row['dDate'];
+                    echo "<br>Departure Postal Code: ".$row['dPostal'];
+                    echo "<br>Arrival Postal Code: ".$row['aPostal'];
+                    echo "<br>Description: ".$row['Description'];
+                    $city = $row["dCity"];
+                    if ($row['Restriction']){
+                        $city2 = $this->conn->query("SELECT * FROM city WHERE cityName='$city'");
+                        echo "<br>Restricted to drivers from the following regions: ";
+                        while ($row2 = $city2->fetch_assoc()) {
+                            echo $row2['citySurrounded'];
+                        }
+                    }
+                    echo "</div>";
                     echo '<a href="matchPost.php?match='.$TID.'">Yes, match!</a><p>';
                 }
             } else {
@@ -82,6 +99,7 @@
 
     ?>
 </p>
+</div>
 
 </body>
 </html>
