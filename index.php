@@ -14,7 +14,8 @@
 
         <h1><a href="#">Su<span>per</span></a></h1>
 
-        <nav>
+        <nav><!--MING added -->
+            <a href="editPersonalData.php">Edit Personal Info</a>
             <?php
             session_start();
             if(isset($_SESSION['user'])){
@@ -46,6 +47,7 @@
             <option>Posted by Drivers</option>
         </select>
     </div>
+
     <input type="text" class="nav" name="search" placeholder="Search all posts">
 
 

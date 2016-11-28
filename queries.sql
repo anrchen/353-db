@@ -198,7 +198,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
  VALUES
   (
     1,
-    'Monday',
+    'December 12 1990',
     'Dorval',
     'Montreal',
     'H4V2N2',
@@ -212,7 +212,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
   2),
    (
    1,
-   'Monday',
+   'November 1 1992',
    'Montreal',
    'Dorval',
    'H4V4N4',
@@ -227,7 +227,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
 
   (
     2,
-    '20161116',
+    'January 1 2001',
     'Dorval',
     'New York',
     'H4B2N2',
@@ -242,7 +242,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
 
    (
      '3',
-     '20100101',
+     'December 2 2016',
      'Montreal',
      'Montreal',
      'H4V2N2',
