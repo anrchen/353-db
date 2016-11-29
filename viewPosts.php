@@ -9,22 +9,39 @@
 <body>
 
 <header class="header-basic">
-    <link rel="stylesheet" type="text/css" href="css/header.css">
-    <link rel="stylesheet" type="text/css" href="css/addPost.css"/>
-
+    <link rel="stylesheet" type="text/css" href="assets/css/header.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/addPost.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
 
     <div class="header-limiter">
 
         <h1><a href="index.php">Su<span>per</span></a></h1>
 
         <nav>
+            <?php
+            session_start();
+            if(isset($_SESSION['user'])){
+                echo"
+                <a>Welcome ".$_SESSION['userName'].
+                    ", </a>
+                <a href=\"logout.php?logout=true\">Log out</a>
+                ";
+            }else{
+                echo"
+                <a href=\"login.php\">Log in</a>
+                ";
+            }
+            $MID = $_SESSION['user'];
+            $_SESSION['role']=$_GET['role'];
+            $role = $_SESSION['role'];
+            ?>
             <a href="#">Support</a>
-            <a href="#">Log in</a>
             <a href="#">About</a>
         </nav>
     </div>
 </header>
 
+<div class="match" style="text-align: center">
 <p class="success" style="text-align: center">
     <?php
 
@@ -33,6 +50,11 @@
         $password = "";
         $dbname = "trip";
 
+        if($role=='rider'){
+            $role=0;
+        }else{
+            $role=1;
+        }
 
             $conn = new mysqli($servername, $username, $password, $dbname);
             // Check connection
@@ -40,22 +62,44 @@
                 die("Connection failed: " . $conn->connect_error);
             }
 
-            $sql = "SELECT title, time, description FROM trip";
+            $sql = "SELECT * FROM trip WHERE authorID='$MID' 
+                    AND role=$role";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
                 // output data of each row
-                while ($row = $result->fetch_assoc()) {
-                    echo "<br> Title: " . $row["title"] . "<br> Time: " . $row["time"] . "<br> Description: " . $row["description"] . "<br>";
+                while($row = $result->fetch_assoc()) {
+
+                    $TID =  $row["TID"];
+                    $_SESSION['location'] = $row['dCity'].' to '.$row['aCity'];
+
+                    echo "<br><div class='serviceContent'>";
+                    echo "Trip ID: ".$row['TID'];
+                    echo "<br>Title: ".$row['Title'];
+                    echo "<br>Departure Date: ".$row['dDate'];
+                    echo "<br>Departure Postal Code: ".$row['dPostal'];
+                    echo "<br>Arrival Postal Code: ".$row['aPostal'];
+                    echo "<br>Description: ".$row['Description'];
+                    $city = $row["dCity"];
+                    if ($row['Restriction']){
+                        $city2 = $this->conn->query("SELECT * FROM city WHERE cityName='$city'");
+                        echo "<br>Restricted to drivers from the following regions: ";
+                        while ($row2 = $city2->fetch_assoc()) {
+                            echo $row2['citySurrounded'];
+                        }
+                    }
+                    echo "</div>";
+                    echo '<a href="matchPost.php?match='.$TID.'">Find a match for your trip now!</a><p>';
                 }
             } else {
-                echo "0 results";
+                echo "<br><span style='color:orangered;'>You do not </span>have any trip yet!";
             }
 
             $conn->close();
 
     ?>
 </p>
+</div>
 
 </body>
 </html>

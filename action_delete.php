@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,8 +9,8 @@
 <body>
 
 <header class="header-basic">
-    <link rel="stylesheet" type="text/css" href="css/header.css">
-    <link rel="stylesheet" type="text/css" href="css/addPost.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/header.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/addPost.css"/>
 
 
     <div class="header-limiter">
@@ -19,8 +18,21 @@
         <h1><a href="index.php">Su<span>per</span></a></h1>
 
         <nav>
+            <?php
+            session_start();
+            if(isset($_SESSION['user'])){
+                echo"
+                                <a>Welcome ".$_SESSION['userName'].
+                    ", </a>
+                                <a href=\"logout.php?logout=true\">Log out</a>
+                            ";
+            }else{
+                echo"
+                                <a href=\"login.php\">Log in</a>
+                            ";
+            }
+            ?>
             <a href="#">Support</a>
-            <a href="#">Log in</a>
             <a href="#">About</a>
         </nav>
     </div>
@@ -31,27 +43,22 @@
 
 
 <?php
-
 $getMyVar = $_GET['subject'];
-
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "trip";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-
-
 $result = $conn->query("DELETE FROM trip
                             WHERE trip.tid=$getMyVar");
-
-
 echo 'Successfully deleted. <p>';
 echo '<a href="deletePost.php">Click here to go back and delete more.</a>';
-
 ?>
 </p>
 
 </body>
 </html>
 
+Contact GitHub API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Status Help

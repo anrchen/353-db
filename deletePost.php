@@ -1,6 +1,4 @@
-<?php
 
-?>
 
 <!DOCTYPE html>
 <html>
@@ -13,8 +11,8 @@
 <body>
 
 <header class="header-basic">
-    <link rel="stylesheet" type="text/css" href="css/header.css">
-    <link rel="stylesheet" type="text/css" href="css/addPost.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/header.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/addPost.css"/>
 
 
     <div class="header-limiter">
@@ -22,52 +20,57 @@
         <h1><a href="index.php">Su<span>per</span></a></h1>
 
         <nav>
+            <?php
+            session_start();
+            if(isset($_SESSION['user'])){
+                echo"
+                                <a>Welcome ".$_SESSION['userName'].
+                    ", </a>
+                                <a href=\"logout.php?logout=true\">Log out</a>
+                            ";
+            }else{
+                echo"
+                                <a href=\"login.php\">Log in</a>
+                            ";
+            }
+            ?>
             <a href="#">Support</a>
-            <a href="#">Log in</a>
             <a href="#">About</a>
         </nav>
     </div>
 </header>
 
 <p class="success" style="text-align: center">
-<p>Delete Posts by Trip Number</p>
+<h1>Delete Posts by Trip Number</h1>
 
-<!--        --><?php
-//                    $servername = "localhost";
-//                    $username = "root";
-//                    $password = "";
-//                    $dbname = "trip";
-//                    // Create connection
-//                    $conn = new mysqli($servername, $username, $password, $dbname);
-//
-//
-//                    $sql = "SELECT tid FROM trip";
-//                    $result = $conn->query($sql);
-//
-//        if ($result->num_rows > 0) {
-//            // output data of each row
-//            while($row = $result->fetch_assoc()) {
-//
-//                /* Link the TID from deletedPost.php to delete.php
-//                    still have errors
-//                    -*/
-//                $TID =  $row["tid"];
-//
-//                echo "Trip ID: " . $row["tid"]. "<br>";
-//                echo '<a href="action_delete.php?'.$TID.'">Yes, delete!</a>';
-//            }
-//        } else {
-//            echo "0 results";
-//        }
-//
-//        ?>
+        <?php
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $dbname = "trip";
+                    // Create connection
+                    $conn = new mysqli($servername, $username, $password, $dbname);
 
 
-    <?php
-        include_once ('connection.php');
-        $con = new Connection();
-        $con->showPosts('trip');
-    ?>
+                    $sql = "SELECT tid FROM trip";
+                    $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+
+                $TID =  $row["tid"];
+
+                echo "Trip ID: " . $row["tid"]. "<br>";
+                echo '<a href="action_delete.php?subject='.$TID.'">Yes, delete!</a><p>';
+            }
+        } else {
+            echo "0 results";
+        }
+
+        ?>
+
+
 
 </body>
 </html>
