@@ -123,22 +123,22 @@ CREATE TABLE Transactions
     ON UPDATE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO memberdetails VALUES
-  ('1',
-   'mcgill',
-   'sherbrook 3110',
-   'Montreal', 'H2HB3B',
-   'Quebec',
-   '13537788'
-  ),
-  ('2',
-   'concordia',
-   'mckay 3121',
-   'Montreal',
-   'H3HJ5J',
-   'Quebec',
-   '14423478'
-  );
+# INSERT INTO memberdetails VALUES
+#   ('1',
+#    'mcgill',
+#    'sherbrook 3110',
+#    'Montreal', 'H2HB3B',
+#    'Quebec',
+#    '13537788'
+#   ),
+#   ('2',
+#    'concordia',
+#    'mckay 3121',
+#    'Montreal',
+#    'H3HJ5J',
+#    'Quebec',
+#    '14423478'
+#   );
 
 INSERT INTO city (cityName, citySurrounded) VALUES
   ('Brossard', 'Montreal'),
@@ -215,7 +215,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
  VALUES
   (
     1,
-    'December 12 1990',
+    '11/29/2016',
     'Dorval',
     'Montreal',
     'H4V2N2',
@@ -228,7 +228,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
     1),
    (
    1,
-   'November 1 1992',
+   '11/29/2016',
    'Montreal',
    'Dorval',
    'H4V4N4',
@@ -242,7 +242,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
 
   (
     2,
-    'January 1 2001',
+    '11/29/2016',
     'Dorval',
     'New York',
     'H4B2N2',
@@ -256,7 +256,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
 
    (
      '3',
-     'December 2 2016',
+     '11/28/2016',
      'Montreal',
      'Montreal',
      'H4V2N2',
