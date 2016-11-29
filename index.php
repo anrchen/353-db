@@ -97,7 +97,7 @@
                     Edit a post
                 </h1>
                 <span class="serviceDescription">
-                                Change your mind? Reschedule or relocate your trip!
+                                Reschedule or relocate your trip!
                             </span>
             </div>
         </a>
@@ -173,7 +173,7 @@
                     Edit a post
                 </h1>
                 <span class="serviceDescription">
-                                Change your mind? Reschedule or relocate your trip!
+                                Reschedule or relocate your trip!
                             </span>
             </div>
         </a>
@@ -215,8 +215,8 @@
                     Delete Post
                 </h1>
                 <span class="serviceDescription">
-                                ONLY ADMIN
-                            </span>
+                    Delete a post by its ID here!
+                </span>
             </div>
         </a>
 
@@ -228,8 +228,8 @@
                     Suspend Bad Rating
                 </h1>
                 <span class="serviceDescription">
-                                ONLY ADMIN
-                            </span>
+                    Suspend user with a bad rating!
+                </span>
             </div>
         </a>
 
