@@ -211,7 +211,7 @@ INSERT INTO account VALUES
      '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', /*qwerty*/
      50);
 
-INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restriction,Title, Comments, Category, Role, matchedID)
+INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restriction,Title, Comments, Category, Role)
  VALUES
   (
     1,
@@ -225,8 +225,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
     'title#1',
     'comments1',
    'specialized',
-    1,
-  2),
+    1),
    (
    1,
    'November 1 1992',
@@ -239,8 +238,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
    'Lets Go to New York',
    'I want to see NYC.',
    'specialized',
-   1,
-   2),
+   1),
 
   (
     2,
@@ -254,8 +252,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
     'title 2',
     'comments 2',
    'normal',
-    2,
-  3),
+    2),
 
    (
      '3',
@@ -269,7 +266,6 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
      'Title 3',
      'Comments 3',
      'normal',
-    3,
-     4
+     3
     )
 ;

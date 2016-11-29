@@ -109,11 +109,15 @@
     }
 
     if(isset($_GET['token'])){
-        echo 'Verificaiton code is '.$_GET['token'];
+        echo "
+                      Your payment has been <span style='color:#1bcd00;'>successful</span> 
+                      The payment verificaiton code is ".$_GET['token'];
+        $feed=$_GET['feed'];
+        $MID = $_SESSION['user'];
 
         include_once ('connection.php');
         $con = new Connection();
-        $query="UPDATE trip SET matchedID='$matchID', status='2' WHERE TID='$postID';";
+        $query="UPDATE account SET Balance=Balance-$feed WHERE MID='$MID';";
         $con->setQuery($query);
         $con->execute();
         $con->close();

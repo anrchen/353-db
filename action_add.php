@@ -19,8 +19,21 @@
             <h1><a href="index.php">Su<span>per</span></a></h1>
 
             <nav>
+                <?php
+                session_start();
+                if(isset($_SESSION['user'])){
+                    echo"
+                                <a>Welcome ".$_SESSION['userName'].
+                        ", </a>
+                                <a href=\"logout.php?logout=true\">Log out</a>
+                            ";
+                }else{
+                    echo"
+                                <a href=\"login.php\">Log in</a>
+                            ";
+                }
+                ?>
                 <a href="#">Support</a>
-                <a href="#">Log in</a>
                 <a href="#">About</a>
             </nav>
         </div>
@@ -28,7 +41,6 @@
 
 <p class="success" style="text-align: center">
     <?php
-    session_start();
     include_once ('connection.php');
     if(isset($_GET['formName']) and isset($_GET['dCity']) and isset($_GET['formBody'])){
         try {

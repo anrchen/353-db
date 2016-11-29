@@ -77,8 +77,8 @@ $transaction->setAmount($amount)
 // payment approval/ cancellation.
 $baseUrl = getBaseUrl();
 $redirectUrls = new RedirectUrls();
-$redirectUrls->setReturnUrl("$baseUrl/matchPost.php")
-    ->setCancelUrl("$baseUrl/matchPost.php");
+$redirectUrls->setReturnUrl("$baseUrl/matchPost.php?feed=66.3&")
+    ->setCancelUrl("$baseUrl/matchPost.php?feed=66.3&");
 
 // ### Payment
 // A Payment Resource; create one using
