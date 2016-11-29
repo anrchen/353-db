@@ -79,6 +79,7 @@
                             </span>
             </div>
         </a>
+
         <a href="addPost.php?type=regular&role=rider" class="serviceContent">
             <img src="Images/createTemplateRider2.png" class="serviceIcon">
             <div class="serviceDetail">
@@ -105,7 +106,7 @@
             <img src="Images/viewTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
-                    View a post
+                    View your posts
                 </h1>
                 <span class="serviceDescription">
                                 Find the details of your posts!
@@ -124,15 +125,26 @@
             </div>
         </a>
 
-        <!-- Ming's rating system-->
         <a href="ratingSystem.php" class="serviceContent">
             <img src="Images/viewTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
-                    Rating
+                    Rating system
                 </h1>
                 <span class="serviceDescription">
                                 Rate A Member or A Trip
+                            </span>
+            </div>
+        </a>
+
+        <a href="action_addBalance.php" class="serviceContent">
+            <img src="Images/createTemplateRider2.png" class="serviceIcon">
+            <div class="serviceDetail">
+                <h1 class="serviceHeader">
+                    Add balance
+                </h1>
+                <span class="serviceDescription">
+                    Add more money to your account balance!
                             </span>
             </div>
         </a>
@@ -181,7 +193,7 @@
             <img src="Images/viewTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
-                    View a post
+                    View your posts
                 </h1>
                 <span class="serviceDescription">
                                 Find the details of your posts!
