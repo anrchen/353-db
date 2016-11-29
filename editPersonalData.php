@@ -11,6 +11,7 @@
 <header class="header-basic">
     <link rel="stylesheet" type="text/css" href="assets/css/header.css">
     <link rel="stylesheet" type="text/css" href="assets/css/addPost.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
 
 
     <div class="header-limiter">
@@ -38,10 +39,11 @@
     </div>
 </header>
 
+
+<h1>Personal profil</h1>
+
+<div class="match" style="text-align: center">
 <p class="success" style="text-align: center">
-<h1>CURRENT PERSONAL INFO</h1>
-
-
 <?php
 $user = $_SESSION['user'];
 
@@ -62,7 +64,7 @@ if (!$result) {
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-
+        echo"<div class='serviceContent'>";
         $id = $row['id'];
         echo 'ID: '.$id;
         echo '<p>';
@@ -85,7 +87,7 @@ if ($result->num_rows > 0) {
 
         $province = $row['province'];
         echo 'Province: '.$province;
-        echo '<p>';
+        echo '<p></p></div>';
 
     }
 } else {
@@ -93,9 +95,14 @@ if ($result->num_rows > 0) {
 }
 ?>
 </p>
-<h1>INPUT CHANGES</h1> <h5>(by completing the form)</h5>
+</div>
+
+
+<h1>Profile update</h1> <h5>Please complete the following form</h5>
+<div class="match" style="text-align: center">
 <form method="get" action="action_ChangeMyData.php">
 
+    <div class='serviceContent'>
     <label>Address1</label>
     <input type="text" name="address1" id="address1"  class="inputBox">
     <p></p>
@@ -111,14 +118,16 @@ if ($result->num_rows > 0) {
     <label>Province</label>
     <input type="text" name="province" id="province"  class="inputBox">
     <p></p>
-            <input type="submit" id="" value="Change">
+            <input type="submit" id="" value="Update">
 
-
+    </div>
     <?php
     echo '<p>';
     echo '<p>';
     echo '<a href="index.php">Click here to go home.</a>';
     ?>
+
+</div>
 </body>
 </html>
 

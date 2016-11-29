@@ -121,22 +121,6 @@ CREATE TABLE Transactions
     ON UPDATE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
-# INSERT INTO memberdetails VALUES
-#   ('1',
-#    'mcgill',
-#    'sherbrook 3110',
-#    'Montreal', 'H2HB3B',
-#    'Quebec',
-#    '13537788'
-#   ),
-#   ('2',
-#    'concordia',
-#    'mckay 3121',
-#    'Montreal',
-#    'H3HJ5J',
-#    'Quebec',
-#    '14423478'
-#   );
 
 INSERT INTO city (cityName, citySurrounded) VALUES
   ('Brossard', 'Montreal'),
@@ -241,8 +225,8 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
   (
     2,
     '11/29/2016',
+    'Montreal',
     'Dorval',
-    'New York',
     'H4B2N2',
     'H4B2N2',
     'description 2',
@@ -250,20 +234,37 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
     'title 2',
     'comments 2',
    'normal',
-    2),
+    0),
 
    (
      '3',
      '11/28/2016',
      'Montreal',
-     'Montreal',
+     'Dorval',
      'H4V2N2',
      'H4V2N2',
      'Description 3',
-     '0',
+     0,
      'Title 3',
      'Comments 3',
      'normal',
-     3
+     0
     )
 ;
+
+INSERT INTO memberdetails VALUES
+  ('1',
+   'mcgill',
+   'sherbrook 3110',
+   'Montreal', 'H2HB3B',
+   'Quebec',
+   '13537788'
+  ),
+  ('2',
+   'concordia',
+   'mckay 3121',
+   'Montreal',
+   'H3HJ5J',
+   'Quebec',
+   '14423478'
+  );
