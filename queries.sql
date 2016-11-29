@@ -123,6 +123,23 @@ CREATE TABLE Transactions
     ON UPDATE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
+INSERT INTO memberdetails VALUES
+  ('1',
+   'mcgill',
+   'sherbrook 3110',
+   'Montreal', 'H2HB3B',
+   'Quebec',
+   '13537788'
+  ),
+  ('2',
+   'concordia',
+   'mckay 3121',
+   'Montreal',
+   'H3HJ5J',
+   'Quebec',
+   '14423478'
+  );
+
 INSERT INTO city (cityName, citySurrounded) VALUES
   ('Brossard', 'Montreal'),
   ('Dorval', 'Montreal'),
@@ -255,7 +272,4 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
     3,
      4
     )
-
-
-
 ;

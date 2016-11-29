@@ -39,7 +39,7 @@
 </header>
 
 <p class="success" style="text-align: center">
-<h1>MY PERSONAL INFO</h1>
+<h1>CURRENT PERSONAL INFO</h1>
 
 
 <?php
@@ -54,37 +54,71 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 
 
-$result = $conn->query("Select * FROM member, memberDetails
-                            WHERE member.mid=$user
-                            and member.mid = memberDetails.id");
-
+$result = $conn->query("Select * FROM memberDetails
+                            WHERE memberDetails.id=$user");
+if (!$result) {
+    trigger_error('Invalid query: ' . $conn->error);
+}
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
 
         $id = $row['id'];
-        echo 'ID: '.$id. '<p>';
-        $address1 = $row["address1"];
-        echo 'ID: '.$address1. '<p>';
-        $address2 =  $row["address2"];
-        echo 'ID: '.$address2. '<p>';
-        $city = $row["city"];
-        echo 'ID: '.$city. '<p>';
-        $postalCode = $row['postalCode'];
-        echo 'ID: '.$postalCode. '<p>';
-        $province = $row['province'];
-        echo 'ID: '.$province. '<p>';
+        echo 'ID: '.$id;
+        echo '<p>';
 
-       // echo '<a href="action_suspend.php?subject='.$DID.'">Suspend this driver!</a><p>';
+        $address1 = $row["address1"];
+        echo 'Address1: '.$address1;
+        echo '<p>';
+
+        $address2 =  $row["address2"];
+        echo 'Address2: '.$address2;
+        echo '<p>';
+
+        $city = $row["city"];
+        echo 'City: '.$city;
+        echo '<p>';
+
+        $postalCode = $row['postalCode'];
+        echo 'Postal Code: '.$postalCode;
+        echo '<p>';
+
+        $province = $row['province'];
+        echo 'Province: '.$province;
+        echo '<p>';
+
     }
 } else {
-    echo "0 results";
+   echo "0 results";
 }
-
-echo '<a href="index.php">Click here to go home.</a>';
 ?>
 </p>
+<h1>INPUT CHANGES</h1> <h5>(by completing the form)</h5>
+<form method="get" action="action_ChangeMyData.php">
 
+    <label>Address1</label>
+    <input type="text" name="address1" id="address1"  class="inputBox">
+    <p></p>
+    <label>Address2</label>
+    <input type="text" name="address2" id="address2"  class="inputBox">
+    <p></p>
+    <label>City</label>
+    <input type="text" name="city" id="city"  class="inputBox">
+    <p></p>
+    <label>Postal Code</label>
+    <input type="text" name="pc" id="pc"  class="inputBox">
+    <p></p>
+    <label>Province</label>
+    <input type="text" name="province" id="province"  class="inputBox">
+    <p></p>
+            <input type="submit" id="" value="Change">
+
+
+    <?php
+    echo '<p>';
+    echo '<p>';
+    echo '<a href="index.php">Click here to go home.</a>';
+    ?>
 </body>
 </html>
 

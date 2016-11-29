@@ -39,21 +39,57 @@
 </header>
 
 <p class="success" style="text-align: center">
-<p>Delete Posts by Trip Number</p>
+
 
 
 <?php
-$getMyVar = $_GET['subject'];
+$user = $_SESSION['user'];
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "trip";
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-$result = $conn->query("DELETE FROM trip
-                            WHERE trip.tid=$getMyVar");
-echo 'Successfully deleted. <p>';
-echo '<a href="deletePost.php">Click here to go back and delete more.</a>';
+
+$a1=$_GET['address1'];
+$a2=$_GET['address2'];
+$city=$_GET['city'];
+$pc=$_GET['pc'];
+$province=$_GET['province'];
+
+
+echo'<h2>Your New Info</h2>';
+
+echo 'Address1: '.$a1;
+echo '<p>';
+
+echo 'Address2: '.$a2;
+echo '<p>';
+
+echo 'City: '.$city;
+echo '<p>';
+
+echo 'Postal Code: '.$pc;
+echo '<p>';
+
+echo 'Province: '.$province;
+echo '<p>';
+
+
+
+    $result = $conn->query("
+                   UPDATE memberDetails 
+                   SET address1 = '$a1',
+                        address2 = '$a2',
+                        city ='$city',
+                        postalCode = '$pc',
+                        province ='$province'    
+                    WHERE id=$user;
+                            ");
+
+
+
+echo 'Update Successfully.<p>';
+echo '<a href="editPersonalData.php">Click here to edit more.</a>';
 ?>
 </p>
 
