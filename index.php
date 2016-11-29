@@ -40,15 +40,21 @@
 <section class="community">
 
 
-    <div class="styled-select">
-        <select>
-            <option selected disabled>Select a role</option>
-            <option>Posted by Riders</option>
-            <option>Posted by Drivers</option>
-        </select>
-    </div>
+  <form method="get" action="searchPost.php">
 
-    <input type="text" class="nav" name="search" placeholder="Search all posts">
+      <div class="styled-select" name="selectRole">
+          <select>
+              <option selected disabled>Select a role</option>
+              <option value="1">>Posted by Riders</option>
+              <option value="2">>Posted by Drivers</option>
+          </select>
+      </div>
+
+      <input type="text" class="nav" name="search" placeholder="Search all posts by Departure Location">
+      <input type="submit" id="DoSearch" value="SEARCH FOR POST" align="right">
+
+
+  </form>
 
 
     <!--                <header class="communityHeader">-->
