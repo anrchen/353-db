@@ -46,6 +46,12 @@
         $_SESSION['newPost']=$_GET['match'];
     }
 
+    if (isset($_GET['Message'])) {
+        $message=$_GET['Message'];
+        echo "<script type='text/javascript'>alert('$message');</script>";
+        echo "<script>window.close();</script>";
+    }
+
     if(isset($_SESSION['newPost'])){
         $lastID = $_SESSION['newPost'];
         $user = $_SESSION['user'];
@@ -99,19 +105,19 @@
                     }
                 }
                 echo "</div>";
-                echo '<a target="_blank" href="action_match.php?match='.$TID.'">Yes, match!</a><p>';
+                echo '<a target="_blank" href="action_match.php?match='.$TID.'">Match trips to process to payment</a><p>';
             }
         } else {
-            echo "0 results";
+            echo "<br><span style='color:orangered;'>No matched</span> trip has been found";
         }
 
         $conn->close();
     }
 
     if(isset($_GET['token'])){
-        echo "
+        echo "<br><br>
                       Your payment has been <span style='color:#1bcd00;'>successful</span> 
-                      The payment verificaiton code is ".$_GET['token'];
+              <br><br>The payment verificaiton code is <span style='color:gray;'>".$_GET['token']."</span>";
         $feed=$_GET['feed'];
         $MID = $_SESSION['user'];
 

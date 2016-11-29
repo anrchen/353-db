@@ -47,10 +47,11 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     </div>
 </header>
 
+
+
 <p class="success" style="text-align: center">
 <h1>Rate a driver that you have gone with</h1>
-
-
+<div class="match" style="text-align: center">
 <?php
 $user = $_SESSION['user'];
 // Username is now used and added, please fix the query
@@ -72,14 +73,15 @@ if ($result->num_rows > 0) {
         echo '<a href="action_rate_form.php?subject2='.$type.'&subject1='.$MID.'">Yes, rate this driver!</a><p>';
     }
 } else {
-    echo "0 results";
+    echo "<br>You <span style='color:orangered;'>have not taken</span> any trip with us yet!";
 }
 
 ?>
-
+</div>
 <p class="success" style="text-align: center">
-<h1>Rate a trip that you have taken</h1>
 
+<h1>Rate a trip that you have taken</h1>
+<div class="match" style="text-align: center">
 <?php
 $user = $_SESSION['user'];
 
@@ -99,10 +101,11 @@ if ($result->num_rows > 0) {
         echo '<a href="action_rate_form.php?subject1='.$TID.'&subject2='.$type.'">Yes, rate this trip!</a><p>';
     }
 } else {
-    echo "0 results";
+    echo "You <br><span style='color:orangered;'>have not taken</span> any trip with us yet!";
 }
 
 ?>
+</div>
 
 </body>
 </html>

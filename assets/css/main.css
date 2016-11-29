@@ -112,3 +112,17 @@ footer {
     text-align: center;
     color: #fff;
 }
+
+.match a{
+    background-color: #ff7079;
+    color: white;
+    width: 45%;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.match a:hover, a:active {
+    background-color: #f4d0a0;
+}

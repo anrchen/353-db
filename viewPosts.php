@@ -89,10 +89,10 @@
                         }
                     }
                     echo "</div>";
-                    echo '<a href="matchPost.php?match='.$TID.'">Yes, match!</a><p>';
+                    echo '<a href="matchPost.php?match='.$TID.'">Find a match for your trip now!</a><p>';
                 }
             } else {
-                echo "0 results";
+                echo "<br><span style='color:orangered;'>You do not </span>have any trip yet!";
             }
 
             $conn->close();

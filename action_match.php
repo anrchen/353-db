@@ -2,14 +2,40 @@
     session_start();
     $postID = $_SESSION['newPost'];
     $matchID = $_GET['match'];
+    $role = $_SESSION['role'];
+    $MID = $_SESSION['user'];
+
+    if($role=='rider'){
+        $role=2;
+        $matchedRole=3;
+    }else{
+        $role=3;
+        $matchedRole=2;
+    }
+
     include_once ('connection.php');
 
+    $con=new Connection();
+    $query="SELECT balance FROM account WHERE MID='$MID' balance>=70";
+    $con->setQuery($query);
+    $con->execute();
+    $balance=$con->getResult();
+
+    if(isset($balance) and $balance!=null){
+
     $con = new Connection();
-    $query="UPDATE trip SET matchedID='$matchID', status='2' WHERE TID='$postID';
-            UPDATE trip SET matchedID='$postID', status='2' WHERE TID='$matchID'";
+    $query="UPDATE trip SET matchedID='$matchID', role=$role WHERE TID='$postID'";
+    $con->setQuery($query);
+    $con->execute();
+    $query="UPDATE trip SET matchedID='$postID', role=$matchedRole WHERE TID='$matchID'";
     $con->setQuery($query);
     $con->execute();
     $con->close();
+
+    }else{
+        $message="You do not have enough balance in your account!";
+        header("Location: matchPost.php?Message=" . urlencode($message));
+    }
 ?>
 
 <!DOCTYPE html>

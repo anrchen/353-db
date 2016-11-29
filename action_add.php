@@ -60,7 +60,6 @@
             }else{
                 $dDate=$_GET['date'];
                 $category = 'onetime';
-                echo $dDate;
             }
             $dCity=$_GET['dCity'];
             $aCity=$_GET['aCity'];

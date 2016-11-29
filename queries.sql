@@ -47,16 +47,14 @@ CREATE TABLE trip
   Title VARCHAR(20) DEFAULT NULL,
   Comments VARCHAR(100) DEFAULT NULL,
   Category VARCHAR(15) NOT NULL,
-  Role INT(3), /*0 = request for ride, 1 = offer a ride, 2 = ride found, 3 = rider found
-                1= driver
-                0=rider
-                */
+  Role INT(3),
+  /*0 = rider, 1 = driver, 2 = rider has found his ride, 3 = driver has found his rider*/
   matchedID INT(11) DEFAULT NULL,
   PRIMARY KEY(TID),
   FOREIGN KEY (authorID) REFERENCES member (MID)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  FOREIGN KEY (matchedID) REFERENCES member (MID)
+  FOREIGN KEY (matchedID) REFERENCES trip (TID)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
