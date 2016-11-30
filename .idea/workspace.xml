@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcbd2740-9f14-42fb-9dc6-60ec50857e9f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/endPost.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/function_login_validation.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action_add.php" afterPath="$PROJECT_DIR$/action_add.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action_delete.php" afterPath="$PROJECT_DIR$/action_delete.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action_match.php" afterPath="$PROJECT_DIR$/action_match.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action_rate_form.php" afterPath="$PROJECT_DIR$/action_rate_form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action_rate_result.php" afterPath="$PROJECT_DIR$/action_rate_result.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action_suspend.php" afterPath="$PROJECT_DIR$/action_suspend.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addPost.php" afterPath="$PROJECT_DIR$/addPost.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/connection.php" afterPath="$PROJECT_DIR$/connection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deletePost.php" afterPath="$PROJECT_DIR$/deletePost.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/editPost.php" afterPath="$PROJECT_DIR$/editPost.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matchPost.php" afterPath="$PROJECT_DIR$/matchPost.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ratingSystem.php" afterPath="$PROJECT_DIR$/ratingSystem.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/searchPost.php" afterPath="$PROJECT_DIR$/searchPost.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/suspendUser.php" afterPath="$PROJECT_DIR$/suspendUser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPosts.php" afterPath="$PROJECT_DIR$/viewPosts.php" />
     </list>
     <ignored path="353-db.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,13 +26,13 @@
             <file leaf-file-name="connection.php" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/connection.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="362">
-                    <caret line="22" column="29" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="29" />
+                  <state relative-caret-position="141">
+                    <caret line="18" column="76" selection-start-line="18" selection-start-column="76" selection-end-line="18" selection-end-column="76" />
                     <folding>
-                      <marker date="1480469869249" expanded="true" signature="637:660" ph="SELECT ${$at... ${$table}" />
-                      <marker date="1480469869249" expanded="true" signature="715:791" ph="..." />
-                      <marker date="1480469869249" expanded="true" signature="1165:1179" ph="SELECT * FRO... ${$table}" />
-                      <marker date="1480469869249" expanded="true" signature="1741:1782" ph="SELECT * FRO... city" />
+                      <marker date="1480472392858" expanded="true" signature="637:660" ph="SELECT ${$at... ${$table}" />
+                      <marker date="1480472392858" expanded="true" signature="715:791" ph="..." />
+                      <marker date="1480472392858" expanded="true" signature="1165:1179" ph="SELECT * FRO... ${$table}" />
+                      <marker date="1480472392858" expanded="true" signature="1741:1782" ph="SELECT * FRO... city" />
                     </folding>
                   </state>
                 </provider>
@@ -90,15 +73,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addPost.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="addPost.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/addPost.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="103" column="52" selection-start-line="103" selection-start-column="52" selection-end-line="103" selection-end-column="52" />
+            <state relative-caret-position="357">
+              <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
               <folding>
-                <marker date="1480469792831" expanded="true" signature="2382:2397" ph="..." />
-                <marker date="1480469792831" expanded="true" signature="2485:3282" ph="..." />
-                <marker date="1480469792831" expanded="true" signature="3418:3581" ph="..." />
+                <marker date="1480472397456" expanded="true" signature="2382:2397" ph="..." />
+                <marker date="1480472397456" expanded="true" signature="2485:3282" ph="..." />
+                <marker date="1480472397456" expanded="true" signature="3418:3581" ph="..." />
               </folding>
             </state>
           </provider>
@@ -143,11 +126,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="action_match.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="action_match.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/action_match.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+            <state relative-caret-position="391">
+              <caret line="23" column="61" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
               <folding>
                 <marker date="1480469657907" expanded="true" signature="488:544" ph="SELECT balan... account" />
                 <marker date="1480469657907" expanded="true" signature="715:783" ph="UPDATE trip " />
@@ -160,7 +143,7 @@
       <file leaf-file-name="action_add.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/action_add.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-32">
+            <state relative-caret-position="17">
               <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
               <folding>
                 <marker date="1480469695223" expanded="false" signature="1327:1345" ph="..." />
@@ -210,9 +193,9 @@
         <option value="$PROJECT_DIR$/action_match.php" />
         <option value="$PROJECT_DIR$/action_delete.php" />
         <option value="$PROJECT_DIR$/action_add.php" />
-        <option value="$PROJECT_DIR$/addPost.php" />
-        <option value="$PROJECT_DIR$/connection.php" />
         <option value="$PROJECT_DIR$/searchPost.php" />
+        <option value="$PROJECT_DIR$/connection.php" />
+        <option value="$PROJECT_DIR$/addPost.php" />
       </list>
     </option>
   </component>
@@ -224,8 +207,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="645" />
-    <option name="width" value="1282" />
+    <option name="x" value="366" />
+    <option name="width" value="1561" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -420,23 +403,23 @@
       <workItem from="1479072190908" duration="846000" />
       <workItem from="1479447442654" duration="1231000" />
       <workItem from="1479531565939" duration="613000" />
-      <workItem from="1480208280731" duration="63222000" />
+      <workItem from="1480208280731" duration="64233000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92528000" />
+    <option name="totallyTimeSpent" value="93539000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="645" y="0" width="1282" height="1047" extended-state="0" />
-    <editor active="false" />
+    <frame x="366" y="0" width="1561" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29620853" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24271844" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32230523" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32230523" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -800,19 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/action_add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-32">
-          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-          <folding>
-            <marker date="1480469695223" expanded="false" signature="1327:1345" ph="..." />
-            <marker date="1480469695223" expanded="true" signature="2021:2034" ph="..." />
-            <marker date="1480469695223" expanded="true" signature="2333:2622" ph="INSERT INTO trip... " />
-            <marker date="1480469695223" expanded="false" signature="2790:2804" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deletePost.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -828,18 +798,6 @@
         <state relative-caret-position="-253">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addPost.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="103" column="52" selection-start-line="103" selection-start-column="52" selection-end-line="103" selection-end-column="52" />
-          <folding>
-            <marker date="1480469792831" expanded="true" signature="2382:2397" ph="..." />
-            <marker date="1480469792831" expanded="true" signature="2485:3282" ph="..." />
-            <marker date="1480469792831" expanded="true" signature="3418:3581" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -918,27 +876,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="29" />
-          <folding>
-            <marker date="1480469869249" expanded="true" signature="637:660" ph="SELECT ${$at... ${$table}" />
-            <marker date="1480469869249" expanded="true" signature="715:791" ph="..." />
-            <marker date="1480469869249" expanded="true" signature="1165:1179" ph="SELECT * FRO... ${$table}" />
-            <marker date="1480469869249" expanded="true" signature="1741:1782" ph="SELECT * FRO... city" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/action_match.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        <state relative-caret-position="391">
+          <caret line="23" column="61" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
           <folding>
             <marker date="1480469657907" expanded="true" signature="488:544" ph="SELECT balan... account" />
             <marker date="1480469657907" expanded="true" signature="715:783" ph="UPDATE trip " />
             <marker date="1480469657907" expanded="true" signature="847:922" ph="UPDATE trip " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action_add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+          <folding>
+            <marker date="1480469695223" expanded="false" signature="1327:1345" ph="..." />
+            <marker date="1480469695223" expanded="true" signature="2021:2034" ph="..." />
+            <marker date="1480469695223" expanded="true" signature="2333:2622" ph="INSERT INTO trip... " />
+            <marker date="1480469695223" expanded="false" signature="2790:2804" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="18" column="76" selection-start-line="18" selection-start-column="76" selection-end-line="18" selection-end-column="76" />
+          <folding>
+            <marker date="1480472392858" expanded="true" signature="637:660" ph="SELECT ${$at... ${$table}" />
+            <marker date="1480472392858" expanded="true" signature="715:791" ph="..." />
+            <marker date="1480472392858" expanded="true" signature="1165:1179" ph="SELECT * FRO... ${$table}" />
+            <marker date="1480472392858" expanded="true" signature="1741:1782" ph="SELECT * FRO... city" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addPost.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+          <folding>
+            <marker date="1480472397456" expanded="true" signature="2382:2397" ph="..." />
+            <marker date="1480472397456" expanded="true" signature="2485:3282" ph="..." />
+            <marker date="1480472397456" expanded="true" signature="3418:3581" ph="..." />
           </folding>
         </state>
       </provider>

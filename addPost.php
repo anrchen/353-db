@@ -103,7 +103,7 @@ if(!isset($_SESSION['user'])){
                     <?php
                     include_once ('connection.php');
                     $con = new Connection();
-                    $con->displaySelectList('cityName','City','Arrival city','dCity');
+                    $con->displaySelectList('cityName','city','Arrival city','dCity');
                     ?>
                 </div>
                 <input type="text" placeholder="Departure Postal Code" name="dPostal" class="postal" maxlength="6">
@@ -112,7 +112,7 @@ if(!isset($_SESSION['user'])){
             <div class="textBoxWrapper">
                 <div class="styled-select">
                     <?php
-                    $con->displaySelectList('cityName','City','Departure city','aCity');
+                    $con->displaySelectList('cityName','city','Departure city','aCity');
                     $con->close();
                     ?>
                 </div>
