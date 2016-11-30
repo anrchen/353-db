@@ -1,4 +1,13 @@
 <?php
+
+if(session_status()==PHP_SESSION_NONE){
+session_start();
+}
+
+if(!isset($_SESSION['user'])){
+    header("Location: login.php");
+}
+
 $servername = "vpc353_2.encs.concordia.ca";
 $username = "vpc353_2";
 $password = "A5DNm8";
@@ -28,7 +37,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
         <nav>
             <?php
-            session_start();
             if(isset($_SESSION['user'])){
                 echo"
                                 <a>Welcome ".$_SESSION['user'].

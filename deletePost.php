@@ -1,4 +1,11 @@
+<?php if(session_status()==PHP_SESSION_NONE){
+    session_start();
+}
 
+if(!isset($_SESSION['user'])){
+    header("Location: login.php");
+}
+?>
 
 <!DOCTYPE html>
 <html>
@@ -21,7 +28,6 @@
 
         <nav>
             <?php
-            session_start();
             if(isset($_SESSION['user'])){
                 echo"
                                 <a>Welcome ".$_SESSION['userName'].

@@ -1,3 +1,13 @@
+<?php if(session_status()==PHP_SESSION_NONE){
+    session_start();
+}
+
+if(!isset($_SESSION['user'])){
+    header("Location: login.php");
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,8 +28,15 @@
         <h1><a href="index.php">Su<span>per</span></a></h1>
 
         <nav>
+            <?php
+            if(isset($_SESSION['user'])){
+                echo"<a>Welcome ".$_SESSION['userName'].", </a>
+                     <a href=\"logout.php?logout=true\">Log out</a>";
+            }else{
+                echo"<a href=\"login.php\">Log in</a>";
+            }
+            ?>
             <a href="#">Support</a>
-            <a href="#">Log in</a>
             <a href="#">About</a>
         </nav>
     </div>

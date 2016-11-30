@@ -1,3 +1,12 @@
+<?php if(session_status()==PHP_SESSION_NONE){
+        session_start();
+    }
+
+    if(!isset($_SESSION['user'])){
+        header("Location: login.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,23 +23,16 @@
 
         <h1><a href="#">Su<span>per</span></a></h1>
 
-        <nav><!--MING added -->
-            <a href="editPersonalData.php">Edit Personal Info</a>
+        <nav>
             <?php
-            session_start();
-		var_dump($_SESSION);
             if(isset($_SESSION['user'])){
-                echo"
-                                <a>Welcome ".$_SESSION['userName'].
-                    ", </a>
-                                <a href=\"logout.php?logout=true\">Log out</a>
-                            ";
+                echo"<a>Welcome ".$_SESSION['userName'].", </a>
+              <a href=\"logout.php?logout=true\">Log out</a>";
             }else{
-                echo"
-                                <a href=\"login.php\">Log in</a>
-                            ";
-            }
-            ?>
+                echo"<a href=\"login.php\">Log in</a>";
+            }?>
+            <a href="editPersonalData.php">Edit Personal Info</a>
+
             <a href="#">Support</a>
             <a href="#">About</a>
         </nav>
@@ -95,7 +97,7 @@
                             </span>
             </div>
         </a>
-        <a href="Images/rider_editPost" class="serviceContent">
+        <a href="editPost.php" class="serviceContent">
             <img src="Images/editTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
@@ -157,7 +159,7 @@
                 </h1>
                 <span class="serviceDescription">
                                 Looking for riders on your next trip? Come here!
-                            </span>
+                 </span>
             </div>
         </a>
         <a href="addPost.php?type=regular&role=driver" class="serviceContent">
@@ -171,7 +173,7 @@
                             </span>
             </div>
         </a>
-        <a href="Images/drider_editPost" class="serviceContent">
+        <a href="editPost.php" class="serviceContent">
             <img src="Images/editTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
