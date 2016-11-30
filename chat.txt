@@ -219,3 +219,5 @@
 <span>Aegix</span>hear me? 
 <span>Leet</span>yo? 
 <span>Aegix</span>NOW do you hear me? 
+<span>StrangeDoctor</span>gjg 
+<span>Dragonman</span>; 

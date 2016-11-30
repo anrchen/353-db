@@ -61,17 +61,27 @@
 
         echo "Selected City for Search: ";
         echo $_GET['search'];
-        //echo $_GET['selectRole'];
+        echo $_GET['selectRole'];
 
         //if(isset($_GET['selectRole']) and isset($_GET['search'])){
         if(isset($_GET['search'])){
           $lookIn = $_GET['search'];
-          $sql = "SELECT * FROM trip WHERE (dCity='$lookIn' OR aCity='$lookIn')";
+          $sql = "SELECT * FROM trip WHERE (dCity='$lookIn' OR aCity='$lookIn') AND role=1";
                   //AND role='SelectRole'";
           $result = mysql_query($sql);//$conn->query($sql);
 
+          /*$sql = "SELECT * FROM trip WHERE (dCity='$lookIn' OR aCity='$lookIn')";
+                    //AND role='SelectRole'";
+            $result = mysql_query($sql);//$conn->query($sql);
+            */
+
+          $sql2 = "SELECT * FROM trip WHERE (dCity='$lookIn' OR aCity='$lookIn') AND role=0";
+                  //AND role='SelectRole'";
+          $result2 = mysql_query($sql2);//$conn->query($sql);
+
 //die(mysql_error());
 
+          echo "<br><br>POSTED BY DRIVERS:";
           if (mysql_num_rows($result) > 0) {
               // output data of each row
               while($row = mysql_fetch_assoc($result)) {
@@ -105,6 +115,43 @@
               }
           } else {
               echo "<br>0 results";
+          }
+
+
+          echo "<br>POSTED BY DRIVERS: <br>";
+          if (mysql_num_rows($result2) > 0) {
+              // output data of each row
+              while($rowT = mysql_fetch_assoc($result2)) {
+
+                  $TIDT =  $rowT["TID"];
+                  $_SESSION['location'] = $rowT['dCity'].' to '.$rowT['aCity'];
+
+                  echo "<br><div class='serviceContent'>";
+                  echo "Trip ID: ".$rowT['TID'];
+                  echo "<br>Title: ".$rowT['Title'];
+                  echo "<br>Departure Date: ".$rowT['dDate'];
+                  echo "<br>--------------------";
+                  echo "<br>Departure City: ".$rowT['dCity'];
+                  echo "<br>Departure Postal Code: ".$rowT['dPostal'];
+                  echo "<br>--------------------";
+                  echo "<br>Arrival City: ".$rowT['aCity'];
+                  echo "<br>Arrival Postal Code: ".$rowT['aPostal'];
+                  echo "<br>--------------------";
+                  echo "<br>Description: ".$rowT['Description'];
+                  $cityT = $rowT["dCity"];
+                  if ($rowT['Restriction']){
+                      $city2T = $conn->query("SELECT * FROM city WHERE cityName='$cityT'");
+                      echo "<br>--------------------";
+                      echo "<br>Restricted to drivers from the following regions: ";
+                      while ($row2T = $city2T->fetch_assoc()) {
+                          echo $row2T['citySurrounded'];
+                      }
+                  }
+                  echo "</div>";
+
+              }
+          } else {
+              echo "<br>0 results<br>";
           }
 
           $conn->close();

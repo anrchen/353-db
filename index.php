@@ -42,6 +42,7 @@
 
   <form method="get" action="searchPost.php">
 
+<!--
       <div class="styled-select" name="selectRole">
           <select>
               <option selected disabled>Select a role</option>
@@ -49,9 +50,9 @@
               <option value="2">>Posted by Drivers</option>
           </select>
       </div>
-
-      <input type="text" class="nav" name="search" placeholder="Search all posts by Departure Location">
-      <input type="submit" id="DoSearch" value="SEARCH FOR POST" align="right">
+-->
+      <input type="text" class="nav" name="search" placeholder="Search all posts by City Name">
+      <!-- <input type="submit" id="DoSearch" value="SEARCH FOR POST" align="right"> -->
 
 
   </form>

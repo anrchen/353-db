@@ -103,7 +103,12 @@ if( !isset($_SESSION['user']) ) {
 
 <body onload="setInterval('chat.update()', 1000)">
 
+
     <div id="page-wrap">
+      <div id="return-link">
+          <a href="index.php" >Return to Index</a>
+
+      </div>
 
         <h2>Super Chat</h2>
 
@@ -116,19 +121,8 @@ if( !isset($_SESSION['user']) ) {
             <textarea id="sendie" maxlength = '100' ></textarea>
         </form>
 
-        <a href="index.php" class="serviceContent">
-            <img src="Images/viewTemplate.png" class="serviceIcon">
-            <div class="serviceDetail">
-                <h1 class="serviceHeader">
-                    Return to Home Page
-                </h1>
-                <span class="serviceDescription">
-                                Go home
-                            </span>
-            </div>
-        </a>
+
     </div>
 
 </body>
-
 </html>
