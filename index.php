@@ -5,6 +5,7 @@
     if(!isset($_SESSION['user'])){
         header("Location: login.php");
     }
+
 ?>
 
 <!DOCTYPE html>
@@ -58,18 +59,10 @@
 
     </form>
 
-    <!--                <header class="communityHeader">-->
-    <!--                    <div class="siteLogo_container">-->
-    <!--                        <p class="welcomeMsg">-->
-    <!--                            Welcome to the official-->
-    <!--                            <span class="SiteName">-->
-    <!--                                Car2Go-->
-    <!--                            </span>  site-->
-    <!--                        </p>-->
-    <!--                    </div>-->
-    <!--                </header>-->
+    <?php
+        if((isset($_GET['role'])) and $_GET['role']=='rider'){
 
-
+    ?>
     <div class="category">
         <header class="categoryHeader">
             <h1 class="categoryHeading">Rider</h1>
@@ -131,7 +124,6 @@
             </div>
         </a>
 
-        <!-- Ming's rating system-->
         <a href="ratingSystem.php" class="serviceContent">
             <img src="Images/viewTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
@@ -144,8 +136,25 @@
             </div>
         </a>
 
+        <a href="addBalance.php" class="serviceContent">
+            <img src="Images/createTemplateRider2.png" class="serviceIcon">
+            <div class="serviceDetail">
+                <h1 class="serviceHeader">
+                    Add Balance
+                </h1>
+                <span class="serviceDescription">
+                    Add more money to your balance here!
+                            </span>
+            </div>
+        </a>
     </div>
+    <?php
+        }
+    ?>
 
+    <?php
+    if((isset($_GET['role'])) and $_GET['role']=='driver'){
+    ?>
     <div class="category">
         <header class="categoryHeader">
             <h1 class="categoryHeading">Driver</h1>
@@ -207,9 +216,14 @@
                             </span>
             </div>
         </a>
-
     </div>
+        <?php
+    }
+    ?>
 
+    <?php
+    if((isset($_GET['admin'])) and $_GET['admin']=='7hajqnnk00i6isp3gr4q60tncc'){
+    ?>
     <div class="category">
         <header class="categoryHeader">
             <h1 class="categoryHeading">Administrator</h1>
@@ -247,7 +261,9 @@
         <a href="Images/admin_viewPost" class="serviceContent"></a>
         <a href="Images/admin_matchPost" class="serviceContent"></a>
     </div>
-
+        <?php
+    }
+    ?>
 
     <footer>
         <p>All rights reserved</p>

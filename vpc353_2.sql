@@ -6,6 +6,8 @@ CREATE TABLE member
   Birthday int(11) NOT NULL,
   Status tinyint(1) DEFAULT 1,	/*Status:  0 = suspended, 1 = Active (Default), 2 = Inactive*/
   isAdmin BOOLEAN,
+  isDriver BOOLEAN,
+  isRider BOOLEAN,
   PRIMARY KEY (MID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -138,6 +140,8 @@ INSERT INTO member VALUES
      'DOCTOR',
      19880501,
      1,
+     1,
+     1,
      1),
 
   (  2,
@@ -145,26 +149,36 @@ INSERT INTO member VALUES
      'Dr',
      19880502,
      1,
-     1),
+     0,
+     1,
+     0),
 
   (  3,
      'Superman',
      'Mr',
      19880503,
      1,
+     1,
+     1,
      1),
+
   (  4,
      'Wonder',
      'Woman',
      19880504,
      1,
-     0),
+     1,
+     1,
+     1),
+
   (  5,
      'Ming',
      'Tsai',
      19991214,
      1,
-     0);
+     0,
+     1,
+     1);
 
 
 INSERT INTO memberdetails VALUES
@@ -252,20 +266,20 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
     'title 2',
     'comments 2',
    'normal',
-    2),
+    0),
 
    (
      '3',
      '11/28/2016',
      'Montreal',
-     'Montreal',
+     'Dorval',
      'H4V2N2',
      'H4V2N2',
      'Description 3',
-     '0',
+     0,
      'Title 3',
      'Comments 3',
      'normal',
-     3
+     0
     )
 ;

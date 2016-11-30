@@ -53,7 +53,7 @@ class Connection{
     }
 
     public function execute(){
-        $this->conn->query($this->query);
+        $this->result=$this->conn->query($this->query);
     }
 
     public function getLastID(){

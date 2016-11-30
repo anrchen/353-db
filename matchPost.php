@@ -102,7 +102,7 @@ if(!isset($_SESSION['user'])){
                 echo "<br>Description: ".$row['Description'];
                 $city = $row["dCity"];
                 if ($row['Restriction']){
-                    $city2 = $this->conn->query("SELECT * FROM city WHERE cityName='$city'");
+                    $city2 = $conn->query("SELECT * FROM city WHERE cityName='$city'");
                     echo "<br>Restricted to drivers from the following regions: ";
                     while ($row2 = $city2->fetch_assoc()) {
                         echo $row2['citySurrounded'];

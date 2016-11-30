@@ -21,7 +21,7 @@
     include_once ('connection.php');
 
     $con=new Connection();
-    $query="SELECT balance FROM account WHERE MID='$MID' balance>=70";
+    $query="SELECT balance FROM account WHERE MID='$MID' and balance>=70";
     $con->setQuery($query);
     $con->execute();
     $balance=$con->getResult();
