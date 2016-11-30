@@ -37,7 +37,7 @@ if( isset($_GET['btn-login']) ) {
 		));
 		$row=mysql_fetch_array($res);
 		$count = mysql_num_rows($res); // if uname/pass correct it returns must be 1 row
-		$query2 = mysql_query(sprintf("SELECT DISTINCT Status FROM Member M, account A WHERE (A.Email='%s' 
+		$query2 = mysql_query(sprintf("SELECT DISTINCT Status FROM member M, account A WHERE (A.Email='%s' 
 			AND A.Password = '%s') AND (M.MID = A.MID)",//" AND (M.Status = 1)",
 			mysql_real_escape_string($email),
 			mysql_real_escape_string($password)

@@ -80,10 +80,10 @@
 </html>
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "person";
+$servername = "vpc353_2.encs.concordia.ca";
+$username = "vpc353_2";
+$password = "A5DNm8";
+$dbname = "vpc353_2";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=person", $username, $password);

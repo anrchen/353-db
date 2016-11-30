@@ -1,9 +1,9 @@
 <?php
 class Connection{
-    public $servername = "localhost";
-    protected $username = "root";
-    protected $password = "";
-    public $dbname = "trip";
+    public $servername = "vpc353_2.encs.concordia.ca";
+    protected $username = "vpc353_2";
+    protected $password = "A5DNm8";
+    public $dbname = "vpc353_2";
     public $conn;
     protected $query;
     protected $lastID;

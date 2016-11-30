@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "trip";
+$servername = "vpc353_2.encs.concordia.ca";
+$username = "vpc353_2";
+$password = "A5DNm8";
+$dbname = "vpc353_2";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 ?>
@@ -46,8 +46,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
         </nav>
     </div>
 </header>
-
-
 
 <p class="success" style="text-align: center">
 <h1>Rate a driver that you have gone with</h1>
@@ -105,8 +103,6 @@ if ($result->num_rows > 0) {
 }
 
 ?>
-</div>
 
 </body>
 </html>
-

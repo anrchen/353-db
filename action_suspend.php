@@ -31,10 +31,10 @@
 
 <?php
 $getMyVar = $_GET['subject'];
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "trip";
+$servername = "vpc353_2.encs.concordia.ca";
+$username = "vpc353_2";
+$password = "A5DNm8";
+$dbname = "vpc353_2";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 $result = $conn->query("

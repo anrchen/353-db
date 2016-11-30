@@ -18,6 +18,7 @@
             <a href="editPersonalData.php">Edit Personal Info</a>
             <?php
             session_start();
+		var_dump($_SESSION);
             if(isset($_SESSION['user'])){
                 echo"
                                 <a>Welcome ".$_SESSION['userName'].
@@ -39,17 +40,21 @@
 
 <section class="community">
 
+    <form method="get" action="searchPost.php">
 
-    <div class="styled-select">
-        <select>
-            <option selected disabled>Select a role</option>
-            <option>Posted by Riders</option>
-            <option>Posted by Drivers</option>
-        </select>
-    </div>
+        <div class="styled-select" name="selectRole">
+            <select>
+                <option selected disabled>Select a role</option>
+                <option value="1">Posted by Riders</option>
+                <option value="2">Posted by Drivers</option>
+            </select>
+        </div>
 
-    <input type="text" class="nav" name="search" placeholder="Search all posts">
+        <input type="text" class="nav" name="search" placeholder="Search all posts by Departure Location">
+        <input type="submit" id="DoSearch" value="SEARCH FOR POST" align="right">
 
+
+    </form>
 
     <!--                <header class="communityHeader">-->
     <!--                    <div class="siteLogo_container">-->

@@ -45,10 +45,10 @@
 <p class="success" style="text-align: center">
     <?php
 
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "trip";
+        $servername = "vpc353_2.encs.concordia.ca";
+        $username = "vpc353_2";
+        $password = "A5DNm8";
+        $dbname = "vpc353_2";
 
         if($role=='rider'){
             $role=0;
@@ -103,5 +103,3 @@
 
 </body>
 </html>
-
-
