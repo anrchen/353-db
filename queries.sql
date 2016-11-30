@@ -37,11 +37,11 @@ CREATE TABLE trip
 (
   TID INT(11) NOT NULL AUTO_INCREMENT,
   authorID INT(11) NOT NULL,
-  dDate VARCHAR(50) NOT NULL,
-  dCity VARCHAR(10) NOT NULL,
-  aCity VARCHAR(15) NOT NULL,
-  dPostal VARCHAR(20) DEFAULT NULL,
-  aPostal VARCHAR(20) DEFAULT NULL,
+  dDate VARCHAR(50) NOT NULL, /*departure date*/
+  dCity VARCHAR(10) NOT NULL,	/*departure city*/
+  aCity VARCHAR(15) NOT NULL,	/*arrival city*/
+  dPostal VARCHAR(20) DEFAULT NULL,	/*departure postal code*/
+  aPostal VARCHAR(20) DEFAULT NULL,/*arrival postal code*/
   Description VARCHAR(100) DEFAULT NULL,
   Restriction BOOLEAN DEFAULT NULL,
   Title VARCHAR(20) DEFAULT NULL,
