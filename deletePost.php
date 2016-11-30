@@ -52,17 +52,23 @@
                     $conn = new mysqli($servername, $username, $password, $dbname);
 
 
-                    $sql = "SELECT tid FROM trip";
+                    $sql = "SELECT * FROM trip";
                     $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
 
-                $TID =  $row["tid"];
+                $TID =  $row["TID"];
+                $dCity = $row['dCity'];
+                $aCity = $row['aCity'];
+                $author = $row['authorID'];
 
-                echo "Trip ID: " . $row["tid"]. "<br>";
-                echo '<a href="action_delete.php?subject='.$TID.'">Yes, delete!</a><p>';
+                echo "Trip ID: " . $row["TID"]. "<br>";
+                echo "Author ID: " . $row["authorID"]. "<br>";
+                echo "Departure City: " . $row["dCity"]. "<br>";
+                echo "Arrival City: " . $row["aCity"]. "<br>";
+                echo '<a href="action_delete.php?subject='.$TID.'">Yes, delete!</a><p><br>';
             }
         } else {
             echo "0 results";

@@ -35,10 +35,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 </header>
 
 <p class="success" style="text-align: center">
-<h1>See ALL Bad Drivers who have a rating of 1 or have complaint as true.</h1>
+<h1>Suspend A Member</h1>
 
 <?php
-
+echo "<h4> Here is a list of drivers who has either a complaint, or a rating of 1. </h4>";
 
 $sql = "SELECT driverID, Reviewer, messages FROM driverreview d
         where d.stars =1 
@@ -54,7 +54,7 @@ if ($result->num_rows > 0) {
         $DID =  $row["driverID"];
         $reason = $row["messages"];
 
-        echo "Driver ID that has a bad rating or got a complaint: " . $row["driverID"]. "<br>";
+        echo "Driver ID: " . $row["driverID"]. "<br>";
         echo "Reviewer ID: " . $row["Reviewer"]. "<br>";
         echo "Reason: " . $row["messages"]. "<br>";
 

@@ -18,7 +18,20 @@
         <h1><a href="index.php">Su<span>per</span></a></h1>
 
         <nav>
-            <a href="#">Support</a>
+            <?php
+            session_start();
+            if(isset($_SESSION['user'])){
+                echo"
+                                <a>Welcome ".$_SESSION['user'].
+                    ", </a>
+                                <a href=\"logout.php?logout=true\">Log out</a>
+                            ";
+            }else{
+                echo"
+                                <a href=\"login.php\">Log in</a>
+                            ";
+            }
+            ?>
             <a href="#">Log in</a>
             <a href="#">About</a>
         </nav>
@@ -39,7 +52,7 @@
             $rateComments=$_GET['comments'];
             $ID = $_GET['ID'];
             $type = $_GET['type'];
-
+            $user = $_SESSION['user'];
             $complaint = $_GET ['complaint'];
 
             /*
@@ -76,11 +89,11 @@
 
         if ($type == "Trip") {
             $result = $conn->query("INSERT INTO tripreview (Reviewer, reviewTrip, stars, complaint, messages)
-                     VALUES ('1', '$ID', '$stars', '$complaint', '$rateComments')");
+                     VALUES ($user, '$ID', '$stars', '$complaint', '$rateComments')");
         }
         if ($type == "Driver") {
         $result = $conn->query("INSERT INTO driverreview (Reviewer, driverID, stars, complaint, messages)
-                     VALUES ('1', '$ID', '$stars', '$complaint', '$rateComments')");
+                     VALUES ($user, '$ID', '$stars', '$complaint', '$rateComments')");
         }
 
 
