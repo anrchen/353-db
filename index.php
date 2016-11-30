@@ -252,6 +252,19 @@
             </div>
         </a>
 
+        <!--review all the statistics-->
+        <a href="statistics_report.php" class="serviceContent">
+            <img src="Images/viewTemplate.png" class="serviceIcon">
+            <div class="serviceDetail">
+                <h1 class="serviceHeader">
+                    Review Statistics
+                </h1>
+                <span class="serviceDescription">
+                    Admin Report
+                </span>
+            </div>
+        </a>
+
 
 
         <a href="Images/admin_createPost" class="serviceContent"></a>

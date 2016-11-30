@@ -20,6 +20,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 <header class="header-basic">
     <link rel="stylesheet" type="text/css" href="assets/css/header.css">
     <link rel="stylesheet" type="text/css" href="assets/css/addPost.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
+
 
 
     <div class="header-limiter">
@@ -34,7 +36,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     </div>
 </header>
 
-<p class="success" style="text-align: center">
+
+
+<div class="match" style="text-align: center">
+    <p class="success" style="text-align: center">
 <h1>Suspend A Member</h1>
 
 <?php
@@ -50,6 +55,8 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
 
+        echo"<div class='serviceContent'>";
+
         $reviewer = $row["Reviewer"];
         $DID =  $row["driverID"];
         $reason = $row["messages"];
@@ -59,6 +66,8 @@ if ($result->num_rows > 0) {
         echo "Reason: " . $row["messages"]. "<br>";
 
         echo '<a href="action_suspend.php?subject='.$DID.'">Suspend this driver!</a><p>';
+
+        echo '<p></p></div>';
     }
 } else {
     echo "0 results";
@@ -66,7 +75,8 @@ if ($result->num_rows > 0) {
 
 ?>
 
-
+    </p>
+</div>
 
 
 </body>

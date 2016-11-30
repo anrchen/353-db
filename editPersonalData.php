@@ -40,11 +40,12 @@
 </header>
 
 
-<h1>Personal profil</h1>
+
 
 <div class="match" style="text-align: center">
 <p class="success" style="text-align: center">
 <?php
+echo "<h1>Personal profile</h1>";
 $user = $_SESSION['user'];
 
 $servername = "localhost";
@@ -64,6 +65,7 @@ if (!$result) {
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
+
         echo"<div class='serviceContent'>";
         $id = $row['id'];
         echo 'ID: '.$id;
@@ -98,8 +100,9 @@ if ($result->num_rows > 0) {
 </div>
 
 
-<h1>Profile update</h1> <h5>Please complete the following form</h5>
+
 <div class="match" style="text-align: center">
+    <h1>Profile update</h1> <h5>Please complete the following form</h5>
 <form method="get" action="action_ChangeMyData.php">
 
     <div class='serviceContent'>
