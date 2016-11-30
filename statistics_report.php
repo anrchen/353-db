@@ -109,7 +109,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
         $result = $conn->query("SELECT COUNT(*) FROM driverreview where complaint = 'true'");
         $row = $result->fetch_row();
-        echo 'Total Number of Members that got a Complaint: '. $row[0]."<br>"."<br>";
+        echo 'Total Number of Members who got a Complaint: '. $row[0]."<br>"."<br>";
 
         echo '</div>';
         ?>
