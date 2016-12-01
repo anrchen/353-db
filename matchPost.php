@@ -1,3 +1,13 @@
+<?php if(session_status()==PHP_SESSION_NONE){
+    session_start();
+}
+
+if(!isset($_SESSION['user'])){
+    header("Location: login.php");
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,17 +30,11 @@
 
         <nav>
             <?php
-            session_start();
             if(isset($_SESSION['user'])){
-                echo"
-                                <a>Welcome ".$_SESSION['userName'].
-                    ", </a>
-                                <a href=\"logout.php?logout=true\">Log out</a>
-                            ";
+                echo"<a>Welcome ".$_SESSION['userName'].", </a>
+                     <a href=\"logout.php?logout=true\">Log out</a>";
             }else{
-                echo"
-                                <a href=\"login.php\">Log in</a>
-                            ";
+                echo"<a href=\"login.php\">Log in</a>";
             }
             ?>
             <a href="#">Support</a>
@@ -98,7 +102,7 @@
                 echo "<br>Description: ".$row['Description'];
                 $city = $row["dCity"];
                 if ($row['Restriction']){
-                    $city2 = $this->conn->query("SELECT * FROM city WHERE cityName='$city'");
+                    $city2 = $conn->query("SELECT * FROM city WHERE cityName='$city'");
                     echo "<br>Restricted to drivers from the following regions: ";
                     while ($row2 = $city2->fetch_assoc()) {
                         echo $row2['citySurrounded'];

@@ -4,7 +4,7 @@ session_start();
 require_once 'dbconnect.php';
 // it will never let you open index(login) page if session is set
 if ( isset($_SESSION['user'])!="" ) {
-	header("Location: index.php");
+	header("Location: selectRole.php");
 	exit;
 }
 $error = false;
@@ -48,7 +48,7 @@ if( isset($_GET['btn-login']) ) {
 			{
 				$_SESSION['user'] = $row['MID'];
 				$_SESSION['userName'] = $row['Username'];
-				header("Location: index.php");
+				header("Location: selectRole.php");
 			}
 			else
 			{

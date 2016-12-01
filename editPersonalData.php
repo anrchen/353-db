@@ -47,16 +47,12 @@
 <?php
 echo "<h1>Personal profile</h1>";
 $user = $_SESSION['user'];
-
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "trip";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-
-
-
 $result = $conn->query("Select * FROM memberDetails
                             WHERE memberDetails.id=$user");
 if (!$result) {
@@ -121,7 +117,7 @@ if ($result->num_rows > 0) {
     <label>Province</label>
     <input type="text" name="province" id="province"  class="inputBox">
     <p></p>
-            <input type="submit" id="" value="Update">
+    <input type="submit" id="" value="Update">
 
     </div>
     <?php

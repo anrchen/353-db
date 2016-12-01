@@ -1,33 +1,51 @@
+<?php if(session_status()==PHP_SESSION_NONE){
+    session_start();
+    }
+
+    if(!isset($_SESSION['user'])){
+        header("Location: login.php");
+    }
+
+    if(isset($_GET['add'])){
+        $_SESSION['add']=$_GET['add'];
+    }
+
+    if(isset($_GET['success'])){
+        $message="Your balance has been updated!";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+        echo "<script>window.close();</script>";
+
+    }
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/header.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/nav.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv=REFRESH CONTENT=10;url=action_payAddBalance.php>
+
 </head>
 
-<body bgcolor="#add8e6">
+<body>
 
 <header class="header-basic">
+    <link rel="stylesheet" type="text/css" href="assets/css/header.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/addPost.css"/>
+
 
     <div class="header-limiter">
 
-        <h1><a href="#">Su<span>per</span></a></h1>
+        <h1><a href="index.php">Su<span>per</span></a></h1>
 
-        <nav><!--MING added -->
-            <a href="editPersonalData.php">Edit Personal Info</a>
+        <nav>
             <?php
-            session_start();
             if(isset($_SESSION['user'])){
-                echo"
-                                <a>Welcome ".$_SESSION['userName'].
-                    ", </a>
-                                <a href=\"logout.php?logout=true\">Log out</a>
-                            ";
+                echo"<a>Welcome ".$_SESSION['userName'].", </a>
+                     <a href=\"logout.php?logout=true\">Log out</a>";
             }else{
-                echo"
-                                <a href=\"login.php\">Log in</a>
-                            ";
+                echo"<a href=\"login.php\">Log in</a>";
             }
             ?>
             <a href="#">Support</a>
@@ -36,66 +54,15 @@
     </div>
 </header>
 
+<p class="success" style="text-align: center">
+    You will be redirecting to your <span style="color:orangered;">PayPal</span>
+    account in 10 seconds.
 
-<section class="community">
-
-
-    <div class="category">
-        <header class="categoryHeader">
-            <h1 class="categoryHeading">Select the amount of money you wish to add</h1>
-        </header>
-
-        <a href="addPost.php?type=onetime&role=rider" class="serviceContent">
-<!--            <img src="Images/createTemplateRider2.png" class="serviceIcon">-->
-            <div class="serviceDetail">
-                <h1 class="serviceHeader">
-                    $10 CAD
-                </h1>
-<!--                <span class="serviceDescription">-->
-<!--                                Looking for riders on your next trip? Come here!-->
-<!--                            </span>-->
-            </div>
-        </a>
-        <a href="addPost.php?type=regular&role=rider" class="serviceContent">
-<!--            <img src="Images/createTemplateRider2.png" class="serviceIcon">-->
-            <div class="serviceDetail">
-                <h1 class="serviceHeader">
-                   $20 CAD
-                </h1>
-<!--                <span class="serviceDescription">-->
-<!--                                Looking for riders on your next trip? Come here!-->
-<!--                            </span>-->
-            </div>
-        </a>
-        <a href="Images/rider_editPost" class="serviceContent">
-<!--            <img src="Images/editTemplate.png" class="serviceIcon">-->
-            <div class="serviceDetail">
-                <h1 class="serviceHeader">
-                    $50 CAD
-                </h1>
-<!--                <span class="serviceDescription">-->
-<!--                                Reschedule or relocate your trip!-->
-<!--                            </span>-->
-            </div>
-        </a>
-
-        <a href="viewPosts.php?role=rider" class="serviceContent">
-<!--            <img src="Images/viewTemplate.png" class="serviceIcon">-->
-            <div class="serviceDetail">
-                <h1 class="serviceHeader">
-                    $100 CAD
-                </h1>
-<!--                <span class="serviceDescription">-->
-<!--                                Find the details of your posts!-->
-<!--                            </span>-->
-            </div>
-        </a>
-
-    </div>
+</p>
 
 
-    <footer>
-        <p>All rights reserved</p>
-    </footer>
+
 </body>
 </html>
+
+

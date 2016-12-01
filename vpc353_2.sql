@@ -6,6 +6,8 @@ CREATE TABLE member
   Birthday int(11) NOT NULL,
   Status tinyint(1) DEFAULT 1,	/*Status:  0 = suspended, 1 = Active (Default), 2 = Inactive*/
   isAdmin BOOLEAN,
+  isDriver BOOLEAN,
+  isRider BOOLEAN,
   PRIMARY KEY (MID)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -121,6 +123,22 @@ CREATE TABLE Transactions
     ON UPDATE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
+# INSERT INTO memberdetails VALUES
+#   ('1',
+#    'mcgill',
+#    'sherbrook 3110',
+#    'Montreal', 'H2HB3B',
+#    'Quebec',
+#    '13537788'
+#   ),
+#   ('2',
+#    'concordia',
+#    'mckay 3121',
+#    'Montreal',
+#    'H3HJ5J',
+#    'Quebec',
+#    '14423478'
+#   );
 
 INSERT INTO city (cityName, citySurrounded) VALUES
   ('Brossard', 'Montreal'),
@@ -138,6 +156,8 @@ INSERT INTO member VALUES
      'DOCTOR',
      19880501,
      1,
+     1,
+     1,
      1),
 
   (  2,
@@ -145,36 +165,50 @@ INSERT INTO member VALUES
      'Dr',
      19880502,
      1,
-     1),
+     0,
+     1,
+     0),
 
   (  3,
      'Superman',
      'Mr',
      19880503,
      1,
+     1,
+     1,
      1),
+
   (  4,
      'Wonder',
      'Woman',
      19880504,
      1,
-     0),
+     1,
+     1,
+     1),
+
   (  5,
      'Ming',
      'Tsai',
      19991214,
      1,
+     0,
+     1,
      0),
   (  6,
-          'Anran',
-          'Chen',
-          19931202,
-          1,
-          0),
+     'Anran',
+     'Chen',
+     19931202,
+     1,
+     0,
+     1,
+     0),
   (  7,
      'Philip',
      'Eloy',
      19890506,
+     1,
+     0,
      1,
      0),
   (  8,
@@ -182,17 +216,23 @@ INSERT INTO member VALUES
      'Crush',
      20100101,
      1,
+     0,
+     1,
      0),
   (  9,
      'Number',
      'Nine',
      19090919,
      1,
+     0,
+     1,
      0),
   (  10,
      'Santa',
      'Claws',
      09901225,
+     1,
+     0,
      1,
      0)
       ;
