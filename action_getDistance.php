@@ -1,6 +1,11 @@
 <?php
 
+    $postID = $_SESSION['newPost'];
 
+    include_once ('connection.php');
+    $con = new Connection();
+    $sql = '';
+    $con->setQuery($sql);
 
     $dCity='New York';
     $dCity=str_replace(' ', '_', $dCity);

@@ -10,6 +10,8 @@
     $role = $_SESSION['role'];
     $MID = $_SESSION['user'];
 
+    include_once('action_getDistance.php');
+
     if($role=='rider'){
         $role=2;
         $matchedRole=3;
