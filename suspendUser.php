@@ -1,3 +1,12 @@
+<?php if(session_status()==PHP_SESSION_NONE){
+    session_start();
+}
+
+if(!isset($_SESSION['user'])){
+    header("Location: login.php");
+}
+?>
+
 <?php
 $servername = "localhost";
 $username = "root";
@@ -40,40 +49,31 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 <div class="match" style="text-align: center">
     <p class="success" style="text-align: center">
-<h1>Suspend A Member</h1>
+    <h1>Suspend A Member</h1>
 
-<?php
-echo "<h4> Here is a list of drivers who has either a complaint, or a rating of 1. </h4>";
-
-$sql = "SELECT driverID, Reviewer, messages FROM driverreview d
+    <?php
+    echo "<h4> Here is a list of drivers who has either a complaint, or a rating of 1. </h4>";
+    $sql = "SELECT driverID, Reviewer, messages FROM driverreview d
         where d.stars =1 
         OR d.complaint = true";
-
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-
-        echo"<div class='serviceContent'>";
-
-        $reviewer = $row["Reviewer"];
-        $DID =  $row["driverID"];
-        $reason = $row["messages"];
-
-        echo "Driver ID: " . $row["driverID"]. "<br>";
-        echo "Reviewer ID: " . $row["Reviewer"]. "<br>";
-        echo "Reason: " . $row["messages"]. "<br>";
-
-        echo '<a href="action_suspend.php?subject='.$DID.'">Suspend this driver!</a><p>';
-
-        echo '<p></p></div>';
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            echo"<div class='serviceContent'>";
+            $reviewer = $row["Reviewer"];
+            $DID =  $row["driverID"];
+            $reason = $row["messages"];
+            echo "Driver ID: " . $row["driverID"]. "<br>";
+            echo "Reviewer ID: " . $row["Reviewer"]. "<br>";
+            echo "Reason: " . $row["messages"]. "<br>";
+            echo '<a href="action_suspend.php?subject='.$DID.'">Suspend this driver!</a><p>';
+            echo '<p></p></div>';
+        }
+    } else {
+        echo "0 results";
     }
-} else {
-    echo "0 results";
-}
-
-?>
+    ?>
 
     </p>
 </div>
@@ -81,4 +81,3 @@ if ($result->num_rows > 0) {
 
 </body>
 </html>
-
