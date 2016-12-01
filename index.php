@@ -82,7 +82,7 @@
             <img src="Images/createTemplateRider2.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
-                    Create a one-time trip post
+                    Create A One-Time Trip
                 </h1>
                 <span class="serviceDescription">
                                 Looking for riders on your next trip? Come here!
@@ -94,7 +94,7 @@
             <img src="Images/createTemplateRider2.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
-                    Create a regular trip post
+                    Create A Regular Trip
                 </h1>
                 <span class="serviceDescription">
                                 Looking for riders on your next trip? Come here!
@@ -105,10 +105,21 @@
             <img src="Images/editTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
-                    Edit a post
+                    Edit Your Post
                 </h1>
                 <span class="serviceDescription">
                                 Reschedule or relocate your trip!
+                            </span>
+            </div>
+        </a>
+        <a href="delete_Personal_Post.php" class="serviceContent">
+            <img src="Images/editTemplate.png" class="serviceIcon">
+            <div class="serviceDetail">
+                <h1 class="serviceHeader">
+                    Delete Your Posts
+                </h1>
+                <span class="serviceDescription">
+                                Delete and then re-create!
                             </span>
             </div>
         </a>
@@ -116,7 +127,7 @@
             <img src="Images/viewTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
-                    View your posts
+                    View Your Posts
                 </h1>
                 <span class="serviceDescription">
                                 Find the details of your posts!
@@ -187,7 +198,7 @@
             <img src="Images/createTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
-                    Create a one-time trip post
+                    Create A One-Time Trip
                 </h1>
                 <span class="serviceDescription">
                                 Looking for riders on your next trip? Come here!
@@ -198,7 +209,7 @@
             <img src="Images/createTemplateRider2.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
-                    Create a regular trip post
+                    Create A Regular Trip
                 </h1>
                 <span class="serviceDescription">
                                 Looking for riders on your next trip? Come here!
@@ -209,10 +220,21 @@
             <img src="Images/editTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
-                    Edit a post
+                    Edit Your Posts
                 </h1>
                 <span class="serviceDescription">
                                 Reschedule or relocate your trip!
+                            </span>
+            </div>
+        </a>
+        <a href="delete_Personal_Post.php" class="serviceContent">
+            <img src="Images/editTemplate.png" class="serviceIcon">
+            <div class="serviceDetail">
+                <h1 class="serviceHeader">
+                    Delete Your Posts
+                </h1>
+                <span class="serviceDescription">
+                                Delete and then re-create!
                             </span>
             </div>
         </a>
@@ -220,7 +242,7 @@
             <img src="Images/viewTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
-                    View your posts
+                    View Your Posts
                 </h1>
                 <span class="serviceDescription">
                                 Find the details of your posts!
@@ -269,7 +291,7 @@
             <img src="Images/viewTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
-                    Delete Post
+                    Delete Posts
                 </h1>
                 <span class="serviceDescription">
                     Delete a post by its ID here!

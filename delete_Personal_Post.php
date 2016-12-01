@@ -1,11 +1,4 @@
-<?php if(session_status()==PHP_SESSION_NONE){
-    session_start();
-}
 
-if(!isset($_SESSION['user'])){
-    header("Location: login.php");
-}
-?>
 
 <!DOCTYPE html>
 <html>
@@ -23,13 +16,13 @@ if(!isset($_SESSION['user'])){
     <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
 
 
-
     <div class="header-limiter">
 
         <h1><a href="index.php">Su<span>per</span></a></h1>
 
         <nav>
             <?php
+            session_start();
             if(isset($_SESSION['user'])){
                 echo"
                                 <a>Welcome ".$_SESSION['userName'].
@@ -41,6 +34,7 @@ if(!isset($_SESSION['user'])){
                                 <a href=\"login.php\">Log in</a>
                             ";
             }
+            $user = $_SESSION['user'];
             ?>
             <a href="#">Support</a>
             <a href="#">About</a>
@@ -48,31 +42,47 @@ if(!isset($_SESSION['user'])){
     </div>
 </header>
 
-
-
 <div class="match" style="text-align: center">
     <p class="success" style="text-align: center">
-    <h2>Delete Posts by Trip Number</h2>
-<?php
-echo"<div class='serviceContent'>";
-$getMyVar = $_GET['subject'];
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "trip";
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-$result = $conn->query("DELETE FROM trip
-                            WHERE trip.tid=$getMyVar");
-echo 'Successfully deleted. <p>';
-echo '<a href="index.php">Go Back to Homepage.</a><br>';
 
-echo 'Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help';
-echo '<p></p></div>';
-?>
+
+        <?php
+        echo "<h1>Delete Posts by Trip Number</h1>";
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "trip";
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+
+        $sql = "SELECT * FROM trip where authorID='$user'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+
+                echo"<div class='serviceContent'>";
+                $TID =  $row["TID"];
+                $dCity = $row['dCity'];
+                $aCity = $row['aCity'];
+
+                echo "Trip ID: " . $row["TID"]. "<br>";
+                echo "Departure City: " . $row["dCity"]. "<br>";
+                echo "Arrival City: " . $row["aCity"]. "<br>";
+                echo '<a href="action_delete.php?subject='.$TID.'">Yes, delete!</a>';
+                echo '</div>';
+            }
+        } else {
+            echo "0 results";
+        }
+
+        ?>
+
     </p>
 </div>
+
 
 </body>
 </html>

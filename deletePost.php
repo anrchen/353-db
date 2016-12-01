@@ -78,8 +78,7 @@ if(!isset($_SESSION['user'])){
                 echo "Author ID: " . $row["authorID"]. "<br>";
                 echo "Departure City: " . $row["dCity"]. "<br>";
                 echo "Arrival City: " . $row["aCity"]. "<br>";
-                echo '<a href="action_delete.php?subject='.$TID.'">Yes, delete!</a>
-                ';
+                echo '<a href="action_delete.php?subject='.$TID.'">Yes, delete!</a>';
                 echo '</div>';
             }
         } else {
