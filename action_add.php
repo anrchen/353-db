@@ -68,8 +68,8 @@ if(!isset($_SESSION['user'])){
                 $dDate=$_GET['date'];
                 $category = 'onetime';
             }
-            $dCity=str_replace(' ', '_', $_GET['dCity']);
-            $aCity=str_replace(' ', '_', $_GET['aCity']);
+            $dCity=$_GET['dCity'];
+            $aCity=$_GET['aCity'];
             $dPostal=$_GET['dPostal'];
             $aPostal=$_GET['aPostal'];
             $Description=$_GET['formBody'];

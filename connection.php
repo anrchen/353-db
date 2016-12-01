@@ -22,7 +22,8 @@ class Connection{
                       <option selected value='default'>$selected</option>>";
         while ($row = $result->fetch_assoc()) {
             $id = $row[$attribute];
-            echo '<option value='.$id.'>'.$id.'</option>';
+            $value=str_replace(' ', '_', $id);
+            echo '<option value='.$value.'>'.$id.'</option>';
         }
         echo "</select>";
     }

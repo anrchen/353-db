@@ -4,8 +4,11 @@
 
     include_once ('connection.php');
     $con = new Connection();
-    $sql = '';
+    $sql = "SELECT * FROM trip WHERE TID=$postID";
     $con->setQuery($sql);
+    $con->execute();
+    $result=$con->getResult();
+
 
     $dCity='New York';
     $dCity=str_replace(' ', '_', $dCity);
