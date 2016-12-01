@@ -75,6 +75,7 @@ if(!isset($_SESSION['user'])){
                 if ($row['isAdmin'] == 1) {
                     $admin = true;
                     $_SESSION['adminCode']='7hajqnnk00i6isp3gr4q60tncc';
+                    $_SESSION['isAdmin']='admin';
                 }
             }
         }

@@ -279,7 +279,7 @@
     ?>
 
     <?php
-    if((isset($_SESSION['role'])) and $_SESSION['role']='admin'
+    if((isset($_SESSION['isAdmin'])) and $_SESSION['isAdmin']='admin'
         and isset($_SESSION['adminCode']) and $_SESSION['adminCode']='7hajqnnk00i6isp3gr4q60tncc'){
     ?>
     <div class="category">
