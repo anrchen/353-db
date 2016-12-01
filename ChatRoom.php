@@ -19,10 +19,11 @@ $Name = $_SESSION['userName'];
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
+
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+    <link rel="stylesheet" type="text/css" href="assets/css/header.css">
     <title>Chat</title>
 
     <link rel="stylesheet" href="style.css" type="text/css" />
@@ -77,6 +78,31 @@ $Name = $_SESSION['userName'];
     </script>
 
 </head>
+
+
+<header class="header-basic">
+
+    <div class="header-limiter">
+
+        <h1><a href="index.php">Su<span>per</span></a></h1>
+
+        <nav>
+            <?php
+            if(isset($_SESSION['user'])){
+                echo"<a>Welcome ".$_SESSION['userName'].", </a>"?>
+              <a href="logout.php?logout=true">Log out</a>;
+            <?php
+
+            }else{
+                echo"<a href=\"login.php\">Log in</a>";
+            }?>
+            <a href="editPersonalData.php">Edit Personal Info</a>
+
+            <a href="#">Support</a>
+            <a href="#">About</a>
+        </nav>
+    </div>
+</header>
 
 <body onload="setInterval('chat.update()', 1000)">
 
