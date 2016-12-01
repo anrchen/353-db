@@ -123,7 +123,7 @@ if(!isset($_SESSION['user'])){
           }
 
 
-          echo "<br>POSTED BY DRIVERS: <br>";
+          echo "<br>POSTED BY RIDERS: <br>";
           if (mysql_num_rows($result2) > 0) {
               // output data of each row
               while($rowT = mysql_fetch_assoc($result2)) {
