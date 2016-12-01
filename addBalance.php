@@ -35,16 +35,53 @@ if(!isset($_SESSION['user'])){
                                 <a href=\"login.php\">Log in</a>
                             ";
             }
+            $user = $_SESSION['user'];
+
             ?>
             <a href="#">Support</a>
             <a href="#">About</a>
         </nav>
     </div>
 </header>
+<div class="match" style="text-align: center">
+    <p class="success" style="text-align: center">
+<?php
+
+echo '<h1> My Balance </h1>';
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "trip";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 
+$sql = "SELECT Balance FROM account where MID='$user'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+
+        echo"<div class='serviceContent'>";
+        $Balance =  $row["Balance"];
+
+
+        echo "<h2><center> Your Current Balance: " . $row["Balance"]. "</center></h2>";
+
+
+        echo '</div>';
+    }
+} else {
+    echo "No Balance";
+}
+
+?>
+    </p>
+</div>
 <section class="community">
-
+    <div class="match" style="text-align: center">
+        <p class="success" style="text-align: center">
 
     <div class="category">
         <header class="categoryHeader">
@@ -83,7 +120,8 @@ if(!isset($_SESSION['user'])){
         </a>
 
     </div>
-
+        </p>
+    </div>
 
     <footer>
         <p>All rights reserved</p>

@@ -108,7 +108,7 @@ CREATE TABLE driverreview
     ON UPDATE CASCADE
 )ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
-
+/* We probably dont need transactions
 CREATE TABLE Transactions
 (
   id int(11) NOT NULL AUTO_INCREMENT,
@@ -122,6 +122,7 @@ CREATE TABLE Transactions
     ON DELETE CASCADE
     ON UPDATE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+*/
 
 # INSERT INTO memberdetails VALUES
 #   ('1',
