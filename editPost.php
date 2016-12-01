@@ -28,20 +28,11 @@ if(!isset($_SESSION['user'])){
 
         <h1><a href="index.php">Su<span>per</span></a></h1>
 
-<<<<<<< HEAD
+
         <nav>
             <?php
-            session_start();
             if(isset($_SESSION['user'])){
                 echo"
-=======
-            <h1><a href="index.php">Su<span>per</span></a></h1>
-
-            <nav>
-                <?php
-                if(isset($_SESSION['user'])){
-                    echo"
->>>>>>> origin/feature
                                 <a>Welcome ".$_SESSION['userName'].
                     ", </a>
                                 <a href=\"logout.php?logout=true\">Log out</a>
@@ -109,34 +100,3 @@ if(!isset($_SESSION['user'])){
 </div>
 
 
-
-
-
-
-</body>
-</html>
-
-<<<<<<< HEAD
-=======
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "trip";
-
-try {
-    $conn = new PDO("mysql:host=$servername;$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//        $sql = "INSERT INTO SAILORS (sname, rating, age)
-//                VALUES ('John', '8', '18')";
-//        $conn->exec($sql);
-//        echo "New record created successfully";
-}
-catch(PDOException $e)
-{
-    echo "Connection failed: " . $e->getMessage();
-}
-
-$conn=null;
-?>
->>>>>>> origin/feature
