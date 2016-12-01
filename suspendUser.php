@@ -39,7 +39,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
         <nav>
             <?php
-            session_start();
+            
             if(isset($_SESSION['user'])){
                 echo"
                                 <a>Welcome ".$_SESSION['userName'].
