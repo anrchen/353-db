@@ -297,7 +297,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Coding Cage - Login & Registration System</title>
+<title>Super Registration page</title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 </head>
@@ -312,7 +312,7 @@
     	<div class="col-md-12">
 
         	<div class="form-group">
-            	<h2 class="">Sign Up.</h2>
+            	<h2 class="">Sign Up for Super</h2>
             </div>
 
         	<div class="form-group">
