@@ -512,3 +512,6 @@ INSERT INTO memberdetails VALUES
    'New York',
    '99399989'
   );
+
+CREATE TRIGGER `clearBalance` AFTER UPDATE ON `member`
+FOR EACH ROW UPDATE account a SET a.balance = 0 WHERE a.MID = NEW.MID AND NEW.Status = 0
