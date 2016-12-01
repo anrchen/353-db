@@ -318,7 +318,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
      'Driving around in New York',
      'Driving around in New York',
      'normal',
-     0
+     1
    ),
    (
      5,
@@ -360,7 +360,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
      'Go to Mcgill.',
      'I am going to concordia university downtown, from dorval.',
      'specialized',
-     1),
+     0),
    (
      9,
      '11/29/2016',
@@ -373,7 +373,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
      'Dorval',
      'I want to see Dorval Airport, again.',
      'specialized',
-     1),
+     0),
 
    (
      10,
@@ -387,7 +387,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
      'To New York',
      'Who is coming with me?',
      'normal',
-     0)
+     1)
 ;
 
 INSERT INTO memberdetails VALUES
