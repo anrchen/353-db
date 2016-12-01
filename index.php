@@ -141,7 +141,7 @@
                     Matching System
                 </h1>
                 <span class="serviceDescription">
-                                Match posts created by you!
+                                Match your posts!
                             </span>
             </div>
         </a>

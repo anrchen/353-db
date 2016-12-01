@@ -17,7 +17,7 @@ class Connection{
         $this->query=$query;
     }
     public function displaySelectList($attribute, $table, $selected, $name){
-        $result = $this->conn->query("SELECT $attribute FROM $table");
+        $result = $this->conn->query("SELECT DISTINCT $attribute FROM $table");
         echo "<select class='city' name=$name> 
                       <option selected value='default'>$selected</option>>";
         while ($row = $result->fetch_assoc()) {

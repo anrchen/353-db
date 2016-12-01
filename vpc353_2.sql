@@ -32,7 +32,7 @@ CREATE TABLE city
 (
   cityName varchar(10) NOT NULL,
   citySurrounded varchar(20) DEFAULT NULL,
-  PRIMARY KEY (cityName)
+  province varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE trip
@@ -141,15 +141,43 @@ CREATE TABLE Transactions
 #    '14423478'
 #   );
 
-INSERT INTO city (cityName, citySurrounded) VALUES
-  ('Brossard', 'Montreal'),
-  ('Dorval', 'Montreal'),
-  ('Laval', 'Montreal'),
-  ('Montreal', 'Toronto'),
-  ('Quebec', 'Montreal'),
-  ('Sherbrooke', 'Montreal'),
-  ('Toronto', 'Montreal'),
-  ('WestIsland', 'Montreal');
+INSERT INTO city (cityName, citySurrounded, province) VALUES
+  ('Montreal', 'Ottawa', 'QC'),
+  ('Montreal', 'Waterloo', 'QC'),
+  ('Montreal', 'Toronto', 'QC'),
+  ('Montreal', 'Gatineau', 'QC'),
+  ('Montreal', 'New York', 'QC'),
+
+  ('Ottawa', 'Montreal', 'ON'),
+  ('Ottawa', 'Waterloo', 'ON'),
+  ('Ottawa', 'Toronto', 'ON'),
+  ('Ottawa', 'Gatineau', 'ON'),
+  ('Ottawa', 'New York', 'ON'),
+
+  ('Waterloo', 'Montreal', 'QC'),
+  ('Waterloo', 'Ottawa', 'QC'),
+  ('Waterloo', 'Toronto', 'QC'),
+  ('Waterloo', 'Gatineau', 'QC'),
+  ('Waterloo', 'New York', 'QC'),
+
+  ('Gatineau', 'Montreal', 'QC'),
+  ('Gatineau', 'Ottawa', 'QC'),
+  ('Gatineau', 'Toronto', 'QC'),
+  ('Gatineau', 'Waterloo', 'QC'),
+  ('Gatineau', 'New York', 'QC'),
+
+  ('New York', 'Montreal', 'NY'),
+  ('New York', 'Ottawa', 'NY'),
+  ('New York', 'Toronto', 'NY'),
+  ('New York', 'Waterloo', 'NY'),
+  ('New York', 'Gatineau', 'NY'),
+
+  ('Toronto', 'Montreal', 'ON'),
+  ('Toronto', 'Waterloo', 'ON'),
+  ('Toronto', 'Ottawa', 'ON'),
+  ('Toronto', 'New York', 'ON'),
+  ('Toronto', 'Gatineau', 'ON');
+
 
 INSERT INTO member VALUES
   (  1,     /*admin*/
@@ -295,7 +323,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
   (
     1,
     '11/29/2016',
-    'Dorval',
+    'New_York',
     'Montreal',
     'H4V2N2',
     'H4V2N2',
@@ -309,7 +337,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
    1,
    '11/29/2016',
    'Montreal',
-   'Dorval',
+   'New_York',
    'H4V4N4',
    'H4V4N4',
    'I love Dorval.',
@@ -323,7 +351,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
     2,
     '11/29/2016',
     'Montreal',
-    'Dorval',
+    'Gatineau',
     'H4B2N2',
     'H4B2N2',
     'Go from Montreal to Dorval',
@@ -337,7 +365,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
      3,
      '11/28/2016',
      'Montreal',
-     'Dorval',
+     'Quebec',
      'H4V2N2',
      'H4V2N2',
      'Go from Montreal to Dorval',
@@ -350,8 +378,8 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
    (
      4,
      '11/30/2016',
-     'New York',
-     'New York',
+     'New_York',
+     'New_York',
      'H4V2N3',
      'H5V2N2',
      'Driving around in New York',
@@ -364,7 +392,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
    (
      5,
      '11/30/2016',
-     'New York',
+     'New_York',
      'Montreal',
      'H5KJ6J',
      'H4V2N2',
@@ -379,7 +407,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
      6,
      '11/30/2016',
      'Montreal',
-     'New York',
+     'New_York',
      'H8IO3E',
      'K4JH3W',
      'Visiting New York',
@@ -392,7 +420,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
    (
      8,
      '11/29/2016',
-     'Dorval',
+     'New_York',
      'Montreal',
      'H4V2N2',
      'H4V2N2',
@@ -406,7 +434,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
      9,
      '11/29/2016',
      'Montreal',
-     'Dorval',
+     'Ottawa',
      'H4V4N4',
      'H4V4N4',
      'I live in Dorval.',
@@ -419,7 +447,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
    (
      10,
      '11/29/2016',
-     'New York',
+     'Toronto',
      'New York',
      'H4B2N2',
      'H4B2N2',
