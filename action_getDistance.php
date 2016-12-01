@@ -38,7 +38,7 @@
     $aCity=str_replace(' ', '_', $aCity);
 
     $distance=10;
-    if($dCity==$aCity){
+    if($dCity!=$aCity){
         $key='AIzaSyCfVhB-ilQZR9XvTCSGtpUE7ekWI6hXlOE';
         $url = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins='.$dCity.'+'.$dProvince.'&destinations='.$aCity.'+'.$aProvince.'&key='.$key;
 
