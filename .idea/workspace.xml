@@ -31,13 +31,48 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="suspendUser.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="suspendUser.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/suspendUser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
+            <state relative-caret-position="802">
+              <caret line="58" column="10" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
               <folding>
-                <marker date="1480617646993" expanded="true" signature="1237:1340" ph="SELECT drive... driverreview" />
+                <marker date="1480619930891" expanded="true" signature="1724:1827" ph="SELECT drive... driverreview" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="statistics_report.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/statistics_report.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="726">
+              <caret line="48" column="10" selection-start-line="25" selection-start-column="4" selection-end-line="48" selection-end-column="10" />
+              <folding>
+                <marker date="1480548574757" expanded="true" signature="1537:1564" ph="SELECT COUNT... member" />
+                <marker date="1480548574757" expanded="true" signature="1715:1757" ph="SELECT COUNT... member" />
+                <marker date="1480548574757" expanded="true" signature="1903:1945" ph="SELECT COUNT... member" />
+                <marker date="1480548574757" expanded="true" signature="2093:2135" ph="SELECT COUNT... member" />
+                <marker date="1480548574757" expanded="true" signature="2284:2327" ph="SELECT COUNT... member" />
+                <marker date="1480548574757" expanded="true" signature="2472:2515" ph="SELECT COUNT... member" />
+                <marker date="1480548574757" expanded="true" signature="2660:2716" ph="SELECT COUNT... memberDetails" />
+                <marker date="1480548574757" expanded="true" signature="2874:2929" ph="SELECT COUNT... memberDetails" />
+                <marker date="1480548574757" expanded="true" signature="3086:3142" ph="SELECT COUNT... memberDetails" />
+                <marker date="1480548574757" expanded="true" signature="3300:3360" ph="SELECT COUNT... memberDetails" />
+                <marker date="1480548574757" expanded="true" signature="3523:3579" ph="SELECT COUNT... memberDetails" />
+                <marker date="1480548574757" expanded="true" signature="3746:3807" ph="SELECT COUNT... driverreview" />
+                <marker date="1480548574757" expanded="true" signature="3969:4027" ph="SELECT COUNT... driverreview" />
+                <marker date="1480548574757" expanded="true" signature="4411:4436" ph="SELECT COUNT... trip" />
+                <marker date="1480548574757" expanded="true" signature="4561:4614" ph="SELECT COUNT... trip" />
+                <marker date="1480548574757" expanded="true" signature="4747:4796" ph="SELECT COUNT... trip" />
+                <marker date="1480548574757" expanded="true" signature="4933:4983" ph="SELECT COUNT... trip" />
+                <marker date="1480548574757" expanded="true" signature="5118:5168" ph="SELECT COUNT... trip" />
+                <marker date="1480548574757" expanded="true" signature="5305:5355" ph="SELECT COUNT... trip" />
+                <marker date="1480548574757" expanded="true" signature="5501:5551" ph="SELECT COUNT... trip" />
+                <marker date="1480548574757" expanded="true" signature="5695:5751" ph="SELECT COUNT... trip" />
+                <marker date="1480548574757" expanded="true" signature="5888:5939" ph="SELECT COUNT... trip" />
+                <marker date="1480548574757" expanded="true" signature="6072:6131" ph="SELECT COUNT... tripreview" />
+                <marker date="1480548574757" expanded="true" signature="6279:6335" ph="SELECT COUNT... tripreview" />
               </folding>
             </state>
           </provider>
@@ -99,7 +134,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addBalance.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="addBalance.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/addBalance.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="362">
@@ -165,7 +200,6 @@
         <option value="$PROJECT_DIR$/deletePost.php" />
         <option value="$PROJECT_DIR$/ratingSystem.php" />
         <option value="$PROJECT_DIR$/assets/css/style.css" />
-        <option value="$PROJECT_DIR$/suspendUser.php" />
         <option value="$PROJECT_DIR$/viewPosts.php" />
         <option value="$PROJECT_DIR$/searchPost.php" />
         <option value="$PROJECT_DIR$/dbconnect.php" />
@@ -180,6 +214,7 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/vpc353_2.sql" />
         <option value="$PROJECT_DIR$/addBalance.php" />
+        <option value="$PROJECT_DIR$/suspendUser.php" />
       </list>
     </option>
   </component>
@@ -373,7 +408,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1706000" />
+    <option name="totallyTimeSpent" value="2116000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -418,7 +453,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/endPost.php" />
     <entry file="file://$PROJECT_DIR$/register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -738,16 +772,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/suspendUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
-          <folding>
-            <marker date="1480617646993" expanded="true" signature="1237:1340" ph="SELECT drive... driverreview" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/viewPosts.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
@@ -819,6 +843,49 @@
             <element signature="n#style#0;n#p#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <marker date="1480619518916" expanded="true" signature="1471:1516" ph="SELECT Balan... account" />
             <marker date="1480619518916" expanded="true" signature="3279:3328" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/statistics_report.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="48" column="10" selection-start-line="25" selection-start-column="4" selection-end-line="48" selection-end-column="10" />
+          <folding>
+            <marker date="1480548574757" expanded="true" signature="1537:1564" ph="SELECT COUNT... member" />
+            <marker date="1480548574757" expanded="true" signature="1715:1757" ph="SELECT COUNT... member" />
+            <marker date="1480548574757" expanded="true" signature="1903:1945" ph="SELECT COUNT... member" />
+            <marker date="1480548574757" expanded="true" signature="2093:2135" ph="SELECT COUNT... member" />
+            <marker date="1480548574757" expanded="true" signature="2284:2327" ph="SELECT COUNT... member" />
+            <marker date="1480548574757" expanded="true" signature="2472:2515" ph="SELECT COUNT... member" />
+            <marker date="1480548574757" expanded="true" signature="2660:2716" ph="SELECT COUNT... memberDetails" />
+            <marker date="1480548574757" expanded="true" signature="2874:2929" ph="SELECT COUNT... memberDetails" />
+            <marker date="1480548574757" expanded="true" signature="3086:3142" ph="SELECT COUNT... memberDetails" />
+            <marker date="1480548574757" expanded="true" signature="3300:3360" ph="SELECT COUNT... memberDetails" />
+            <marker date="1480548574757" expanded="true" signature="3523:3579" ph="SELECT COUNT... memberDetails" />
+            <marker date="1480548574757" expanded="true" signature="3746:3807" ph="SELECT COUNT... driverreview" />
+            <marker date="1480548574757" expanded="true" signature="3969:4027" ph="SELECT COUNT... driverreview" />
+            <marker date="1480548574757" expanded="true" signature="4411:4436" ph="SELECT COUNT... trip" />
+            <marker date="1480548574757" expanded="true" signature="4561:4614" ph="SELECT COUNT... trip" />
+            <marker date="1480548574757" expanded="true" signature="4747:4796" ph="SELECT COUNT... trip" />
+            <marker date="1480548574757" expanded="true" signature="4933:4983" ph="SELECT COUNT... trip" />
+            <marker date="1480548574757" expanded="true" signature="5118:5168" ph="SELECT COUNT... trip" />
+            <marker date="1480548574757" expanded="true" signature="5305:5355" ph="SELECT COUNT... trip" />
+            <marker date="1480548574757" expanded="true" signature="5501:5551" ph="SELECT COUNT... trip" />
+            <marker date="1480548574757" expanded="true" signature="5695:5751" ph="SELECT COUNT... trip" />
+            <marker date="1480548574757" expanded="true" signature="5888:5939" ph="SELECT COUNT... trip" />
+            <marker date="1480548574757" expanded="true" signature="6072:6131" ph="SELECT COUNT... tripreview" />
+            <marker date="1480548574757" expanded="true" signature="6279:6335" ph="SELECT COUNT... tripreview" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/suspendUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="802">
+          <caret line="58" column="10" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
+          <folding>
+            <marker date="1480619930891" expanded="true" signature="1724:1827" ph="SELECT drive... driverreview" />
           </folding>
         </state>
       </provider>
