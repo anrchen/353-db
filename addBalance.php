@@ -20,7 +20,7 @@ if(!isset($_SESSION['user'])){
 
     <div class="header-limiter">
 
-        <h1><a href="#">Su<span>per</span></a></h1>
+        <h1><a href="index.php">Su<span>per</span></a></h1>
 
         <nav>
             <?php
