@@ -99,7 +99,7 @@ if ($result->num_rows > 0) {
 
 <div class="match" style="text-align: center">
     <h1>Profile update</h1> <h5>Please complete the following form</h5>
-<form method="get" action="action_ChangeMyData.php">
+<form method="get" action="action_changeData.php">
 
     <div class='serviceContent'>
     <label>Address1</label>

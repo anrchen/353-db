@@ -151,7 +151,7 @@ INSERT INTO city (cityName, citySurrounded) VALUES
   ('WestIsland', 'Montreal');
 
 INSERT INTO member VALUES
-  (  1,
+  (  1,     /*admin*/
      'DRAGON',
      'DOCTOR',
      19880501,
@@ -169,7 +169,7 @@ INSERT INTO member VALUES
      1,
      0),
 
-  (  3,
+  (  3,     /*admin*/
      'Superman',
      'Mr',
      19880503,
@@ -178,7 +178,7 @@ INSERT INTO member VALUES
      1,
      1),
 
-  (  4,
+  (  4,     /*admin*/
      'Wonder',
      'Woman',
      19880504,

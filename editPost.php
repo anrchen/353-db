@@ -42,6 +42,13 @@ if(!isset($_SESSION['user'])){
                                 <a href=\"login.php\">Log in</a>
                             ";
             }
+            $role = $_SESSION['role'];
+            if($role=='rider'){
+                $role=0;
+            }else{
+                $role=1;
+            }
+
             ?>
             <a href="#">Support</a>
             <a href="#">About</a>
@@ -62,13 +69,16 @@ if(!isset($_SESSION['user'])){
         $username = "root";
         $password = "";
         $dbname = "trip";
+
+
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
 
 
 
         $result = $conn->query("Select * FROM trip
-                            WHERE authorID=$user");
+                            WHERE authorID=$user
+                            AND role=$role");
         if (!$result) {
             trigger_error('Invalid query: ' . $conn->error);
         }

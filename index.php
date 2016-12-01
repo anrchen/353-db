@@ -101,7 +101,7 @@
                             </span>
             </div>
         </a>
-        <a href="editPost.php" class="serviceContent">
+        <a href="editPost.php?role=rider" class="serviceContent">
             <img src="Images/editTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
@@ -112,7 +112,7 @@
                             </span>
             </div>
         </a>
-        <a href="delete_Personal_Post.php" class="serviceContent">
+        <a href="delete_Personal_Post.php?role=rider" class="serviceContent">
             <img src="Images/editTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
@@ -146,7 +146,7 @@
             </div>
         </a>
 
-        <a href="ratingSystem.php" class="serviceContent">
+        <a href="ratingSystem.php?role=rider" class="serviceContent">
             <img src="Images/rating.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
