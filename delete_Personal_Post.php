@@ -35,6 +35,13 @@
                             ";
             }
             $user = $_SESSION['user'];
+            $role = $_SESSION['role'];
+            if($role=='rider'){
+                $role=0;
+            }else{
+                $role=1;
+            }
+
             ?>
             <a href="#">Support</a>
             <a href="#">About</a>
@@ -56,7 +63,7 @@
         $conn = new mysqli($servername, $username, $password, $dbname);
 
 
-        $sql = "SELECT * FROM trip where authorID='$user'";
+        $sql = "SELECT * FROM trip where authorID='$user' AND role='$role'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -77,6 +84,7 @@
         } else {
             echo "0 results";
         }
+
 
         ?>
 

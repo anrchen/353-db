@@ -52,10 +52,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     <h1>Suspend A Member</h1>
 
     <?php
-    echo "<h4> Here is a list of drivers who has either a complaint, or a rating of 1. </h4>";
-    $sql = "SELECT driverID, Reviewer, messages FROM driverreview d
-        where d.stars =1 
-        OR d.complaint = true";
+    echo "<h4> Here is a list of drivers who has either received a complaint, <br> or have a rating of 1. </h4>";
+    $sql = "SELECT driverID, Reviewer, messages FROM driverreview 
+        where stars =1 
+        OR complaint = 0";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         // output data of each row

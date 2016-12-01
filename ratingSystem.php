@@ -53,7 +53,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 <div class="match" style="text-align: center">
     <p class="success" style="text-align: center">
-    <h1>Rate Your Driver</h1>
+    <h1>Rate Your Member</h1>
 <?php
 $user = $_SESSION['user'];
 // Username is now used and added, please fix the query
