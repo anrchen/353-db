@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['user'])){
+    header("Location: login.php");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +25,7 @@
 
         <nav>
             <?php
+
                   include_once 'dbconnect.php';
 
                     $servername = "localhost";
@@ -26,19 +33,13 @@
                     $password = "";
                     $dbname = "trip";
 
-					
-					    if(!isset($_SESSION['user'])){
-							header("Location: login.php");
-						}
+
                     $conn = new mysqli($servername, $username, $password, $dbname);
 
                     // Check connection
                     if ($conn->connect_error) {
                         die("Connection failed: " . $conn->connect_error);
                     }
-
-            session_start();
-            include_once ('connection.php');
 
             if(isset($_SESSION['user'])){
                 echo"
