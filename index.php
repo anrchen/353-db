@@ -57,7 +57,7 @@
           </select>
       </div>
 -->
-      <input type="text" class="nav" name="search" placeholder="Search all posts by City Name">
+      <input type="text" class="nav" name="search" placeholder="Search all posts by City Name (use _ instead of spaces)">
       <!-- <input type="submit" id="DoSearch" value="SEARCH FOR POST" align="right"> -->
 
 
@@ -170,6 +170,18 @@
             </div>
         </a>
 
+        <a href="ChatRoom.php" class="serviceContent">
+            <img src="Images/editTemplate.png" class="serviceIcon">
+            <div class="serviceDetail">
+                <h1 class="serviceHeader">
+                    Chatroom
+                </h1>
+                <span class="serviceDescription">
+                    Access the Chatroom to chat with other super users
+                </span>
+            </div>
+        </a>
+
         <a href="selectRole.php" class="serviceContent">
             <img src="Images/switchRole.png" class="serviceIcon">
             <div class="serviceDetail">
@@ -262,6 +274,18 @@
             </div>
         </a>
 
+        <a href="ChatRoom.php" class="serviceContent">
+            <img src="Images/editTemplate.png" class="serviceIcon">
+            <div class="serviceDetail">
+                <h1 class="serviceHeader">
+                    Chatroom
+                </h1>
+                <span class="serviceDescription">
+                    Access the Chatroom to chat with other super users
+                </span>
+            </div>
+        </a>
+
         <a href="selectRole.php" class="serviceContent">
             <img src="Images/switchRole.png" class="serviceIcon">
             <div class="serviceDetail">
@@ -323,6 +347,18 @@
                 </span>
             </div>
         </a>
+
+              <a href="ChatRoom.php" class="serviceContent">
+                  <img src="Images/editTemplate.png" class="serviceIcon">
+                  <div class="serviceDetail">
+                      <h1 class="serviceHeader">
+                          Chatroom
+                      </h1>
+                      <span class="serviceDescription">
+                          Access the Chatroom to chat with other super users
+                      </span>
+                  </div>
+              </a>
 
         <a href="selectRole.php" class="serviceContent">
             <img src="Images/switchRole.png" class="serviceIcon">
