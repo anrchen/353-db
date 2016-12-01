@@ -24,7 +24,7 @@
             session_start();
             if(isset($_SESSION['user'])){
                 echo"
-                                <a>Welcome ".$_SESSION['userName'].
+                                <a>Welcome ".$_SESSION['user'].
                     ", </a>
                                 <a href=\"logout.php?logout=true\">Log out</a>
                             ";
@@ -33,39 +33,78 @@
                                 <a href=\"login.php\">Log in</a>
                             ";
             }
+            $user = $_SESSION['user'];
             ?>
-            <a href="#">Support</a>
+            <a href="#">Log in</a>
             <a href="#">About</a>
         </nav>
     </div>
 </header>
 
 
-
 <div class="match" style="text-align: center">
     <p class="success" style="text-align: center">
-    <h2>Delete Posts by Trip Number</h2>
 <?php
 echo"<div class='serviceContent'>";
-$getMyVar = $_GET['subject'];
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "trip";
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-$result = $conn->query("DELETE FROM trip
-                            WHERE trip.tid=$getMyVar");
-echo 'Successfully deleted. <p>';
-echo '<a href="index.php">Go Back to Homepage.</a><br>';
 
-echo 'Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help';
+
+$TID=$_GET['TID'];
+$dCity=$_GET['dCity'];
+$aCity=$_GET['aCity'];
+$dPostal=$_GET['dPostal'];
+$aPostal=$_GET['aPostal'];
+$Title=$_GET['title'];
+$desc=$_GET['desc'];
+
+
+
+
+echo "My New Updated Result<P>";
+echo "TID: " .$TID;
+echo "<P>";
+echo "Departure City: " .$dCity;
+echo "<P>";
+echo "Arrival City: " .$aCity;
+echo "<P>";
+echo "Departure Postal Code: " .$dPostal;
+echo "<P>";
+echo "Arrival Postal Code: " . $aPostal ;
+echo "<P>";
+echo "Title: " .$Title;
+echo "<P>";
+echo "Description: " .$desc;
+echo "<P>";
+
+
+    $result = $conn->query("UPDATE trip
+                                SET dCity = '$dCity',
+                                 aCity = '$aCity',
+                                 dPostal = '$dPostal',
+                                 aPostal = '$aPostal',
+                                 Title = '$Title',
+                                 Description = '$desc'
+                                WHERE TID = '$TID';
+                                ");
+
+
+
+echo '<p>'.'Your trip has been successfully updated.  ';
+
+echo '<p>';
+echo '<a href="index.php">Go Back To Home Page.</a>';
+
 echo '<p></p></div>';
 ?>
     </p>
 </div>
 
+
 </body>
 </html>
+
 

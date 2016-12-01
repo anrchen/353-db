@@ -11,6 +11,7 @@
 <header class="header-basic">
     <link rel="stylesheet" type="text/css" href="assets/css/header.css">
     <link rel="stylesheet" type="text/css" href="assets/css/addPost.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
 
 
     <div class="header-limiter">
@@ -38,9 +39,10 @@
     </div>
 </header>
 
-
+<div class="match" style="text-align: center">
+    <p class="success" style="text-align: center">
     <?php
-
+    echo"<div class='serviceContent'>";
         $servername = "localhost";
         $username = "root";
         $password = "";
@@ -102,9 +104,10 @@
     echo '<p>';
     echo '<a href="index.php">Go Back To Home Page.</a>';
 
-
+    echo '<p></p></div>';
     ?>
-
+    </p>
+</div>
 
 </body>
 </html>
