@@ -1,3 +1,13 @@
+<?php if(session_status()==PHP_SESSION_NONE){
+        session_start();
+    }
+
+    if(!isset($_SESSION['user'])){
+        header("Location: login.php");
+    }
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,22 +24,18 @@
 
         <h1><a href="#">Su<span>per</span></a></h1>
 
-        <nav><!--MING added -->
-            <a href="editPersonalData.php">Edit Personal Info</a>
+        <nav>
             <?php
-            session_start();
             if(isset($_SESSION['user'])){
-                echo"
-                                <a>Welcome ".$_SESSION['userName'].
-                    ", </a>
-                                <a href=\"logout.php?logout=true\">Log out</a>
-                            ";
+                echo"<a>Welcome ".$_SESSION['userName'].", </a>"?>
+              <a href="logout.php?logout=true">Log out</a>;
+            <?php
+
             }else{
-                echo"
-                                <a href=\"login.php\">Log in</a>
-                            ";
-            }
-            ?>
+                echo"<a href=\"login.php\">Log in</a>";
+            }?>
+            <a href="editPersonalData.php">Edit Personal Info</a>
+
             <a href="#">Support</a>
             <a href="#">About</a>
         </nav>
@@ -58,18 +64,15 @@
   </form>
 
 
-    <!--                <header class="communityHeader">-->
-    <!--                    <div class="siteLogo_container">-->
-    <!--                        <p class="welcomeMsg">-->
-    <!--                            Welcome to the official-->
-    <!--                            <span class="SiteName">-->
-    <!--                                Car2Go-->
-    <!--                            </span>  site-->
-    <!--                        </p>-->
-    <!--                    </div>-->
-    <!--                </header>-->
 
+    <?php
+        if((isset($_GET['role']))){
+            $_SESSION['role']=$_GET['role'];
+        }
 
+        if((isset($_SESSION['role'])) and $_SESSION['role']=='rider'){
+
+    ?>
     <div class="category">
         <header class="categoryHeader">
             <h1 class="categoryHeading">Rider</h1>
@@ -98,7 +101,7 @@
                             </span>
             </div>
         </a>
-        <a href="Images/rider_editPost" class="serviceContent">
+        <a href="editPost.php" class="serviceContent">
             <img src="Images/editTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
@@ -133,7 +136,7 @@
         </a>
 
         <a href="ratingSystem.php" class="serviceContent">
-            <img src="Images/viewTemplate.png" class="serviceIcon">
+            <img src="Images/rating.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
                     Rating system
@@ -144,20 +147,37 @@
             </div>
         </a>
 
-        <a href="action_addBalance.php" class="serviceContent">
-            <img src="Images/createTemplateRider2.png" class="serviceIcon">
+        <a href="addBalance.php" class="serviceContent">
+            <img src="Images/addBalance.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
-                    Add balance
+                    Add Balance
                 </h1>
                 <span class="serviceDescription">
-                    Add more money to your account balance!
+                    Add more money to your balance here!
                             </span>
             </div>
         </a>
 
+        <a href="selectRole.php" class="serviceContent">
+            <img src="Images/switchRole.png" class="serviceIcon">
+            <div class="serviceDetail">
+                <h1 class="serviceHeader">
+                    Switch Role
+                </h1>
+                <span class="serviceDescription">
+                    Switch your role between rider or driver!
+                </span>
+            </div>
+        </a>
     </div>
+    <?php
+        }
+    ?>
 
+    <?php
+    if((isset($_SESSION['role'])) and $_SESSION['role']=='driver'){
+    ?>
     <div class="category">
         <header class="categoryHeader">
             <h1 class="categoryHeading">Driver</h1>
@@ -171,7 +191,7 @@
                 </h1>
                 <span class="serviceDescription">
                                 Looking for riders on your next trip? Come here!
-                            </span>
+                 </span>
             </div>
         </a>
         <a href="addPost.php?type=regular&role=driver" class="serviceContent">
@@ -185,7 +205,7 @@
                             </span>
             </div>
         </a>
-        <a href="Images/drider_editPost" class="serviceContent">
+        <a href="editPost.php" class="serviceContent">
             <img src="Images/editTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
@@ -220,8 +240,26 @@
             </div>
         </a>
 
+        <a href="selectRole.php" class="serviceContent">
+            <img src="Images/switchRole.png" class="serviceIcon">
+            <div class="serviceDetail">
+                <h1 class="serviceHeader">
+                    Switch Role
+                </h1>
+                <span class="serviceDescription">
+                    Switch your role between rider or driver!
+                </span>
+            </div>
+        </a>
     </div>
+        <?php
+    }
+    ?>
 
+    <?php
+    if((isset($_SESSION['role'])) and $_SESSION['role']='admin'
+        and isset($_SESSION['adminCode']) and $_SESSION['adminCode']='7hajqnnk00i6isp3gr4q60tncc'){
+    ?>
     <div class="category">
         <header class="categoryHeader">
             <h1 class="categoryHeading">Administrator</h1>
@@ -239,7 +277,6 @@
             </div>
         </a>
 
-        <!--suspend a complainted dirver or trip-->
         <a href="suspendUser.php" class="serviceContent">
             <img src="Images/viewTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
@@ -265,6 +302,18 @@
             </div>
         </a>
 
+        <a href="selectRole.php" class="serviceContent">
+            <img src="Images/switchRole.png" class="serviceIcon">
+            <div class="serviceDetail">
+                <h1 class="serviceHeader">
+                    Switch Role
+                </h1>
+                <span class="serviceDescription">
+                    Switch your role between rider or driver!
+                </span>
+            </div>
+        </a>
+
 
 
         <a href="Images/admin_createPost" class="serviceContent"></a>
@@ -272,7 +321,13 @@
         <a href="Images/admin_viewPost" class="serviceContent"></a>
         <a href="Images/admin_matchPost" class="serviceContent"></a>
     </div>
-
+        <?php
+    }else if ((isset($_SESSION['role'])) and $_SESSION['role']='admin'){
+        $message="Cheating aren't you? You are not supposed to be here!";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+        echo "<script>window.close();</script>";
+    }
+    ?>
 
     <footer>
         <p>All rights reserved</p>

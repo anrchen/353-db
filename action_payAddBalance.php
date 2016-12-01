@@ -15,8 +15,9 @@ use PayPal\Api\Payment;
 use PayPal\Api\RedirectUrls;
 use PayPal\Api\Transaction;
 
-$location=$_SESSION['location'];
+//$location=$_SESSION['location'];
 $km = 30;
+$location='Montreal';
 
 // ### Payer
 // A resource representing a Payer that funds a payment
@@ -75,10 +76,10 @@ $transaction->setAmount($amount)
 // ### Redirect urls
 // Set the urls that the buyer must be redirected to after
 // payment approval/ cancellation.
-$baseUrl = getBaseUrl();
+//$baseUrl = getBaseUrl();
 $redirectUrls = new RedirectUrls();
-$redirectUrls->setReturnUrl("$baseUrl/matchPost.php?feed=66.3&")
-    ->setCancelUrl("$baseUrl/matchPost.php?feed=66.3&");
+$redirectUrls->setReturnUrl("http://www.w3schools.com")
+    ->setCancelUrl("http://www.w3schools.com");
 
 // ### Payment
 // A Payment Resource; create one using
@@ -86,7 +87,7 @@ $redirectUrls->setReturnUrl("$baseUrl/matchPost.php?feed=66.3&")
 $payment = new Payment();
 $payment->setIntent("sale")
     ->setPayer($payer)
-    ->setRedirectUrls($redirectUrls)
+//    ->setRedirectUrls($redirectUrls)
     ->setTransactions(array($transaction));
 
 

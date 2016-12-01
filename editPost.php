@@ -1,3 +1,13 @@
+<?php if(session_status()==PHP_SESSION_NONE){
+    session_start();
+}
+
+if(!isset($_SESSION['user'])){
+    header("Location: login.php");
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,7 +40,6 @@
 
             <nav>
                 <?php
-                session_start();
                 if(isset($_SESSION['user'])){
                     echo"
                                 <a>Welcome ".$_SESSION['userName'].
@@ -83,10 +92,10 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "person";
+$dbname = "trip";
 
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=person", $username, $password);
+    $conn = new PDO("mysql:host=$servername;$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //        $sql = "INSERT INTO SAILORS (sname, rating, age)
 //                VALUES ('John', '8', '18')";
