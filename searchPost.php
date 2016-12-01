@@ -26,6 +26,10 @@
                     $password = "";
                     $dbname = "trip";
 
+					
+					    if(!isset($_SESSION['user'])){
+							header("Location: login.php");
+						}
                     $conn = new mysqli($servername, $username, $password, $dbname);
 
                     // Check connection
