@@ -22,13 +22,13 @@ if(!isset($_SESSION['user'])){
 
     <div class="header-limiter">
 
-        <h1><a href="#">Su<span>per</span></a></h1>
+        <h1><a href="selectRole.php">Su<span>per</span></a></h1>
 
         <nav>
             <?php
             if(isset($_SESSION['user'])){
                 echo"<a>Welcome ".$_SESSION['userName'].", </a>
-              <a href=\"logout.php?logout=true\">Log out</a>";
+              <a href='logout.php?logout=true'>Log out</a>";
             }else{
                 echo"<a href=\"login.php\">Log in</a>";
             }?>
@@ -61,11 +61,10 @@ if(!isset($_SESSION['user'])){
             die("Connection failed: " . $conn->connect_error);
         }
 
+        unset($_SESSION['role']);
         $sql="SELECT isAdmin, isDriver, isRider FROM member WHERE MID='$MID'";
         $result = $conn->query($sql);
-    echo'Hello'.$sql;
         if ($result->num_rows > 0) {
-            echo'Hello';
         while($row = $result->fetch_assoc()) {
                 if ($row['isRider'] == 1) {
                     $rider = true;
@@ -75,17 +74,22 @@ if(!isset($_SESSION['user'])){
                 }
                 if ($row['isAdmin'] == 1) {
                     $admin = true;
+                    $_SESSION['adminCode']='7hajqnnk00i6isp3gr4q60tncc';
                 }
             }
         }
         $conn->close();
     ?>
     <div class="category">
-<?php
+        <header class="categoryHeader">
+            <h1 class="categoryHeading">Select your role</h1>
+        </header>
+
+        <?php
    if($driver){
 ?>
         <a href="index.php?role=driver" class="serviceContent">
-            <img src="Images/viewTemplate.png" class="serviceIcon">
+            <img src="Images/switchRole.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
                     Driver
@@ -101,7 +105,7 @@ if(!isset($_SESSION['user'])){
 ?>
 
         <a href="index.php?role=rider" class="serviceContent">
-            <img src="Images/createTemplateRider2.png" class="serviceIcon">
+            <img src="Images/switchRole.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
                     Rider
@@ -115,8 +119,8 @@ if(!isset($_SESSION['user'])){
     }
     if($admin){
 ?>
-        <a href="index.php?admin=7hajqnnk00i6isp3gr4q60tncc" class="serviceContent">
-            <img src="Images/createTemplateRider2.png" class="serviceIcon">
+        <a href="index.php?role=admin&admin=7hajqnnk00i6isp3gr4q60tncc" class="serviceContent">
+            <img src="Images/switchRole.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
                     Administrator

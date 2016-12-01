@@ -27,8 +27,10 @@
         <nav>
             <?php
             if(isset($_SESSION['user'])){
-                echo"<a>Welcome ".$_SESSION['userName'].", </a>
-              <a href=\"logout.php?logout=true\">Log out</a>";
+                echo"<a>Welcome ".$_SESSION['userName'].", </a>"?>
+              <a href="logout.php?logout=true">Log out</a>;
+            <?php
+
             }else{
                 echo"<a href=\"login.php\">Log in</a>";
             }?>
@@ -60,7 +62,11 @@
     </form>
 
     <?php
-        if((isset($_GET['role'])) and $_GET['role']=='rider'){
+        if((isset($_GET['role']))){
+            $_SESSION['role']=$_GET['role'];
+        }
+
+        if((isset($_SESSION['role'])) and $_SESSION['role']=='rider'){
 
     ?>
     <div class="category">
@@ -125,7 +131,7 @@
         </a>
 
         <a href="ratingSystem.php" class="serviceContent">
-            <img src="Images/viewTemplate.png" class="serviceIcon">
+            <img src="Images/rating.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
                     Rating
@@ -137,7 +143,7 @@
         </a>
 
         <a href="addBalance.php" class="serviceContent">
-            <img src="Images/createTemplateRider2.png" class="serviceIcon">
+            <img src="Images/addBalance.png" class="serviceIcon">
             <div class="serviceDetail">
                 <h1 class="serviceHeader">
                     Add Balance
@@ -147,13 +153,25 @@
                             </span>
             </div>
         </a>
+
+        <a href="selectRole.php" class="serviceContent">
+            <img src="Images/switchRole.png" class="serviceIcon">
+            <div class="serviceDetail">
+                <h1 class="serviceHeader">
+                    Switch Role
+                </h1>
+                <span class="serviceDescription">
+                    Switch your role between rider or driver!
+                </span>
+            </div>
+        </a>
     </div>
     <?php
         }
     ?>
 
     <?php
-    if((isset($_GET['role'])) and $_GET['role']=='driver'){
+    if((isset($_SESSION['role'])) and $_SESSION['role']=='driver'){
     ?>
     <div class="category">
         <header class="categoryHeader">
@@ -216,13 +234,26 @@
                             </span>
             </div>
         </a>
+
+        <a href="selectRole.php" class="serviceContent">
+            <img src="Images/switchRole.png" class="serviceIcon">
+            <div class="serviceDetail">
+                <h1 class="serviceHeader">
+                    Switch Role
+                </h1>
+                <span class="serviceDescription">
+                    Switch your role between rider or driver!
+                </span>
+            </div>
+        </a>
     </div>
         <?php
     }
     ?>
 
     <?php
-    if((isset($_GET['admin'])) and $_GET['admin']=='7hajqnnk00i6isp3gr4q60tncc'){
+    if((isset($_SESSION['role'])) and $_SESSION['role']='admin'
+        and $_SESSION['adminCode']=='7hajqnnk00i6isp3gr4q60tncc'){
     ?>
     <div class="category">
         <header class="categoryHeader">
@@ -236,12 +267,11 @@
                     Delete Post
                 </h1>
                 <span class="serviceDescription">
-                                ONLY ADMIN
+                        Delete a post
                             </span>
             </div>
         </a>
 
-        <!--suspend a complainted dirver or trip-->
         <a href="suspendUser.php" class="serviceContent">
             <img src="Images/viewTemplate.png" class="serviceIcon">
             <div class="serviceDetail">
@@ -249,8 +279,20 @@
                     Suspend Bad Rating
                 </h1>
                 <span class="serviceDescription">
-                                ONLY ADMIN
+                          Suspend an account
                             </span>
+            </div>
+        </a>
+
+        <a href="selectRole.php" class="serviceContent">
+            <img src="Images/switchRole.png" class="serviceIcon">
+            <div class="serviceDetail">
+                <h1 class="serviceHeader">
+                    Switch Role
+                </h1>
+                <span class="serviceDescription">
+                    Switch your role between rider or driver!
+                </span>
             </div>
         </a>
 
@@ -262,6 +304,10 @@
         <a href="Images/admin_matchPost" class="serviceContent"></a>
     </div>
         <?php
+    }else if ((isset($_SESSION['role'])) and $_SESSION['role']='admin'){
+        $message="Cheating aren't you? You are not supposed to be here!";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+        echo "<script>window.close();</script>";
     }
     ?>
 
