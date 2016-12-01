@@ -16,7 +16,7 @@ use PayPal\Api\RedirectUrls;
 use PayPal\Api\Transaction;
 
 //$location=$_SESSION['location'];
-$km = 30;
+$price = $_SESSION['add'];
 $location='Montreal';
 
 // ### Payer
@@ -32,15 +32,15 @@ $payer->setPaymentMethod("paypal");
 $item1 = new Item();
 $item1->setName('Cost per km')
     ->setCurrency('CAD')
-    ->setQuantity($km)
+    ->setQuantity($price)
     ->setSku($location) // Similar to `item_number` in Classic API
-    ->setPrice(2);
+    ->setPrice(1);
 $item2 = new Item();
 $item2->setName('Inital Starting Charge')
     ->setCurrency('CAD')
     ->setQuantity(1)
     ->setSku($location) // Similar to `item_number` in Classic API
-    ->setPrice(5);
+    ->setPrice(1);
 
 $itemList = new ItemList();
 $itemList->setItems(array($item1, $item2));
@@ -52,7 +52,7 @@ $itemList->setItems(array($item1, $item2));
 $details = new Details();
 $details
     ->setTax(1.3)
-    ->setSubtotal(65);
+    ->setSubtotal($price+1);
 
 // ### Amount
 // Lets you specify a payment amount.
@@ -60,7 +60,7 @@ $details
 // such as shipping, tax.
 $amount = new Amount();
 $amount->setCurrency("CAD")
-    ->setTotal(66.3)
+    ->setTotal($price+1.3+1)
     ->setDetails($details);
 
 // ### Transaction
@@ -76,10 +76,10 @@ $transaction->setAmount($amount)
 // ### Redirect urls
 // Set the urls that the buyer must be redirected to after
 // payment approval/ cancellation.
-//$baseUrl = getBaseUrl();
+$baseUrl = getBaseUrl();
 $redirectUrls = new RedirectUrls();
-$redirectUrls->setReturnUrl("http://www.w3schools.com")
-    ->setCancelUrl("http://www.w3schools.com");
+$redirectUrls->setReturnUrl($baseUrl."/addBalance.php")
+    ->setCancelUrl($baseUrl."/addBalance.php");
 
 // ### Payment
 // A Payment Resource; create one using
@@ -87,7 +87,7 @@ $redirectUrls->setReturnUrl("http://www.w3schools.com")
 $payment = new Payment();
 $payment->setIntent("sale")
     ->setPayer($payer)
-//    ->setRedirectUrls($redirectUrls)
+    ->setRedirectUrls($redirectUrls)
     ->setTransactions(array($transaction));
 
 

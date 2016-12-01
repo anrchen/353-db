@@ -139,7 +139,7 @@ if(!isset($_SESSION['user'])){
 
         if(!$driver){
             ?>
-            <a href="action_addRole.php" class="serviceContent">
+            <a href="action_addRole.php?role=driver.php" class="serviceContent">
                 <img src="Images/switchRole.png" class="serviceIcon">
                 <div class="serviceDetail">
                     <h1 class="serviceHeader">
@@ -159,7 +159,7 @@ if(!isset($_SESSION['user'])){
 
         if(!$rider){
             ?>
-            <a href="action_addRole.php" class="serviceContent">
+            <a href="action_addRole?role=rider.php" class="serviceContent">
                 <img src="Images/switchRole.png" class="serviceIcon">
                 <div class="serviceDetail">
                     <h1 class="serviceHeader">

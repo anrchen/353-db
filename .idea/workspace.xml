@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcbd2740-9f14-42fb-9dc6-60ec50857e9f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action_getDistance.php" afterPath="$PROJECT_DIR$/action_getDistance.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action_payAddBalance.php" afterPath="$PROJECT_DIR$/action_payAddBalance.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addBalance.php" afterPath="$PROJECT_DIR$/addBalance.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/selectRole.php" afterPath="$PROJECT_DIR$/selectRole.php" />
     </list>
     <ignored path="353-db.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,20 +29,30 @@
       <file leaf-file-name="selectRole.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/selectRole.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="150" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+            <state relative-caret-position="127">
+              <caret line="141" column="55" selection-start-line="141" selection-start-column="55" selection-end-line="141" selection-end-column="55" />
               <folding>
-                <marker date="1480627744000" expanded="true" signature="1504:1566" ph="SELECT isAdm... member" />
+                <marker date="1480628371000" expanded="true" signature="1504:1566" ph="SELECT isAdm... member" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="action_payAddBalance.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="action_addRole.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/action_addRole.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="action_payAddBalance.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/action_payAddBalance.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="96" column="21" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="21" />
+            <state relative-caret-position="300">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -59,15 +72,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="viewPosts.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/viewPosts.php">
+      <file leaf-file-name="action_addBalance.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/action_addBalance.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="83" column="60" selection-start-line="83" selection-start-column="60" selection-end-line="83" selection-end-column="60" />
+            <state relative-caret-position="240">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
-                <marker date="1480627744000" expanded="true" signature="1826:1897" ph="SELECT * FRO... trip" />
-                <marker date="1480627744000" expanded="true" signature="2906:2947" ph="SELECT * FRO... city" />
-                <marker date="1480627744000" expanded="true" signature="3427:3443" ph="..." />
+                <marker date="1480628596000" expanded="true" signature="665:681" ph="..." />
+                <marker date="1480628596000" expanded="true" signature="955:996" ph="..." />
               </folding>
             </state>
           </provider>
@@ -83,48 +95,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="searchPost.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/searchPost.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="56" column="35" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="action_pay.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/action_pay.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-578">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="292">
+              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="matchPost.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/matchPost.php">
+      <file leaf-file-name="addBalance.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addBalance.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="98" column="58" selection-start-line="98" selection-start-column="58" selection-end-line="100" selection-end-column="56" />
+            <state relative-caret-position="300">
+              <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
               <folding>
-                <marker date="1480627744000" expanded="true" signature="2002:2282" ph="SELECT * FRO... trip" />
-                <marker date="1480627744000" expanded="true" signature="3214:3255" ph="SELECT * FRO... city" />
-                <marker date="1480627744000" expanded="true" signature="3716:3732" ph="..." />
-                <marker date="1480627744000" expanded="false" signature="3927:3941" ph="..." />
-                <marker date="1480627744000" expanded="false" signature="4030:4041" ph="..." />
-                <marker date="1480627744000" expanded="true" signature="4225:4282" ph="UPDATE accou... " />
+                <marker date="1480629143000" expanded="true" signature="1548:1605" ph="UPDATE accou... " />
+                <marker date="1480629143000" expanded="true" signature="1562:1605" ph="SELECT Balan... account" />
+                <marker date="1480629143000" expanded="true" signature="1900:1945" ph="SELECT Balan... account" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="action_getDistance.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="action_getDistance.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/action_getDistance.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+            <state relative-caret-position="285">
+              <caret line="19" column="63" selection-start-line="19" selection-start-column="63" selection-end-line="19" selection-end-column="63" />
               <folding>
                 <marker date="1480627906000" expanded="true" signature="190:219" ph="SELECT * FRO... trip" />
                 <marker date="1480627906000" expanded="true" signature="434:483" ph="SELECT prove... city" />
@@ -168,11 +167,9 @@
         <option value="$PROJECT_DIR$/queries.sql" />
         <option value="$PROJECT_DIR$/feature/paypal/paypal/rest-api-sdk-php/lib/PayPal/Api/RedirectUrls.php" />
         <option value="$PROJECT_DIR$/feature/paypal/paypal/rest-api-sdk-php/lib/PayPal/Validation/UrlValidator.php" />
-        <option value="$PROJECT_DIR$/action_payAddBalance.php" />
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/logout.php" />
         <option value="$PROJECT_DIR$/ChatRoom.php" />
-        <option value="$PROJECT_DIR$/action_addBalance.php" />
         <option value="$PROJECT_DIR$/action_rate_form.php" />
         <option value="$PROJECT_DIR$/action_rate_result.php" />
         <option value="$PROJECT_DIR$/assets/css/main.css" />
@@ -187,7 +184,6 @@
         <option value="$PROJECT_DIR$/editPersonalData.php" />
         <option value="$PROJECT_DIR$/action_changeData.php" />
         <option value="$PROJECT_DIR$/editPost.php" />
-        <option value="$PROJECT_DIR$/addBalance.php" />
         <option value="$PROJECT_DIR$/suspendUser.php" />
         <option value="$PROJECT_DIR$/connection.php" />
         <option value="$PROJECT_DIR$/action_add.php" />
@@ -197,8 +193,12 @@
         <option value="$PROJECT_DIR$/matchPost.php" />
         <option value="$PROJECT_DIR$/viewPosts.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/selectRole.php" />
         <option value="$PROJECT_DIR$/action_getDistance.php" />
+        <option value="$PROJECT_DIR$/action_addRole.php" />
+        <option value="$PROJECT_DIR$/selectRole.php" />
+        <option value="$PROJECT_DIR$/action_addBalance.php" />
+        <option value="$PROJECT_DIR$/action_payAddBalance.php" />
+        <option value="$PROJECT_DIR$/addBalance.php" />
       </list>
     </option>
   </component>
@@ -388,12 +388,12 @@
       <workItem from="1480563097681" duration="88000" />
       <workItem from="1480563200458" duration="722000" />
       <workItem from="1480616249861" duration="374000" />
-      <workItem from="1480622268713" duration="5629000" />
+      <workItem from="1480622268713" duration="6948000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7966000" />
+    <option name="totallyTimeSpent" value="9285000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="156" y="23" width="1287" height="803" extended-state="0" />
@@ -438,7 +438,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/queries.sql" />
     <entry file="file://$PROJECT_DIR$/feature/paypal/paypal/rest-api-sdk-php/lib/PayPal/Api/Payment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
@@ -694,14 +693,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/action_addBalance.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/addPost.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="397">
@@ -710,16 +701,6 @@
             <marker date="1480610196000" expanded="false" signature="2382:2397" ph="..." />
             <marker date="1480610196000" expanded="true" signature="2485:3282" ph="..." />
             <marker date="1480610196000" expanded="true" signature="3418:3581" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addBalance.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-368">
-          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-          <folding>
-            <marker date="1480621880000" expanded="true" signature="1471:1516" ph="SELECT Balan... account" />
           </folding>
         </state>
       </provider>
@@ -804,16 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/selectRole.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="150" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
-          <folding>
-            <marker date="1480627744000" expanded="true" signature="1504:1566" ph="SELECT isAdm... member" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/action_edit_result.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -836,31 +807,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/action_pay.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-578">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action_payAddBalance.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="96" column="21" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/action_getDistance.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+        <state relative-caret-position="285">
+          <caret line="19" column="63" selection-start-line="19" selection-start-column="63" selection-end-line="19" selection-end-column="63" />
           <folding>
             <marker date="1480627906000" expanded="true" signature="190:219" ph="SELECT * FRO... trip" />
             <marker date="1480627906000" expanded="true" signature="434:483" ph="SELECT prove... city" />
             <marker date="1480627906000" expanded="true" signature="666:715" ph="SELECT provi... city" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/selectRole.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="141" column="55" selection-start-line="141" selection-start-column="55" selection-end-line="141" selection-end-column="55" />
+          <folding>
+            <marker date="1480628371000" expanded="true" signature="1504:1566" ph="SELECT isAdm... member" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action_addRole.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action_pay.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action_addBalance.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <marker date="1480628596000" expanded="true" signature="665:681" ph="..." />
+            <marker date="1480628596000" expanded="true" signature="955:996" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addBalance.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
+          <folding>
+            <marker date="1480629143000" expanded="true" signature="1548:1605" ph="UPDATE accou... " />
+            <marker date="1480629143000" expanded="true" signature="1562:1605" ph="SELECT Balan... account" />
+            <marker date="1480629143000" expanded="true" signature="1900:1945" ph="SELECT Balan... account" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action_payAddBalance.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -47,6 +47,23 @@ if(!isset($_SESSION['user'])){
     <p class="success" style="text-align: center">
 <?php
 
+if(isset($_SESSION['add']) and isset($_GET['token'])){
+    $add=$_SESSION['add'];
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "trip";
+// Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+
+    $sql = "UPDATE account SET Balance=Balance+$add WHERE MID='$user'";
+    $result = $conn->query($sql);
+    $conn->close();
+    unset($_SESSION['add']);
+}
+
 echo '<h1> My Balance </h1>';
 $servername = "localhost";
 $username = "root";
