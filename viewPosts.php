@@ -85,6 +85,8 @@ if(!isset($_SESSION['user'])){
                     echo "Trip ID: ".$row['TID'];
                     echo "<br>Title: ".$row['Title'];
                     echo "<br>Departure Date: ".$row['dDate'];
+                    echo "<br>Departure City: ".$row['dCity'];
+                    echo "<br>Arrival City: ".$row['aCity'];
                     echo "<br>Departure Postal Code: ".$row['dPostal'];
                     echo "<br>Arrival Postal Code: ".$row['aPostal'];
                     echo "<br>Description: ".$row['Description'];

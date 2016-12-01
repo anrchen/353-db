@@ -5,6 +5,7 @@
     if(!isset($_SESSION['user'])){
         header("Location: login.php");
     }
+
     $postID = $_SESSION['newPost'];
     $matchID = $_GET['match'];
     $role = $_SESSION['role'];
@@ -21,6 +22,7 @@
     }
 
     include_once ('connection.php');
+    $distance=$_SESSION['distance'];
 
     $con=new Connection();
     $query="SELECT balance FROM account WHERE MID='$MID' and balance>=70";
@@ -50,8 +52,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv=REFRESH CONTENT=10;url=action_pay.php>
-
+    <?php
+        echo "<meta http-equiv=REFRESH CONTENT=10;url=action_pay.php?distance=".$distance.">";
+    ?>
 </head>
 
 <body>

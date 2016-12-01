@@ -3,40 +3,56 @@
     $postID = $_SESSION['newPost'];
 
     include_once ('connection.php');
+    $aCity='';
+    $dCity='';
+    $aProvince='';
+    $dProvince='';
     $con = new Connection();
     $sql = "SELECT * FROM trip WHERE TID=$postID";
     $con->setQuery($sql);
     $con->execute();
     $result=$con->getResult();
+    while ($row = $result->fetch_assoc()) {
+        $aCity = $row['aCity'];
+        $dCity = $row['dCity'];
+    }
+
+    $sql = "SELECT province FROM city WHERE cityName='$dCity'";
+    $con->setQuery($sql);
+    $con->execute();
+    $result=$con->getResult();
+    while ($row = $result->fetch_assoc()) {
+        $dProvince = $row['province'];
+    }
+
+    $sql = "SELECT province FROM city WHERE cityName='$aCity'";
+    $con->setQuery($sql);
+    $con->execute();
+    $result=$con->getResult();
+    while ($row = $result->fetch_assoc()) {
+        $aProvince = $row['province'];
+    }
 
 
-    $dCity='New York';
     $dCity=str_replace(' ', '_', $dCity);
-    $dProvince='NY';
-    $aCity='Montreal';
     $aCity=str_replace(' ', '_', $aCity);
-    $aProvince='QC';
-    $key='AIzaSyCfVhB-ilQZR9XvTCSGtpUE7ekWI6hXlOE';
-    $url = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins='.$dCity.'+'.$dProvince.'&destinations='.$aCity.'+'.$aProvince.'&key='.$key;
 
-    $json = file_get_contents($url);
-    $data = json_decode($json);
-//
-    print_r($data);
-//    echo 'Hello <br>'.$data->rows[0]['elements'];
+    $distance=10;
+    if($dCity==$aCity){
+        $key='AIzaSyCfVhB-ilQZR9XvTCSGtpUE7ekWI6hXlOE';
+        $url = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins='.$dCity.'+'.$dProvince.'&destinations='.$aCity.'+'.$aProvince.'&key='.$key;
+
+        $json = file_get_contents($url);
+        $data = json_decode($json);
+
+        //request the directions
+        $distance = $routes=$data->rows[0]->elements[0]->distance->value;
+        $distance *= 0.001;
+    }
 
 
-  //request the directions
-    $distance = $routes=$data->rows[0]->elements[0]->distance->value;
-    $distance *= 0.001;
+    $_SESSION['distance']=round($distance);
 
-    echo $distance.'km';
-
-//  //sort the routes based on the distance
-//    usort($routes,create_function('$a,$b','return intval($a->legs[0]->distance->value) - intval($b->legs[0]->distance->value);'));
-//
-// //print the shortest distance
-//    echo $routes[0]->legs[0]->distance->text;//returns 9.0 km
 
 ?>
 

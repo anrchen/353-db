@@ -372,18 +372,11 @@
             </div>
         </a>
 
-
-
-        <a href="Images/admin_createPost" class="serviceContent"></a>
-        <a href="Images/admin_editPost" class="serviceContent"></a>
-        <a href="Images/admin_viewPost" class="serviceContent"></a>
-        <a href="Images/admin_matchPost" class="serviceContent"></a>
     </div>
         <?php
-    }else if ((isset($_SESSION['role'])) and $_SESSION['role']='admin'){
+    }else if ((isset($_SESSION['role'])) and $_SESSION['role']=='admin'){
         $message="Cheating aren't you? You are not supposed to be here!";
-        echo "<script type='text/javascript'>alert('$message');</script>";
-        echo "<script>window.close();</script>";
+        echo $message;
     }
     ?>
 

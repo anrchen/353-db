@@ -134,6 +134,45 @@ if(!isset($_SESSION['user'])){
 <?php
     }
 ?>
+
+        <?php
+
+        if(!$driver){
+            ?>
+            <a href="action_addRole.php" class="serviceContent">
+                <img src="Images/switchRole.png" class="serviceIcon">
+                <div class="serviceDetail">
+                    <h1 class="serviceHeader">
+                        Add Driver Role
+                    </h1>
+                    <span class="serviceDescription">
+                    Become a driver now!
+                            </span>
+                </div>
+            </a>
+            <?php
+        }
+        ?>
+
+
+        <?php
+
+        if(!$rider){
+            ?>
+            <a href="action_addRole.php" class="serviceContent">
+                <img src="Images/switchRole.png" class="serviceIcon">
+                <div class="serviceDetail">
+                    <h1 class="serviceHeader">
+                        Add Rider Role
+                    </h1>
+                    <span class="serviceDescription">
+                    Become a rider now!
+                            </span>
+                </div>
+            </a>
+            <?php
+        }
+        ?>
     </div>
 
 
