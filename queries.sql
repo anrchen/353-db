@@ -42,10 +42,10 @@ CREATE TABLE trip
   aCity VARCHAR(15) NOT NULL,	/*arrival city*/
   dPostal VARCHAR(20) DEFAULT NULL,	/*departure postal code*/
   aPostal VARCHAR(20) DEFAULT NULL,/*arrival postal code*/
-  Description VARCHAR(100) DEFAULT NULL,
+  Description VARCHAR(200) DEFAULT NULL,
   Restriction BOOLEAN DEFAULT NULL,
-  Title VARCHAR(20) DEFAULT NULL,
-  Comments VARCHAR(100) DEFAULT NULL,
+  Title VARCHAR(200) DEFAULT NULL,
+  Comments VARCHAR(200) DEFAULT NULL,
   Category VARCHAR(15) NOT NULL,
   Role INT(3),
   /*0 = rider, 1 = driver, 2 = rider has found his ride, 3 = driver has found his rider*/
@@ -205,12 +205,12 @@ INSERT INTO account VALUES
      355),
   (  2,
      'StrangeDoctor',
-     'newEmail@email.com',
+     'newemail@email.com',
      '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5',
      1000),
   (  3,
      'Superman',
-     'supermail@email.com',
+     'superemail@email.com',
      '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', /*qwerty*/
      200),
   (  4,
@@ -260,8 +260,8 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
     'H4V2N2',
     'I am going to concordia university downtown, from dorval.',
     0,
-    'To Downtown',
-    'To Downtown',
+    'I am going to concordia university downtown, from dorval.',
+    'I am going to concordia university downtown, from dorval.',
    'specialized',
     1),
    (
@@ -271,7 +271,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
    'Dorval',
    'H4V4N4',
    'H4V4N4',
-   'I love New York.',
+   'I love Dorval.',
    0,
    'Lets Go to Dorval',
    'I want to see Dorval Airport.',
@@ -293,7 +293,7 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
     0),
 
    (
-     '3',
+     3,
      '11/28/2016',
      'Montreal',
      'Dorval',
@@ -305,7 +305,89 @@ INSERT INTO trip (authorID,dDate,dCity,aCity,dPostal,aPostal,Description,Restric
      'To Dorval',
      'normal',
      0
-    )
+    ),
+   (
+     4,
+     '11/30/2016',
+     'New York',
+     'New York',
+     'H4V2N3',
+     'H5V2N2',
+     'Driving around in New York',
+     0,
+     'Driving around in New York',
+     'Driving around in New York',
+     'normal',
+     0
+   ),
+   (
+     5,
+     '11/30/2016',
+     'New York',
+     'Montreal',
+     'H5KJ6J',
+     'H4V2N2',
+     'Leaving New York',
+     0,
+     'Leave from New York to Montreal',
+     'Leave from New York to Montreal',
+     'normal',
+     0
+   ),
+   (
+     6,
+     '11/30/2016',
+     'Montreal',
+     'New York',
+     'H8IO3E',
+     'K4JH3W',
+     'Visiting New York',
+     0,
+     'Going to visit family in New York',
+     'Going to visit Mother in New York',
+     'normal',
+     0
+   ),
+   (
+     8,
+     '11/29/2016',
+     'Dorval',
+     'Montreal',
+     'H4V2N2',
+     'H4V2N2',
+     'I am going to Mcgill University downtown, from dorval.',
+     0,
+     'Go to Mcgill.',
+     'I am going to concordia university downtown, from dorval.',
+     'specialized',
+     1),
+   (
+     9,
+     '11/29/2016',
+     'Montreal',
+     'Dorval',
+     'H4V4N4',
+     'H4V4N4',
+     'I live in Dorval.',
+     0,
+     'Dorval',
+     'I want to see Dorval Airport, again.',
+     'specialized',
+     1),
+
+   (
+     10,
+     '11/29/2016',
+     'New York',
+     'New York',
+     'H4B2N2',
+     'H4B2N2',
+     'Today is not New Year eve, but I still want to go to New York.',
+     1,
+     'To New York',
+     'Who is coming with me?',
+     'normal',
+     0)
 ;
 
 INSERT INTO memberdetails VALUES
