@@ -177,7 +177,7 @@
                     Chatroom
                 </h1>
                 <span class="serviceDescription">
-                    Access the Chatroom to chat with other super users
+                    Access the Chatroom to chat with other users
                 </span>
             </div>
         </a>
@@ -281,7 +281,7 @@
                     Chatroom
                 </h1>
                 <span class="serviceDescription">
-                    Access the Chatroom to chat with other super users
+                    Access the Chatroom to chat with other users
                 </span>
             </div>
         </a>
@@ -355,7 +355,7 @@
                           Chatroom
                       </h1>
                       <span class="serviceDescription">
-                          Access the Chatroom to chat with other super users
+                          Access the Chatroom to chat with other users
                       </span>
                   </div>
               </a>
