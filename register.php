@@ -227,7 +227,7 @@
 
 				//die(mysql_errno($conn) . ": " . mysql_error($conn));
 
-				$query1 = sprintf("INSERT INTO member(firstName, lastName, Birthday, Role, isAdmin) VALUES('%s','%s', '%s', 'Driver', false)",
+				$query1 = sprintf("INSERT INTO member(firstName, lastName, Birthday, isAdmin) VALUES('%s','%s', '%s', false)",
 						mysql_real_escape_string($fName),
 						mysql_real_escape_string($lName),
 						mysql_real_escape_string($dob)
