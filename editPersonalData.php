@@ -40,82 +40,91 @@
 </header>
 
 
-<h1>Personal profil</h1>
+
 
 <div class="match" style="text-align: center">
-    <p class="success" style="text-align: center">
-        <?php
-        $user = $_SESSION['user'];
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "trip";
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        $result = $conn->query("Select * FROM memberDetails
+<p class="success" style="text-align: center">
+<?php
+echo "<h1>Personal profile</h1>";
+$user = $_SESSION['user'];
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "trip";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+$result = $conn->query("Select * FROM memberDetails
                             WHERE memberDetails.id=$user");
-        if (!$result) {
-            trigger_error('Invalid query: ' . $conn->error);
-        }
-        if ($result->num_rows > 0) {
-            // output data of each row
-            while($row = $result->fetch_assoc()) {
-                echo"<div class='serviceContent'>";
-                $id = $row['id'];
-                echo 'ID: '.$id;
-                echo '<p>';
-                $address1 = $row["address1"];
-                echo 'Address1: '.$address1;
-                echo '<p>';
-                $address2 =  $row["address2"];
-                echo 'Address2: '.$address2;
-                echo '<p>';
-                $city = $row["city"];
-                echo 'City: '.$city;
-                echo '<p>';
-                $postalCode = $row['postalCode'];
-                echo 'Postal Code: '.$postalCode;
-                echo '<p>';
-                $province = $row['province'];
-                echo 'Province: '.$province;
-                echo '<p></p></div>';
-            }
-        } else {
-            echo "0 results";
-        }
-        ?>
-    </p>
+if (!$result) {
+    trigger_error('Invalid query: ' . $conn->error);
+}
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+
+        echo"<div class='serviceContent'>";
+        $id = $row['id'];
+        echo 'ID: '.$id;
+        echo '<p>';
+
+        $address1 = $row["address1"];
+        echo 'Address1: '.$address1;
+        echo '<p>';
+
+        $address2 =  $row["address2"];
+        echo 'Address2: '.$address2;
+        echo '<p>';
+
+        $city = $row["city"];
+        echo 'City: '.$city;
+        echo '<p>';
+
+        $postalCode = $row['postalCode'];
+        echo 'Postal Code: '.$postalCode;
+        echo '<p>';
+
+        $province = $row['province'];
+        echo 'Province: '.$province;
+        echo '<p></p></div>';
+
+    }
+} else {
+   echo "0 results";
+}
+?>
+</p>
 </div>
 
 
-<h1>Profile update</h1> <h5>Please complete the following form</h5>
+
 <div class="match" style="text-align: center">
-    <form method="get" action="action_ChangeMyData.php">
+    <h1>Profile update</h1> <h5>Please complete the following form</h5>
+<form method="get" action="action_changeData.php">
 
-        <div class='serviceContent'>
-            <label>Address1</label>
-            <input type="text" name="address1" id="address1"  class="inputBox">
-            <p></p>
-            <label>Address2</label>
-            <input type="text" name="address2" id="address2"  class="inputBox">
-            <p></p>
-            <label>City</label>
-            <input type="text" name="city" id="city"  class="inputBox">
-            <p></p>
-            <label>Postal Code</label>
-            <input type="text" name="pc" id="pc"  class="inputBox">
-            <p></p>
-            <label>Province</label>
-            <input type="text" name="province" id="province"  class="inputBox">
-            <p></p>
-            <input type="submit" id="" value="Update">
+    <div class='serviceContent'>
+    <label>Address1</label>
+    <input type="text" name="address1" id="address1"  class="inputBox">
+    <p></p>
+    <label>Address2</label>
+    <input type="text" name="address2" id="address2"  class="inputBox">
+    <p></p>
+    <label>City</label>
+    <input type="text" name="city" id="city"  class="inputBox">
+    <p></p>
+    <label>Postal Code</label>
+    <input type="text" name="pc" id="pc"  class="inputBox">
+    <p></p>
+    <label>Province</label>
+    <input type="text" name="province" id="province"  class="inputBox">
+    <p></p>
+    <input type="submit" id="" value="Update">
 
-        </div>
-        <?php
-        echo '<p>';
-        echo '<p>';
-        echo '<a href="index.php">Click here to go home.</a>';
-        ?>
+    </div>
+    <?php
+    echo '<p>';
+    echo '<p>';
+    echo '<a href="selectRole.php">Click here to go home.</a>';
+    ?>
 
 </div>
 </body>
