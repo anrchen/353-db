@@ -22,6 +22,7 @@ CREATE TABLE memberDetails
   postalCode varchar(20) DEFAULT NULL,
   province varchar(20) DEFAULT NULL,
   license varchar(20) DEFAULT NULL,
+  registerDate datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id),
   FOREIGN KEY (id) REFERENCES member(MID)
     ON DELETE CASCADE
@@ -130,7 +131,8 @@ CREATE TABLE Transactions
 #    'sherbrook 3110',
 #    'Montreal', 'H2HB3B',
 #    'Quebec',
-#    '13537788'
+#    '13537788',
+#	'2014-11-22 12:45:34'
 #   ),
 #   ('2',
 #    'concordia',
@@ -138,7 +140,8 @@ CREATE TABLE Transactions
 #    'Montreal',
 #    'H3HJ5J',
 #    'Quebec',
-#    '14423478'
+#    '14423478',
+#	'2014-11-22 12:45:34'
 #   );
 
 INSERT INTO city (cityName, citySurrounded, province) VALUES
@@ -466,7 +469,8 @@ INSERT INTO memberdetails VALUES
    'Montreal',
    'H2HB3B',
    'Quebec',
-   '13537788'
+   '13537788',
+   CURRENT_TIMESTAMP
   ),
   ('2',
    'Concordia University',
@@ -474,7 +478,8 @@ INSERT INTO memberdetails VALUES
    'Montreal',
    'H3HJ5J',
    'Quebec',
-   '14423478'
+   '14423478',
+   CURRENT_TIMESTAMP
   ),
   ('3',
     'sherbrook',
@@ -482,7 +487,8 @@ INSERT INTO memberdetails VALUES
     'Montreal',
     'H3HJ6J',
     'Quebec',
-    '15857766'
+    '15857766',
+	CURRENT_TIMESTAMP
   ),
   ('4',
     'West Side',
@@ -490,7 +496,8 @@ INSERT INTO memberdetails VALUES
     'Toronto',
     'A5JK3K',
     'Ontario',
-    '33579231'
+    '33579231',
+	CURRENT_TIMESTAMP
   ),
   ('5',
    'King St',
@@ -498,7 +505,8 @@ INSERT INTO memberdetails VALUES
    'Toronto',
    'Z3YX3X',
    'Ontario',
-   Null
+   '43677790',
+	CURRENT_TIMESTAMP
   ),
   ('6',
    'Front Street West 1050',
@@ -506,7 +514,8 @@ INSERT INTO memberdetails VALUES
    'Toronto',
    'L8OP2R',
    'Ontario',
-   '34839009'
+   '34839009',
+   CURRENT_TIMESTAMP
   ),
   ('7',
    'Loyal Campus',
@@ -514,7 +523,8 @@ INSERT INTO memberdetails VALUES
    'Dorval',
    'A5JK3K',
    'Montreal',
-   Null
+   '22444490',
+   CURRENT_TIMESTAMP
   ),
   ('8',
    'Carrefour Angrignon',
@@ -522,7 +532,8 @@ INSERT INTO memberdetails VALUES
    'Angrignon',
    'H3HJ5J',
    'Quebec',
-   '22567790'
+   '22567790',
+   CURRENT_TIMESTAMP
   ),
   ('9',
    'Ile des Soeurs',
@@ -530,7 +541,8 @@ INSERT INTO memberdetails VALUES
    'Montreal',
    'A2BC4D',
    'Quebec',
-   Null
+   '22513370',
+   CURRENT_TIMESTAMP
   ),
   ('10',
    'Wall Street 10',
@@ -538,7 +550,8 @@ INSERT INTO memberdetails VALUES
    'New York',
    Null,
    'New York',
-   '99399989'
+   '99399989',
+   CURRENT_TIMESTAMP
   );
 
 CREATE TRIGGER `clearBalance` AFTER UPDATE ON `member`
