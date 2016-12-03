@@ -48,6 +48,12 @@
 
   <form method="get" action="searchPost.php">
 
+      <input type="text" class="nav" name="search" placeholder="Search all posts by City Name           (use _ instead of spaces)">
+
+  </form>
+
+  <form method="get" action="searchMember.php">
+
 <!--
       <div class="styled-select" name="selectRole">
           <select>
@@ -57,7 +63,7 @@
           </select>
       </div>
 -->
-      <input type="text" class="nav" name="search" placeholder="Search all posts by City Name (use _ instead of spaces)">
+      <input type="text" class="nav" name="search" placeholder="Search all members by Username">
       <!-- <input type="submit" id="DoSearch" value="SEARCH FOR POST" align="right"> -->
 
 
