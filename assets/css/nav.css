@@ -51,6 +51,4 @@ option
     transition: width 0.4s ease-in-out;
 }
 
-.community input[type=text]:focus {
-    width: 79.5%;
-}
+

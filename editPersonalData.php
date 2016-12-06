@@ -123,7 +123,7 @@ if ($result->num_rows > 0) {
     <?php
     echo '<p>';
     echo '<p>';
-    echo '<a href="selectRole.php">Click here to go home.</a>';
+    echo '<a href="selectRole.php">Return to Index</a>';
     ?>
 
 </div>

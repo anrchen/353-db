@@ -129,6 +129,8 @@ if(!isset($_SESSION['user'])){
                       echo "<br>";
                       echo "<br> Average Driver Rating: " .$avg ." Stars out of 10.";
                       //echo 'Total Number of Members Registered: '. $rows[0]."<br>"."<br>";
+
+
                     }
                     else{
                       echo "<br>This member has not been reviewed yet.";
@@ -147,17 +149,22 @@ if(!isset($_SESSION['user'])){
                   echo "</div>";
 
               }
+              if((isset($_SESSION['isAdmin'])) and $_SESSION['isAdmin']='admin'
+                  and isset($_SESSION['adminCode']) and $_SESSION['adminCode']='7hajqnnk00i6isp3gr4q60tncc'){
+                  echo "<a href='action_updateUser.php?member=$lookIn'>Update user profile</a>";
+              }
           } else {
-              echo "<br>0 results";
+              echo "<br>User not found!";
           }
 
 
           $conn->close();
           //Search by city using search
 
+
         }
     ?>
-
+    <p></p>
     <a href="index.php">Return to Index</a><p>
 </p>
 </div>
