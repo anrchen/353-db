@@ -58,7 +58,7 @@
     $city=$_GET['city'];
     $pc=$_GET['pc'];
     $province=$_GET['province'];
-
+    $email = $_GET['email'];
 
     echo'<h2>Your New Info</h2>';
 
@@ -77,6 +77,9 @@
     echo 'Province: '.$province;
     echo '<p>';
 
+    echo 'Email: '.$email;
+    echo '<p>';
+
 
 
     $result = $conn->query("
@@ -87,6 +90,12 @@
                         postalCode = '$pc',
                         province ='$province'    
                     WHERE id=$user;
+                            ");
+
+    $result = $conn->query("
+                   UPDATE account 
+                   SET Email = '$email' 
+                    WHERE MID=$user;
                             ");
 
 

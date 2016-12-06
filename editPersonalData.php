@@ -53,8 +53,9 @@ $password = "";
 $dbname = "trip";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-$result = $conn->query("Select * FROM memberDetails
-                            WHERE memberDetails.id=$user");
+$result = $conn->query("Select * FROM memberDetails, account
+                            WHERE memberDetails.id=$user
+                            AND account.MID = $user");
 if (!$result) {
     trigger_error('Invalid query: ' . $conn->error);
 }
@@ -85,6 +86,10 @@ if ($result->num_rows > 0) {
 
         $province = $row['province'];
         echo 'Province: '.$province;
+        echo '<p>';
+
+        $email = $row['Email'];
+        echo 'Email: '.$email;
         echo '<p></p></div>';
 
     }
@@ -117,6 +122,9 @@ if ($result->num_rows > 0) {
     <label>Province</label>
     <input type="text" name="province" id="province"  class="inputBox">
     <p></p>
+        <label>Email</label>
+        <input type="text" name="email" id="email"  class="inputBox">
+        <p></p>
     <input type="submit" id="" value="Update">
 
     </div>

@@ -35,6 +35,7 @@
                 echo"<a href=\"login.php\">Log in</a>";
             }?>
             <a href="editPersonalData.php">Edit Personal Info</a>
+            <a href="view_Your_Stat.php">View Personal Stats</a>
 
             <a href="#">Support</a>
             <a href="#">About</a>

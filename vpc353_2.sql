@@ -22,7 +22,7 @@ CREATE TABLE memberDetails
   postalCode varchar(20) DEFAULT NULL,
   province varchar(20) DEFAULT NULL,
   license varchar(20) DEFAULT NULL,
-  registerDate datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  registerDate datetime NOT NULL DEFAULT CURRENT_TIMESTAMP, /*DATETIME - format: YYYY-MM-DD HH:MI:SS*/
   PRIMARY KEY (id),
   FOREIGN KEY (id) REFERENCES member(MID)
     ON DELETE CASCADE
@@ -109,40 +109,6 @@ CREATE TABLE driverreview
     ON UPDATE CASCADE
 )ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
-/* We probably dont need transactions
-CREATE TABLE Transactions
-(
-  id int(11) NOT NULL AUTO_INCREMENT,
-  tripId int(11) NOT NULL,
-  memberId int(11) NOT NULL,
-  amount float(20) DEFAULT NULL,
-  transactionDate date NOT NULL,
-  PRIMARY KEY (id),
-  FOREIGN KEY (tripId) REFERENCES trip(TID),
-  FOREIGN KEY (memberId) REFERENCES member(MID)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
-) ENGINE = InnoDB DEFAULT CHARSET=latin1;
-*/
-
-# INSERT INTO memberdetails VALUES
-#   ('1',
-#    'mcgill',
-#    'sherbrook 3110',
-#    'Montreal', 'H2HB3B',
-#    'Quebec',
-#    '13537788',
-#	'2014-11-22 12:45:34'
-#   ),
-#   ('2',
-#    'concordia',
-#    'mckay 3121',
-#    'Montreal',
-#    'H3HJ5J',
-#    'Quebec',
-#    '14423478',
-#	'2014-11-22 12:45:34'
-#   );
 
 INSERT INTO city (cityName, citySurrounded, province) VALUES
   ('Montreal', 'Ottawa', 'QC'),
@@ -553,6 +519,15 @@ INSERT INTO memberdetails VALUES
    '99399989',
    CURRENT_TIMESTAMP
   );
+
+    /*dummy data*/
+  INSERT INTO driverreview Values 
+  ('10', '1', '10', '0', 'I like him'),
+  ('9', '1', '1', '0', 'I dont like him');
+    /*dummy data*/
+  INSERT INTO tripreview Values
+  ('10', '1', '8', '0', 'I like him'),
+  ('9', '1', '2', '0', 'I dont like him');
 
 CREATE TRIGGER `clearBalance` AFTER UPDATE ON `member`
 FOR EACH ROW UPDATE account a SET a.balance = 0 WHERE a.MID = NEW.MID AND NEW.Status = 0
