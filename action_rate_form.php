@@ -69,7 +69,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             <input type='hidden' name='ID' value='<?php echo "$ID";?>'/>
             <input type='hidden' name='type' value='<?php echo "$type";?>'/>
 
-            <label class="formName">Give a rate from 1 to 10</label>
+            <label class="textBoxWrapper">Give a rate from 1 to 10</label>
             <div class="textBoxWrapper">
                 <input type="number" name="rating" id="rating" title="" value="" min="1" max="10" class="inputBox">
             </div>

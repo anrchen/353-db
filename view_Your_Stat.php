@@ -81,6 +81,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     $row = $result->fetch_row();
     echo '<b>Trips Not Matched: </b>'. $row[0]."<br>"."<br>";
 
+    $result = $conn->query("SELECT COUNT(*) FROM trip where authorID = '$user' AND matchedID IS NOT Null");
+    $row = $result->fetch_row();
+    echo '<b>Trips Matched: </b>'. $row[0]."<br>"."<br>";
+
     $result = $conn->query("SELECT avg(stars) FROM driverreview where driverID = '$user'");
     $row = $result->fetch_row();
     echo '<b>My User Average Rating: </b>'. $row[0]."<br>"."<br>";
