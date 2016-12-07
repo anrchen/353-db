@@ -35,7 +35,7 @@ option
 }
 
 .community input[type=text] {
-    width: 320px;
+    width: 200px;
     float: right;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -51,4 +51,6 @@ option
     transition: width 0.4s ease-in-out;
 }
 
-
+.community input[type=text]:focus {
+    width: 79.5%;
+}

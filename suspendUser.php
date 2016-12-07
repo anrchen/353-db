@@ -8,10 +8,10 @@ if(!isset($_SESSION['user'])){
 ?>
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "trip";
+$servername = "vpc353_2.encs.concordia.ca";
+$username = "vpc353_2";
+$password = "A5DNm8";
+$dbname = "vpc353_2";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 ?>
@@ -29,8 +29,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 <header class="header-basic">
     <link rel="stylesheet" type="text/css" href="assets/css/header.css">
     <link rel="stylesheet" type="text/css" href="assets/css/addPost.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
-
 
 
     <div class="header-limiter">
@@ -39,19 +37,17 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
         <nav>
             <?php
-
             if(isset($_SESSION['user'])){
                 echo"
-                                <a>Welcome ".$_SESSION['userName'].
+                <a>Welcome ".$_SESSION['userName'].
                     ", </a>
-                                <a href=\"logout.php?logout=true\">Log out</a>
-                            ";
+                <a href=\"logout.php?logout=true\">Log out</a>
+                ";
             }else{
                 echo"
-                                <a href=\"login.php\">Log in</a>
-                            ";
+                <a href=\"login.php\">Log in</a>
+                ";
             }
-            $user = $_SESSION['user'];
             ?>
             <a href="#">Support</a>
             <a href="#">About</a>
@@ -59,46 +55,39 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     </div>
 </header>
 
+<p class="success" style="text-align: center">
+<h1>See ALL Bad Drivers who have a rating of 1 or have complaint as true.</h1>
+
+<?php
 
 
-<div class="match" style="text-align: center">
-    <p class="success" style="text-align: center">
-    <h1>Suspend A Member</h1>
+$sql = "SELECT driverID, Reviewer, messages FROM driverreview d
+        where d.stars =1
+        OR d.complaint = true";
 
-    <?php
-    echo "<h4> Here is a list of drivers who has either received a complaint, <br> or have a rating of 1. </h4>";
-    $sql = "SELECT * FROM driverreview 
-        where stars =1 
-        OR complaint = 1";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            echo"<div class='serviceContent'>";
-            $reviewer = $row["Reviewer"];
-            $DID =  $row["driverID"];
-            $stars = $row["stars"];
-            $complaint = $row["complaint"];
-            $reason = $row["messages"];
-            echo "Rated Member ID: " . $row["driverID"]. "<br>";
-            echo "Reviewer ID: " . $row["Reviewer"]. "<br>";
-            echo "Stars Received: " . $stars. "<br>";
-            if ($complaint==1){
-                echo"Complained Received: True <br>";
-            }else{
-                echo"Complained Received: False <br>";
-            }
-            echo "Reason: " . $row["messages"]. "<br>";
-            echo '<a href="action_suspend.php?subject='.$DID.'">Suspend this driver!</a><p>';
-            echo '<p></p></div>';
-        }
-    } else {
-        echo "0 results";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+
+        $reviewer = $row["Reviewer"];
+        $DID =  $row["driverID"];
+        $reason = $row["messages"];
+
+        echo "Driver ID that has a bad rating or got a complaint: " . $row["driverID"]. "<br>";
+        echo "Reviewer ID: " . $row["Reviewer"]. "<br>";
+        echo "Reason: " . $row["messages"]. "<br>";
+
+        echo '<a href="action_suspend.php?subject='.$DID.'">Suspend this driver!</a><p>';
     }
-    ?>
+} else {
+    echo "0 results";
+}
 
-    </p>
-</div>
+?>
+
+
 
 
 </body>

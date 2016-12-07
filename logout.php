@@ -3,7 +3,7 @@ session_start();
 if (!isset($_SESSION['user'])) {
     header("Location: login.php");
 } else if(isset($_SESSION['user'])!="") {
-    header("Location: selectRole.php");
+    header("Location: index.php");
 }
 if (isset($_GET['logout'])) {
     unset($_SESSION['user']);

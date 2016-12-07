@@ -21,7 +21,6 @@ if(!isset($_SESSION['user'])){
 <header class="header-basic">
     <link rel="stylesheet" type="text/css" href="assets/css/header.css">
     <link rel="stylesheet" type="text/css" href="assets/css/addPost.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
 
 
     <div class="header-limiter">
@@ -43,14 +42,13 @@ if(!isset($_SESSION['user'])){
     </div>
 </header>
 
-<div class="match" style="text-align: center">
-    <p class="success" style="text-align: center">
+
     <?php
-    echo"<div class='serviceContent'>";
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "trip";
+
+        $servername = "vpc353_2.encs.concordia.ca";
+        $username = "vpc353_2";
+        $password = "A5DNm8";
+        $dbname = "vpc353_2";
         $conn = new mysqli($servername, $username, $password, $dbname);
 
 
@@ -58,7 +56,7 @@ if(!isset($_SESSION['user'])){
             $rateComments=$_GET['comments'];
             $ID = $_GET['ID'];
             $type = $_GET['type'];
-            $user = $_SESSION['user'];
+
             $complaint = $_GET ['complaint'];
 
             /*
@@ -95,11 +93,11 @@ if(!isset($_SESSION['user'])){
 
         if ($type == "Trip") {
             $result = $conn->query("INSERT INTO tripreview (Reviewer, reviewTrip, stars, complaint, messages)
-                     VALUES ($user, '$ID', '$stars', '$complaint', '$rateComments')");
+                     VALUES ('1', '$ID', '$stars', '$complaint', '$rateComments')");
         }
         if ($type == "Driver") {
         $result = $conn->query("INSERT INTO driverreview (Reviewer, driverID, stars, complaint, messages)
-                     VALUES ($user, '$ID', '$stars', '$complaint', '$rateComments')");
+                     VALUES ('1', '$ID', '$stars', '$complaint', '$rateComments')");
         }
 
 
@@ -108,12 +106,9 @@ if(!isset($_SESSION['user'])){
     echo '<p>';
     echo '<a href="index.php">Go Back To Home Page.</a>';
 
-    echo '<p></p></div>';
+
     ?>
-    </p>
-</div>
+
 
 </body>
 </html>
-
-

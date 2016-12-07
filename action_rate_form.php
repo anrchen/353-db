@@ -2,10 +2,14 @@
 session_start();
 }
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "trip";
+if(!isset($_SESSION['user'])){
+    header("Location: login.php");
+}
+
+$servername = "vpc353_2.encs.concordia.ca";
+$username = "vpc353_2";
+$password = "A5DNm8";
+$dbname = "vpc353_2";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -69,7 +73,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             <input type='hidden' name='ID' value='<?php echo "$ID";?>'/>
             <input type='hidden' name='type' value='<?php echo "$type";?>'/>
 
-            <label class="textBoxWrapper">Give a rate from 1 to 10</label>
+            <label class="formName">Give a rate from 1 to 10</label>
             <div class="textBoxWrapper">
                 <input type="number" name="rating" id="rating" title="" value="" min="1" max="10" class="inputBox">
             </div>

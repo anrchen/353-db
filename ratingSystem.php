@@ -1,8 +1,17 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "trip";
+
+if(session_status()==PHP_SESSION_NONE){
+session_start();
+}
+
+if(!isset($_SESSION['user'])){
+    header("Location: login.php");
+}
+
+$servername = "vpc353_2.encs.concordia.ca";
+$username = "vpc353_2";
+$password = "A5DNm8";
+$dbname = "vpc353_2";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 ?>
@@ -20,7 +29,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 <header class="header-basic">
     <link rel="stylesheet" type="text/css" href="assets/css/header.css">
     <link rel="stylesheet" type="text/css" href="assets/css/addPost.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
+
 
     <div class="header-limiter">
 
@@ -28,7 +37,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
         <nav>
             <?php
-            session_start();
             if(isset($_SESSION['user'])){
                 echo"
                                 <a>Welcome ".$_SESSION['user'].
@@ -47,79 +55,62 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     </div>
 </header>
 
-
-
-
-
+<p class="success" style="text-align: center">
+<h1>Rate a driver that you have gone with</h1>
 <div class="match" style="text-align: center">
-    <p class="success" style="text-align: center">
-    <h1>Rate Your Member</h1>
 <?php
 $user = $_SESSION['user'];
 // Username is now used and added, please fix the query
-$sql = "SELECT account.Username, trip.authorID FROM trip, account, member
-          where trip.matchedID='$user'
-          and member.MID = trip.authorID
-          and member.MID = account.MID
+$sql = "SELECT MID FROM member, trip
+          where trip.Role = 1 
+          and trip.matchedID='$user'
+          and member.MID= trip.authorID
+          ORDER BY MID
           ";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-
-        echo"<div class='serviceContent'>";
-        echo 'You have gone with ';
-        $MID =  $row["authorID"];
+        echo 'you have been with ';
+        $MID =  $row["MID"];
         $type= "Driver";
-        echo "username: " . $row["Username"];
-        echo " (ID: " . $row["authorID"]. ")<br><br>";
+        echo "Driver ID: " . $row["MID"]. "<br>";
         echo '<a href="action_rate_form.php?subject2='.$type.'&subject1='.$MID.'">Yes, rate this driver!</a><p>';
-        echo '<p></p></div>';
-
     }
 } else {
     echo "<br>You <span style='color:orangered;'>have not taken</span> any trip with us yet!";
 }
 
 ?>
-    </p>
 </div>
+<p class="success" style="text-align: center">
 
+<h1>Rate a trip that you have taken</h1>
 <div class="match" style="text-align: center">
-    <p class="success" style="text-align: center">
-    <h1>Rate Your Trip</h1>
 <?php
 $user = $_SESSION['user'];
 
-$sql = "SELECT  TID, dCity, aCity FROM trip, member
+$sql = "SELECT  TID FROM trip, member
         WHERE member.MID='$user'
-        And member.MID = trip.matchedID
+        And member.MID = trip.authorID
         ORDER BY TID";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo"<div class='serviceContent'>";
-        echo 'You have taken ';
+        echo 'You have gone to ';
         $TID =  $row["TID"];
         $type= "Trip";
-        $dCity = $row["dCity"];
-        $aCity = $row["aCity"];
-        echo "trip number " . $TID. " ,from ". $dCity." to ".$aCity.". <br><br>";
+        echo "Trip ID: " . $row["TID"]. "<br>";
         echo '<a href="action_rate_form.php?subject1='.$TID.'&subject2='.$type.'">Yes, rate this trip!</a><p>';
-        echo '<p></p></div>';
-
     }
 } else {
     echo "You <br><span style='color:orangered;'>have not taken</span> any trip with us yet!";
 }
 
 ?>
-    </p>
-</div>
 
 </body>
 </html>
-

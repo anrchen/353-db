@@ -20,8 +20,6 @@ if(!isset($_SESSION['user'])){
 <header class="header-basic">
     <link rel="stylesheet" type="text/css" href="assets/css/header.css">
     <link rel="stylesheet" type="text/css" href="assets/css/addPost.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
-
 
 
     <div class="header-limiter">
@@ -48,32 +46,27 @@ if(!isset($_SESSION['user'])){
     </div>
 </header>
 
+<p class="success" style="text-align: center">
+<p>Delete Posts by Trip Number</p>
 
 
-<div class="match" style="text-align: center">
-    <p class="success" style="text-align: center">
-    <h2>Delete Posts by Trip Number</h2>
 <?php
-echo"<div class='serviceContent'>";
 $getMyVar = $_GET['subject'];
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "trip";
+$servername = "vpc353_2.encs.concordia.ca";
+$username = "vpc353_2";
+$password = "A5DNm8";
+$dbname = "vpc353_2";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 $result = $conn->query("DELETE FROM trip
                             WHERE trip.tid=$getMyVar");
 echo 'Successfully deleted. <p>';
-echo '<a href="index.php">Go Back to Homepage.</a><br>';
-
-echo 'Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help';
-echo '<p></p></div>';
+echo '<a href="deletePost.php">Click here to go back and delete more.</a>';
 ?>
-    </p>
-</div>
+</p>
 
 </body>
 </html>
 
+Contact GitHub API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Status Help

@@ -16,8 +16,7 @@ use PayPal\Api\RedirectUrls;
 use PayPal\Api\Transaction;
 
 $location=$_SESSION['location'];
-$km=$_GET['distance']+0;
-$price = 0.6;
+$km = 30;
 
 // ### Payer
 // A resource representing a Payer that funds a payment
@@ -34,7 +33,7 @@ $item1->setName('Cost per km')
     ->setCurrency('CAD')
     ->setQuantity($km)
     ->setSku($location) // Similar to `item_number` in Classic API
-    ->setPrice($price);
+    ->setPrice(2);
 $item2 = new Item();
 $item2->setName('Inital Starting Charge')
     ->setCurrency('CAD')
@@ -52,7 +51,7 @@ $itemList->setItems(array($item1, $item2));
 $details = new Details();
 $details
     ->setTax(1.3)
-    ->setSubtotal($price*$km+5);
+    ->setSubtotal(65);
 
 // ### Amount
 // Lets you specify a payment amount.
@@ -60,7 +59,7 @@ $details
 // such as shipping, tax.
 $amount = new Amount();
 $amount->setCurrency("CAD")
-    ->setTotal($price*$km+5+1.3)
+    ->setTotal(66.3)
     ->setDetails($details);
 
 // ### Transaction
