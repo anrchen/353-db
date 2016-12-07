@@ -67,10 +67,10 @@ if(!isset($_SESSION['user'])){
             $lookingStatus=0;
         }
 
-        $servername = "vpc353_2.encs.concordia.ca";
-        $username = "vpc353_2";
-        $password = "A5DNm8";
-        $dbname = "vpc353_2";
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "trip";
 
 
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -97,12 +97,14 @@ if(!isset($_SESSION['user'])){
                 echo "Trip ID: ".$row['TID'];
                 echo "<br>Title: ".$row['Title'];
                 echo "<br>Departure Date: ".$row['dDate'];
+                echo "<br>Departure City: ".$row['dCity'];
+                echo "<br>Arrival City: ".$row['aCity'];
                 echo "<br>Departure Postal Code: ".$row['dPostal'];
                 echo "<br>Arrival Postal Code: ".$row['aPostal'];
                 echo "<br>Description: ".$row['Description'];
                 $city = $row["dCity"];
                 if ($row['Restriction']){
-                    $city2 = $this->conn->query("SELECT * FROM city WHERE cityName='$city'");
+                    $city2 = $conn->query("SELECT * FROM city WHERE cityName='$city'");
                     echo "<br>Restricted to drivers from the following regions: ";
                     while ($row2 = $city2->fetch_assoc()) {
                         echo $row2['citySurrounded'];

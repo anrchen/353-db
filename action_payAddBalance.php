@@ -15,9 +15,9 @@ use PayPal\Api\Payment;
 use PayPal\Api\RedirectUrls;
 use PayPal\Api\Transaction;
 
-$location=$_SESSION['location'];
-$km=$_GET['distance']+0;
-$price = 0.6;
+//$location=$_SESSION['location'];
+$price = $_SESSION['add'];
+$location='Montreal';
 
 // ### Payer
 // A resource representing a Payer that funds a payment
@@ -32,15 +32,15 @@ $payer->setPaymentMethod("paypal");
 $item1 = new Item();
 $item1->setName('Cost per km')
     ->setCurrency('CAD')
-    ->setQuantity($km)
+    ->setQuantity($price)
     ->setSku($location) // Similar to `item_number` in Classic API
-    ->setPrice($price);
+    ->setPrice(1);
 $item2 = new Item();
 $item2->setName('Inital Starting Charge')
     ->setCurrency('CAD')
     ->setQuantity(1)
     ->setSku($location) // Similar to `item_number` in Classic API
-    ->setPrice(5);
+    ->setPrice(1);
 
 $itemList = new ItemList();
 $itemList->setItems(array($item1, $item2));
@@ -52,7 +52,7 @@ $itemList->setItems(array($item1, $item2));
 $details = new Details();
 $details
     ->setTax(1.3)
-    ->setSubtotal($price*$km+5);
+    ->setSubtotal($price+1);
 
 // ### Amount
 // Lets you specify a payment amount.
@@ -60,7 +60,7 @@ $details
 // such as shipping, tax.
 $amount = new Amount();
 $amount->setCurrency("CAD")
-    ->setTotal($price*$km+5+1.3)
+    ->setTotal($price+1.3+1)
     ->setDetails($details);
 
 // ### Transaction
@@ -78,8 +78,8 @@ $transaction->setAmount($amount)
 // payment approval/ cancellation.
 $baseUrl = getBaseUrl();
 $redirectUrls = new RedirectUrls();
-$redirectUrls->setReturnUrl("$baseUrl/matchPost.php?feed=66.3&")
-    ->setCancelUrl("$baseUrl/matchPost.php?feed=66.3&");
+$redirectUrls->setReturnUrl($baseUrl."/addBalance.php")
+    ->setCancelUrl($baseUrl."/addBalance.php");
 
 // ### Payment
 // A Payment Resource; create one using

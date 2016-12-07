@@ -1,11 +1,3 @@
-<?php if(session_status()==PHP_SESSION_NONE){
-    session_start();
-}
-
-if(!isset($_SESSION['user'])){
-    header("Location: login.php");
-}
-?>
 
 
 <!DOCTYPE html>
@@ -28,9 +20,9 @@ if(!isset($_SESSION['user'])){
 
         <h1><a href="index.php">Su<span>per</span></a></h1>
 
-
         <nav>
             <?php
+            session_start();
             if(isset($_SESSION['user'])){
                 echo"
                                 <a>Welcome ".$_SESSION['userName'].
@@ -42,6 +34,7 @@ if(!isset($_SESSION['user'])){
                                 <a href=\"login.php\">Log in</a>
                             ";
             }
+            $user = $_SESSION['user'];
             $role = $_SESSION['role'];
             if($role=='rider'){
                 $role=0;
@@ -56,57 +49,49 @@ if(!isset($_SESSION['user'])){
     </div>
 </header>
 
-
-
-
 <div class="match" style="text-align: center">
     <p class="success" style="text-align: center">
-        <?php
-        echo "<h1>  Your Current Postings  </h1>";
-        $user = $_SESSION['user'];
 
+
+        <?php
+        echo "<h1>Delete Posts by Trip Number</h1>";
         $servername = "localhost";
         $username = "root";
         $password = "";
         $dbname = "trip";
-
-
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
 
 
+        $sql = "SELECT * FROM trip where authorID='$user' AND role='$role'";
+        $result = $conn->query($sql);
 
-        $result = $conn->query("Select * FROM trip
-                            WHERE authorID=$user
-                            AND role=$role");
-        if (!$result) {
-            trigger_error('Invalid query: ' . $conn->error);
-        }
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
 
                 echo"<div class='serviceContent'>";
+                $TID =  $row["TID"];
+                $dCity = $row['dCity'];
+                $aCity = $row['aCity'];
 
-                echo 'Please select the trip that you would like to edit'."<br><br>";
-                $TID = $row['TID'];
-                echo 'Trip ID: '.$TID;
-                echo '<p>';
-
-                $title = $row["Title"];
-                echo 'Title: '.$title;
-                echo '<p>';
-
-                echo '<p></p></div>';
-
-                echo '<a href="action_edit.php?subject='.$TID.'">Edit!</a>';
-
+                echo "Trip ID: " . $row["TID"]. "<br>";
+                echo "Departure City: " . $row["dCity"]. "<br>";
+                echo "Arrival City: " . $row["aCity"]. "<br>";
+                echo '<a href="action_delete.php?subject='.$TID.'">Yes, delete!</a>';
+                echo '</div>';
             }
         } else {
             echo "0 results";
         }
+
+
         ?>
+
     </p>
 </div>
 
+
+</body>
+</html>
 

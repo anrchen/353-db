@@ -1,9 +1,9 @@
 <?php
 class Connection{
-    public $servername = "vpc353_2.encs.concordia.ca";
-    protected $username = "vpc353_2";
-    protected $password = "A5DNm8";
-    public $dbname = "vpc353_2";
+    public $servername = "localhost";
+    protected $username = "root";
+    protected $password = "";
+    public $dbname = "trip";
     public $conn;
     protected $query;
     protected $lastID;
@@ -17,12 +17,13 @@ class Connection{
         $this->query=$query;
     }
     public function displaySelectList($attribute, $table, $selected, $name){
-        $result = $this->conn->query("SELECT $attribute FROM $table");
+        $result = $this->conn->query("SELECT DISTINCT $attribute FROM $table");
         echo "<select class='city' name=$name> 
                       <option selected value='default'>$selected</option>>";
         while ($row = $result->fetch_assoc()) {
             $id = $row[$attribute];
-            echo '<option value='.$id.'>'.$id.'</option>';
+            $value=str_replace(' ', '_', $id);
+            echo '<option value='.$value.'>'.$id.'</option>';
         }
         echo "</select>";
     }
@@ -53,7 +54,7 @@ class Connection{
     }
 
     public function execute(){
-        $this->conn->query($this->query);
+        $this->result=$this->conn->query($this->query);
     }
 
     public function getLastID(){
