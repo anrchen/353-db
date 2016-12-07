@@ -94,7 +94,7 @@ $user = $_SESSION['user'];
 
 $sql = "SELECT  TID, dCity, aCity FROM trip, member
         WHERE member.MID='$user'
-        And member.MID = trip.authorID
+        And member.MID = trip.matchedID
         ORDER BY TID";
 $result = $conn->query($sql);
 
