@@ -37,8 +37,8 @@
             <a href="editPersonalData.php">Edit Personal Info</a>
             <a href="view_Your_Stat.php">View Personal Stats</a>
 
-            <a href="#">Support</a>
-            <a href="#">About</a>
+            <a href="https://en.wikipedia.org/wiki/Uber_(company)">Support</a>
+            <a href="https://en.wikipedia.org/wiki/Uber_(company)">About</a>
         </nav>
     </div>
 </header>

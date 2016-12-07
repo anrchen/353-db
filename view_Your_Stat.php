@@ -96,7 +96,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     echo '<b>My Trip Average Rating: </b>'. $row[0]."<br>"."<br>";
 
 
-
+    echo '<a href="index.php">Click here to go home.</a>';
 
 
 

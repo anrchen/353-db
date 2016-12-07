@@ -77,7 +77,7 @@
         <?php
         echo '<p>';
         echo '<p>';
-        echo '<a href="index.php">Click here to go home.</a>';
+
         ?>
 
 </div>
