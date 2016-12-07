@@ -47,7 +47,7 @@
 
 
 <div class="match" style="text-align: center">
-    <h1>Profile update</h1> <h5>Please complete the following form</h5>
+    <h1>Trip Update</h1> <h5>Please complete the following form</h5>
     <form method="get" action="action_edit_result.php">
 
         <div class='serviceContent'>
