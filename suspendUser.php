@@ -67,9 +67,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
     <?php
     echo "<h4> Here is a list of drivers who has either received a complaint, <br> or have a rating of 1. </h4>";
-    $sql = "SELECT driverID, Reviewer, messages FROM driverreview 
+    $sql = "SELECT * FROM driverreview 
         where stars =1 
-        OR complaint = 0";
+        OR complaint = 1";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         // output data of each row
@@ -77,9 +77,17 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             echo"<div class='serviceContent'>";
             $reviewer = $row["Reviewer"];
             $DID =  $row["driverID"];
+            $stars = $row["stars"];
+            $complaint = $row["complaint"];
             $reason = $row["messages"];
-            echo "Driver ID: " . $row["driverID"]. "<br>";
+            echo "Rated Member ID: " . $row["driverID"]. "<br>";
             echo "Reviewer ID: " . $row["Reviewer"]. "<br>";
+            echo "Stars Received: " . $stars. "<br>";
+            if ($complaint==1){
+                echo"Complained Received: True <br>";
+            }else{
+                echo"Complained Received: False <br>";
+            }
             echo "Reason: " . $row["messages"]. "<br>";
             echo '<a href="action_suspend.php?subject='.$DID.'">Suspend this driver!</a><p>';
             echo '<p></p></div>';
