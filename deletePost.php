@@ -73,14 +73,14 @@ if(!isset($_SESSION['user'])){
                 echo "Departure City: " . $row["dCity"]. "<br>";
                 echo "Arrival City: " . $row["aCity"]. "<br>";
                 echo '<a href="action_delete.php?subject='.$TID.'">Yes, delete!</a>';
-                echo '</div>';
+                echo '</div><br>';
             }
         } else {
             echo "0 results";
         }
         ?>
 
-    </p>
+        <a href="index.php">Return to Index</a><p>
 </div>
 
 

@@ -1,3 +1,11 @@
+<?php if(session_status()==PHP_SESSION_NONE){
+    session_start();
+}
+if(!isset($_SESSION['user'])){
+    header("Location: login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +28,6 @@
 
         <nav>
             <?php
-            session_start();
             if(isset($_SESSION['user'])){
                 echo"
                                 <a>Welcome ".$_SESSION['userName'].
@@ -58,7 +65,7 @@
             $conn = new mysqli($servername, $username, $password, $dbname);
             $result = $conn->query("Select * FROM account 
             INNER JOIN member ON member.MID=account.MID 
-            INNER JOIN memberdetails ON memberdetails.id=account.MID WHERE account.username='$member'");
+            INNER JOIN memberDetails ON memberDetails.id=account.MID WHERE account.username='$member'");
             if (!$result) {
                 trigger_error('Invalid query: ' . $conn->error);
             }

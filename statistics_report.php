@@ -147,7 +147,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     echo 'Total Number of Trips that got a Complaint: '. $row[0]."<br>"."<br>";
     echo '</div>';
     ?>
-    </p>
+    <a href="index.php">Return to Index</a><p>
 </div>
 
 </body>
