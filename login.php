@@ -4,7 +4,7 @@ session_start();
 require_once 'dbconnect.php';
 // it will never let you open index(login) page if session is set
 if ( isset($_SESSION['user'])!="" ) {
-	header("Location: index.php");
+	header("Location: selectRole.php");
 	exit;
 }
 $error = false;
@@ -37,7 +37,7 @@ if( isset($_GET['btn-login']) ) {
 		));
 		$row=mysql_fetch_array($res);
 		$count = mysql_num_rows($res); // if uname/pass correct it returns must be 1 row
-		$query2 = mysql_query(sprintf("SELECT DISTINCT Status FROM member M, account A WHERE (A.Email='%s' 
+		$query2 = mysql_query(sprintf("SELECT DISTINCT Status FROM member M, account A WHERE (A.Email='%s'
 			AND A.Password = '%s') AND (M.MID = A.MID)",//" AND (M.Status = 1)",
 			mysql_real_escape_string($email),
 			mysql_real_escape_string($password)
@@ -48,7 +48,7 @@ if( isset($_GET['btn-login']) ) {
 			{
 				$_SESSION['user'] = $row['MID'];
 				$_SESSION['userName'] = $row['Username'];
-				header("Location: index.php");
+				header("Location: selectRole.php");
 			}
 			else
 			{
@@ -71,7 +71,7 @@ if( isset($_GET['btn-login']) ) {
 	<html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Coding Cage - Login & Registration System</title>
+		<title>Super - Login page</title>
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css"  />
 		<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 	</head>
@@ -85,7 +85,7 @@ if( isset($_GET['btn-login']) ) {
 				<div class="col-md-12">
 
 					<div class="form-group">
-						<h2 class="">Sign In.</h2>
+						<h2 class="">Sign In to Super</h2>
 					</div>
 
 					<div class="form-group">

@@ -1,11 +1,3 @@
-<?php if(session_status()==PHP_SESSION_NONE){
-    session_start();
-}
-if(!isset($_SESSION['user'])){
-    header("Location: login.php");
-}
-?>
-
 <?php
 $servername = "vpc353_2.encs.concordia.ca";
 $username = "vpc353_2";
@@ -31,13 +23,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
 
 
-
     <div class="header-limiter">
 
         <h1><a href="index.php">Su<span>per</span></a></h1>
 
         <nav>
             <?php
+            session_start();
             if(isset($_SESSION['user'])){
                 echo"
                                 <a>Welcome ".$_SESSION['userName'].
@@ -59,42 +51,43 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 
 
+
 <div class="match" style="text-align: center">
     <p class="success" style="text-align: center">
-    <h1>Suspend A Member</h1>
-
+    <h1>My History</h1>
     <?php
-    echo "<h4> Here is a list of drivers who has either received a complaint, <br> or have a rating of 1. </h4>";
-    $sql = "SELECT * FROM driverreview 
-        where stars =1 
-        OR complaint = 1";
-    $result = $conn->query($sql);
+    echo"<div class='serviceContent'>";
+    $result = $conn->query("SELECT registerDate FROM memberDetails
+                            Where id = '$user'              ");
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-            echo"<div class='serviceContent'>";
-            $reviewer = $row["Reviewer"];
-            $DID =  $row["driverID"];
-            $stars = $row["stars"];
-            $complaint = $row["complaint"];
-            $reason = $row["messages"];
-            echo "Rated Member ID: " . $row["driverID"]. "<br>";
-            echo "Reviewer ID: " . $row["Reviewer"]. "<br>";
-            echo "Stars Received: " . $stars. "<br>";
-            if ($complaint==1){
-                echo"Complained Received: True <br>";
-            }else{
-                echo"Complained Received: False <br>";
-            }
-            echo "Reason: " . $row["messages"]. "<br>";
-            echo '<a href="action_suspend.php?subject='.$DID.'">Suspend this driver!</a><p>';
-            echo '<p></p></div>';
+            $date =  $row["registerDate"];
+            echo '<b>Joined Date: </b>'. $date."<br>"."<br>";
         }
     } else {
         echo "0 results";
     }
+    $result = $conn->query("SELECT COUNT(*) FROM trip where authorID = '$user'");
+    $row = $result->fetch_row();
+    echo '<b>Total Trips Posted: </b>'. $row[0]."<br>"."<br>";
+    $result = $conn->query("SELECT COUNT(*) FROM trip where authorID = '$user' AND matchedID IS Null");
+    $row = $result->fetch_row();
+    echo '<b>Trips Not Matched: </b>'. $row[0]."<br>"."<br>";
+    $result = $conn->query("SELECT COUNT(*) FROM trip where authorID = '$user' AND matchedID IS NOT Null");
+    $row = $result->fetch_row();
+    echo '<b>Trips Matched: </b>'. $row[0]."<br>"."<br>";
+    $result = $conn->query("SELECT avg(stars) FROM driverreview where driverID = '$user'");
+    $row = $result->fetch_row();
+    echo '<b>My User Average Rating: </b>'. $row[0]."<br>"."<br>";
+    $result = $conn->query("SELECT avg(stars) FROM tripreview, trip t
+                            where t.authorID = '$user'
+                            AND t.TID = reviewTrip");
+    $row = $result->fetch_row();
+    echo '<b>My Trip Average Rating: </b>'. $row[0]."<br>"."<br>";
+    echo '<a href="index.php">Click here to go home.</a>';
+    echo '</div>';
     ?>
-
     </p>
 </div>
 

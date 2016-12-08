@@ -1,7 +1,6 @@
 <?php if(session_status()==PHP_SESSION_NONE){
     session_start();
 }
-
 if(!isset($_SESSION['user'])){
     header("Location: login.php");
 }
@@ -20,6 +19,8 @@ if(!isset($_SESSION['user'])){
 <header class="header-basic">
     <link rel="stylesheet" type="text/css" href="assets/css/header.css">
     <link rel="stylesheet" type="text/css" href="assets/css/addPost.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
+
 
 
     <div class="header-limiter">
@@ -41,31 +42,31 @@ if(!isset($_SESSION['user'])){
     </div>
 </header>
 
-<p class="success" style="text-align: center">
-<p>Temporarily Suspend A Driver</p>
+
+<div class="match" style="text-align: center">
+    <p class="success" style="text-align: center">
+    <h2>Temporarily Suspend A Driver</h2>
 
 
-<?php
-$getMyVar = $_GET['subject'];
-$servername = "vpc353_2.encs.concordia.ca";
-$username = "vpc353_2";
-$password = "A5DNm8";
-$dbname = "vpc353_2";
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-$result = $conn->query("
+    <?php
+    echo"<div class='serviceContent'>";
+    $getMyVar = $_GET['subject'];
+    $servername = "vpc353_2.encs.concordia.ca";
+    $username = "vpc353_2";
+    $password = "A5DNm8";
+    $dbname = "vpc353_2";
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    $result = $conn->query("
                    UPDATE member SET Status = 0
                     WHERE MID=$getMyVar;
                             ");
-
-
-echo 'Successfully Suspended this driver. <p>';
-echo '<a href="index.php">Click here to go home.</a>';
-?>
-</p>
+    echo 'Successfully Suspended this driver. <p>';
+    echo '<a href="index.php">Click here to go home.</a>';
+    echo '<p></p></div>';
+    ?>
+    </p>
+</div>
 
 </body>
 </html>
-
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help

@@ -1,18 +1,12 @@
 <?php if(session_status()==PHP_SESSION_NONE){
-session_start();
+    session_start();
 }
-
-if(!isset($_SESSION['user'])){
-    header("Location: login.php");
-}
-
 $servername = "vpc353_2.encs.concordia.ca";
 $username = "vpc353_2";
 $password = "A5DNm8";
 $dbname = "vpc353_2";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-
 ?>
 
 
@@ -65,22 +59,19 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             $ID = $_GET['subject1'];
             $type = $_GET['subject2'];
             echo"Type: " . $type. "<p>". " ID: " . $ID;
-
-
-
             ?>
 
             <input type='hidden' name='ID' value='<?php echo "$ID";?>'/>
             <input type='hidden' name='type' value='<?php echo "$type";?>'/>
 
-            <label class="formName">Give a rate from 1 to 10</label>
+            <label class="textBoxWrapper">Give a rate from 1 to 10</label>
             <div class="textBoxWrapper">
                 <input type="number" name="rating" id="rating" title="" value="" min="1" max="10" class="inputBox">
             </div>
 
             <div class="textBoxWrapper">
                 <label>Do you wish to complaint?</label>
-            <input type="radio" name="complaint" value="true">Yes
+                <input type="radio" name="complaint" value="true">Yes
                 <input type="radio" name="complaint" value="false" checked>No
             </div>
 
@@ -100,11 +91,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 
 <?php
-
-
-
 /*
-
 */
 ?>
 
@@ -112,4 +99,3 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 </body>
 </html>
-

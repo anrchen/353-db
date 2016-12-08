@@ -31,6 +31,7 @@ h1.categoryHeading{
 
 .serviceContent{
     background: rgba(145, 156, 152, 0.27);
+    box-shadow: 5px 5px 5px #888888;
 }
 
 img{
@@ -46,8 +47,8 @@ img{
 
 .serviceIcon{
     float:left;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     padding: 20px 0;
     margin: 10px;
 }
@@ -126,3 +127,21 @@ footer {
 .match a:hover, a:active {
     background-color: #f4d0a0;
 }
+
+label {
+    display: inline-block;
+    width: 100px;
+}
+
+
+#contactContent {
+    display: inline;
+    margin-left: 20px;
+}
+input {
+
+    border: none;
+    background-color: #ffffff;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    padding-right: 50px;}

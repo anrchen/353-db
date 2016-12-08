@@ -6,7 +6,6 @@ if(!isset($_SESSION['user'])){
 }
 ?>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +26,6 @@ if(!isset($_SESSION['user'])){
 
         <h1><a href="index.php">Su<span>per</span></a></h1>
 
-
         <nav>
             <?php
             if(isset($_SESSION['user'])){
@@ -41,6 +39,7 @@ if(!isset($_SESSION['user'])){
                                 <a href=\"login.php\">Log in</a>
                             ";
             }
+            $user = $_SESSION['user'];
             $role = $_SESSION['role'];
             if($role=='rider'){
                 $role=0;
@@ -54,43 +53,41 @@ if(!isset($_SESSION['user'])){
     </div>
 </header>
 
-
-
-
 <div class="match" style="text-align: center">
     <p class="success" style="text-align: center">
+
+
         <?php
-        echo "<h1>  Your Current Postings  </h1>";
-        $user = $_SESSION['user'];
+        echo "<h1>Delete Posts by Trip Number</h1>";
         $servername = "vpc353_2.encs.concordia.ca";
         $username = "vpc353_2";
         $password = "A5DNm8";
         $dbname = "vpc353_2";
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
-        $result = $conn->query("Select * FROM trip
-                            WHERE authorID=$user
-                            AND role=$role");
-        if (!$result) {
-            trigger_error('Invalid query: ' . $conn->error);
-        }
+        $sql = "SELECT * FROM trip where authorID='$user' AND role='$role'";
+        $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
                 echo"<div class='serviceContent'>";
-                echo 'Please select the trip that you would like to edit'."<br><br>";
-                $TID = $row['TID'];
-                echo 'Trip ID: '.$TID;
-                echo '<p>';
-                $title = $row["Title"];
-                echo 'Title: '.$title;
-                echo '<p>';
-                echo '<p></p></div>';
-                echo '<a href="action_edit.php?subject='.$TID.'">Edit!</a>';
+                $TID =  $row["TID"];
+                $dCity = $row['dCity'];
+                $aCity = $row['aCity'];
+                echo "Trip ID: " . $row["TID"]. "<br>";
+                echo "Departure City: " . $row["dCity"]. "<br>";
+                echo "Arrival City: " . $row["aCity"]. "<br>";
+                echo '<a href="action_delete.php?subject='.$TID.'">Yes, delete!</a>';
+                echo '</div>';
             }
         } else {
             echo "0 results";
         }
         ?>
+
     </p>
 </div>
+
+
+</body>
+</html>

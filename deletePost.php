@@ -1,7 +1,6 @@
 <?php if(session_status()==PHP_SESSION_NONE){
     session_start();
 }
-
 if(!isset($_SESSION['user'])){
     header("Location: login.php");
 }
@@ -20,6 +19,7 @@ if(!isset($_SESSION['user'])){
 <header class="header-basic">
     <link rel="stylesheet" type="text/css" href="assets/css/header.css">
     <link rel="stylesheet" type="text/css" href="assets/css/addPost.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
 
 
     <div class="header-limiter">
@@ -46,36 +46,42 @@ if(!isset($_SESSION['user'])){
     </div>
 </header>
 
-<p class="success" style="text-align: center">
-<h1>Delete Posts by Trip Number</h1>
+<div class="match" style="text-align: center">
+    <p class="success" style="text-align: center">
+
 
         <?php
-                    $servername = "vpc353_2.encs.concordia.ca";
-                    $username = "vpc353_2";
-                    $password = "A5DNm8";
-                    $dbname = "vpc353_2";
-                    // Create connection
-                    $conn = new mysqli($servername, $username, $password, $dbname);
-
-
-                    $sql = "SELECT tid FROM trip";
-                    $result = $conn->query($sql);
-
+        echo "<h1>Delete Posts by Trip Number</h1>";
+        $servername = "vpc353_2.encs.concordia.ca";
+        $username = "vpc353_2";
+        $password = "A5DNm8";
+        $dbname = "vpc353_2";
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        $sql = "SELECT * FROM trip";
+        $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
-
-                $TID =  $row["tid"];
-
-                echo "Trip ID: " . $row["tid"]. "<br>";
-                echo '<a href="action_delete.php?subject='.$TID.'">Yes, delete!</a><p>';
+                echo"<div class='serviceContent'>";
+                $TID =  $row["TID"];
+                $dCity = $row['dCity'];
+                $aCity = $row['aCity'];
+                $author = $row['authorID'];
+                echo "Trip ID: " . $row["TID"]. "<br>";
+                echo "Author ID: " . $row["authorID"]. "<br>";
+                echo "Departure City: " . $row["dCity"]. "<br>";
+                echo "Arrival City: " . $row["aCity"]. "<br>";
+                echo '<a href="action_delete.php?subject='.$TID.'">Yes, delete!</a>';
+                echo '</div>';
             }
         } else {
             echo "0 results";
         }
-
         ?>
 
+    </p>
+</div>
 
 
 </body>

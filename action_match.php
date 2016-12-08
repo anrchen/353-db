@@ -1,33 +1,29 @@
 <?php if(session_status()==PHP_SESSION_NONE){
-        session_start();
-    }
-
-    if(!isset($_SESSION['user'])){
-        header("Location: login.php");
-    }
-    $postID = $_SESSION['newPost'];
-    $matchID = $_GET['match'];
-    $role = $_SESSION['role'];
-    $MID = $_SESSION['user'];
-
-    if($role=='rider'){
-        $role=2;
-        $matchedRole=3;
-    }else{
-        $role=3;
-        $matchedRole=2;
-    }
-
-    include_once ('connection.php');
-
-    $con=new Connection();
-    $query="SELECT balance FROM account WHERE MID='$MID' balance>=70";
-    $con->setQuery($query);
-    $con->execute();
-    $balance=$con->getResult();
-
-    if(isset($balance) and $balance!=null){
-
+    session_start();
+}
+if(!isset($_SESSION['user'])){
+    header("Location: login.php");
+}
+$postID = $_SESSION['newPost'];
+$matchID = $_GET['match'];
+$role = $_SESSION['role'];
+$MID = $_SESSION['user'];
+include_once('action_getDistance.php');
+if($role=='rider'){
+    $role=2;
+    $matchedRole=3;
+}else{
+    $role=3;
+    $matchedRole=2;
+}
+include_once ('connection.php');
+$distance=$_SESSION['distance'];
+$con=new Connection();
+$query="SELECT balance FROM account WHERE MID='$MID' and balance>=70";
+$con->setQuery($query);
+$con->execute();
+$balance=$con->getResult();
+if(isset($balance) and $balance!=null){
     $con = new Connection();
     $query="UPDATE trip SET matchedID='$matchID', role=$role WHERE TID='$postID'";
     $con->setQuery($query);
@@ -36,11 +32,10 @@
     $con->setQuery($query);
     $con->execute();
     $con->close();
-
-    }else{
-        $message="You do not have enough balance in your account!";
-        header("Location: matchPost.php?Message=" . urlencode($message));
-    }
+}else{
+    $message="You do not have enough balance in your account!";
+    header("Location: matchPost.php?Message=" . urlencode($message));
+}
 ?>
 
 <!DOCTYPE html>
@@ -48,8 +43,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv=REFRESH CONTENT=10;url=action_pay.php>
-
+    <?php
+    echo "<meta http-equiv=REFRESH CONTENT=10;url=action_pay.php?distance=".$distance.">";
+    ?>
 </head>
 
 <body>
@@ -88,4 +84,3 @@
 
 </body>
 </html>
-
